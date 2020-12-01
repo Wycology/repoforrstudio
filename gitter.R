@@ -7,6 +7,6 @@ abline(teg,
        col = "blue", 
        lwd = 3, 
        lty = "dashed",
-       v = 1.5,
+       v = 1.6,
        h = 7.3)
 
