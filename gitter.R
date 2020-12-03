@@ -1,9 +1,9 @@
 data("iris")
 # Drawing regression line on a plot
 
-teg <-  lm(Sepal.Length ~ Petal.Width, data = iris)
+Reg <-  lm(Sepal.Length ~ Petal.Width, data = iris)
 plot(iris$Sepal.Length ~ iris$Petal.Width, col = "red")
-abline(teg, 
+abline(Reg, 
        col = "blue", 
        lwd = 3, 
        lty = "dashed",
