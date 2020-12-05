@@ -10,9 +10,10 @@ abline(Reg,
        v = 1.6,
        h = 7.3)
 
-library(tidyverse
-        )
-diamonds_df <- diamonds
+# Adding beautiful violin plots on boxplots in R Studio
+
+library(tidyverse) # Loading the necessary libraries
+diamonds_df <- diamonds # Creating a copy of the diamonds data to manipulate
 
 diamonds_df %>% 
         ggplot(aes(x = cut, y = price, color = cut)) +
