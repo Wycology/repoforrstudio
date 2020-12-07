@@ -20,3 +20,13 @@ diamonds_df %>%
         geom_boxplot(alpha = 0, width = 0.15) +
         geom_violin(alpha = 0) +
         theme(legend.position = "none")
+library(shiny)
+library(shinythemes)
+
+# Plotting beautiful hexagons
+chic <- readr::read_csv("https://raw.githubusercontent.com/Z3tt/R-Tutorials/master/ggplot2/chicago-nmmaps.csv")
+tibble::glimpse(chic)
+ggplot(chic, aes(temp, o3)) +
+        geom_hex(color = "grey") +
+        scale_fill_distiller(palette = "RdPu", direction = 1) +
+        labs(x = "Temperature (°F)", y = "Ozone Level")
