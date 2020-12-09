@@ -77,7 +77,7 @@ title("Tool Rental by Day of the Week")
 
 vioplot(graph7, graph8, graph9, graph10, 
         names = c("1", "2", "3", "4"),
-        col = "magenta")
+        col = "purple")
 title("Tool Rentals by Season")
 
 # Time to try histograms
