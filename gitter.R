@@ -7,10 +7,10 @@ plot(iris$Sepal.Length ~ iris$Petal.Width,
      pch = 23)
 abline(Reg, 
        col = "blue", 
-       lwd = 3, 
-       lty = "dashed",
+       lwd = 2.5, 
+       lty = "dotted",
        v = 1.6,
-       h = 7.3)
+       h = 7.2)
 
 # Adding beautiful violin plots on boxplots in R Studio
 
@@ -20,8 +20,9 @@ diamonds_df <- diamonds # Creating a copy of the diamonds data to manipulate
 diamonds_df %>% 
         ggplot(aes(x = cut, y = price, color = cut)) +
         geom_boxplot(alpha = 0, width = 0.15) +
-        geom_violin(alpha = 0) +
+        geom_violin(alpha = 0.1) +
         theme(legend.position = "none")
+
 library(shiny)
 library(shinythemes)
 
@@ -31,7 +32,8 @@ tibble::glimpse(chic)
 ggplot(chic, aes(temp, o3)) +
         geom_hex(color = "grey") +
         scale_fill_distiller(palette = "RdPu", direction = 1) +
-        labs(x = "Temperature (°F)", y = "Ozone Level")
+        labs(x = "Temperature (°F)", y = "Ozone Level") +
+  theme_classic()
 # install.packages("vioplot")
 library(vioplot)
 library(ggplot2)
@@ -69,14 +71,14 @@ vioplot(graph0, graph1, graph2, graph3, graph4, graph5, graph6,
 vioplot(graph0, graph1, graph2, graph3, graph4, graph5, graph6, 
         names = c("1", "2", "3", "4", "5", "6", "7"),
 col = "purple")
-title("Tool Rental By Day of The Week")
+title("Tool Rental by Day of the Week")
 
 # Doing that for the seasons
 
 vioplot(graph7, graph8, graph9, graph10, 
         names = c("1", "2", "3", "4"),
         col = "magenta")
-title("Tool Rentals By Season")
+title("Tool Rentals by Season")
 
 # Time to try histograms
 
