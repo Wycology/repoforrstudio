@@ -117,3 +117,14 @@ barplot(height = testData1$newrentals,
         main = "Tool Rentals By Date",
         ylab = "Rentals",
         xlab = "Date") # Super cool
+
+# Practising with tapply function
+# Let me create a dataframe
+
+tea_yield <- data.frame(Yield = c(20, 27, 25, 21, 25, 28, 29, 35, 36, 33),
+                        Site = c('Timbilil', 'Timbilil', 'Timbilil', 'Timbilil',
+                                 'Timbilil', 'Sotik', 'Sotik', 'Sotik', 'Sotik', 
+                                 'Sotik'))
+
+tapply(tea_yield$Yield, tea_yield$Site, mean, simplify = FALSE)
+
