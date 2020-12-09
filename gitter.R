@@ -131,4 +131,12 @@ tapply(tea_yield$Yield, tea_yield$Site, mean, simplify = TRUE) # Applies a
 # function with respect to a factor.
 
 apply(tea_yield[,1:2], 2, FUN = mean) # Finds means of columns in a dataframe
+library(dplyr)
 
+stemdata <-  tea_yield %>% 
+  filter(Site == "Sotik") %>% 
+  select(Temp)
+
+str(stemdata)
+
+stem(iris$Sepal.Width, scale = 5)
