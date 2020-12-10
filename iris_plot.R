@@ -1,3 +1,5 @@
+# IRIS PLOT ----
+
 # One of the beautiful plots I created using a range of packages
 
 # I will use three packages
@@ -74,11 +76,4 @@ combined_plots_labeled <- combined_plots +
 combined_plots_labeled_no_legend <- combined_plots_labeled &
   theme(legend.position = "none")
 
-combined_plots_labeled_no_legend
-
-
-
-
-
-
-
+combined_plots_labeled_no_legend # This will print out the final product.
