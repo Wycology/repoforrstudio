@@ -56,7 +56,7 @@ uniform_smooth <- ggplot(data = iris,
                         description = "Medium species")) +
   geom_mark_ellipse(aes(fill = Species,
                         filter = Species == "virginica",
-                        label = "Iiris virginica",
+                        label = "Iris virginica",
                         description = "Tallest species")) +
   theme_classic() +
   geom_smooth()
