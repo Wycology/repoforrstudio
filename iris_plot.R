@@ -67,19 +67,23 @@ uniform_smooth <- ggplot(data = iris,
 # Avoiding the color parameter in the aes() ensures all species are considered
 # together in the subsequent layers arguments. No grouping by species.
 
-combined_plots <- separate_smooth + uniform_smooth
+# Patchwork package allows for addition of two plots by their object names.
+# The addition is so simple, just relying on the plus (+) operator.
+
+combined_plots <- separate_smooth + uniform_smooth # Adding plots.
 
 # Now I want to give the plots title and tags or labels to identify them
 
 combined_plots_labeled <- combined_plots +
   plot_annotation(
-    title = "Dimensions of three iris species",
-    tag_levels = "A"
-  ) # This makes the first plot to be a and the next to be b
+    title = "Dimensions of three iris species", # Title of both plots.
+    tag_levels = "A" # Indicates that the plots will be labelled A, B, C etc.
+  ) # This makes the first plot to be A and the next to be B. Checking on 
+# documentation will help know more arguments in this function.
 
 # Now I want to remove the legends since the species labels are visible
 
 combined_plots_labeled_no_legend <- combined_plots_labeled &
-  theme(legend.position = "none")
+  theme(legend.position = "none") # Removes legends from the plots.
 
 combined_plots_labeled_no_legend # This will print out the final product.
