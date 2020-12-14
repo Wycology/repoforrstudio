@@ -87,3 +87,17 @@ combined_plots_labeled_no_legend <- combined_plots_labeled &
   theme(legend.position = "none") # Removes legends from the plots.
 
 combined_plots_labeled_no_legend # This will print out the final product.
+
+# Showing that in ggplot2 we can use & instead of plus (+)
+
+ggplot2::ggplot(data = iris,
+       mapping = aes(x = Sepal.Length,
+                     y = Petal.Width)) &
+  ggplot2::geom_point() &
+  ggplot2::theme_classic()
+
+# I think it has taken me a long time to know this.
+# I used ggplot2:: so that I can be sure that the & is supported by ggplot2 and 
+# not any other loaded packages such ggforce and patchwork.
+
+
