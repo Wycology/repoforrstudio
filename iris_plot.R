@@ -1,7 +1,5 @@
 # IRIS PLOT ----
 
-# One of the beautiful plots I created using a range of packages
-
 # I will use three packages
 
 # install.packages("patchwork")
@@ -14,9 +12,11 @@ library(patchwork)
 library(ggforce)
 library(ggplot2)
 
-str(iris)
+str(iris) # Checking the structure of the dataset. Returned in Console.
 
-plot(iris$Sepal.Length, iris$Petal.Width)
+plot(iris$Sepal.Length, iris$Petal.Width) # Basic plot within the R base.
+
+# Creating the first plot of the iris data.
 
 separate_smooth <- ggplot(data = iris,
        mapping = aes(x = Sepal.Length,
