@@ -41,13 +41,16 @@ diamonds %>%
 
 library(gapminder)
 
+
+start_time <- Sys.time()
+
 gapminder %>% 
         filter(country == "Kenya") %>% 
         head(4)
 
+end_time <- Sys.time()
 
-
-
+duration2 <- round(end_time - start_time, 2)
 
 
 
