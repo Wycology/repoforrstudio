@@ -31,7 +31,10 @@ max(Orange$circumference) # This gives a value of 214 mm.
 max(Orange$age)/365 # This gives 1582 days. About 4.3 years. Dividing days by 365.
 
 
-
-
-
-
+library(tidyverse)
+head(diamonds)
+diamonds %>% 
+        mutate(color2 = case_when(price > 400 ~ "High",
+                                  price < 400 ~ "Moderate",
+                                  TRUE ~ "Low")) %>% 
+        head()
