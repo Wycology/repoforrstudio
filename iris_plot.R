@@ -91,7 +91,7 @@ combined_plots_labeled_no_legend # This will print out the final product.
 # Showing that in ggplot2 we can use & instead of plus (+)
 
 ggplot2::ggplot(data = iris,
-       mapping = aes(x = Sepal.Length,
+       mapping = ::aes(x = Sepal.Length,
                      y = Petal.Width)) &
   ggplot2::geom_point() &
   ggplot2::theme_classic()
