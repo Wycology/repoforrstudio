@@ -23,4 +23,15 @@ abline(Orangelm, lwd = 3, lty = "dashed", col = "cyan") # Adding the lm as ablin
 text(300, 200, "R^2 = 0.8345\nP<0.0001\ny = 17.4 + 0.107x")
 # Annotating text on the graph.
 # \n indicates line break to shift the next component to next line.
-?Orange
+
+# Checking the largest tree circumference
+max(Orange$circumference) # This gives a value of 214 mm. 
+
+# Checking the oldest orange tree
+max(Orange$age)/365 # This gives 1582 days. About 4.3 years. Dividing days by 365.
+
+
+
+
+
+
