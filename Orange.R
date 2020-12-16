@@ -38,3 +38,21 @@ diamonds %>%
                                   price < 400 ~ "Moderate",
                                   TRUE ~ "Low")) %>% 
         head()
+
+library(gapminder)
+
+gapminder %>% 
+        filter(country == "Kenya") %>% 
+        head(4)
+
+
+
+
+
+
+
+
+
+
+
+
