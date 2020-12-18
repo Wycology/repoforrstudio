@@ -53,7 +53,11 @@ end_time <- Sys.time()
 
 duration2 <- round(end_time - start_time, 2)
 
+ggplot(data = gapminder, aes(pop)) +
+        geom_histogram()
 
+ggplot(data = gapminder, aes(log(pop))) +
+        geom_histogram()
 
 
 
