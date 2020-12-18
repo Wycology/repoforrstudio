@@ -57,7 +57,7 @@ ggplot(data = gapminder, aes(pop)) +
         geom_histogram()
 
 ggplot(data = gapminder, aes(log(pop))) +
-        geom_histogram()
+        geom_histogram(col = "cyan", fill = "purple")
 
 
 
