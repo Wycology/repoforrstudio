@@ -40,11 +40,12 @@ diamonds %>%
         head()
 
 library(gapminder)
-
+library(tidyverse)
 
 start_time <- Sys.time()
 
 gapminder %>% 
+        select(country) %>% 
         filter(country == "Kenya") %>% 
         head(4)
 
