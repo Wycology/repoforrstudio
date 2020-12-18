@@ -43,9 +43,9 @@ library(gapminder)
 library(tidyverse)
 
 start_time <- Sys.time()
-
+head(gapminder)
 gapminder %>% 
-        select(country) %>% 
+        select(country, year, pop) %>% 
         filter(country == "Kenya") %>% 
         head(4)
 
