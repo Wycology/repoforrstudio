@@ -57,9 +57,11 @@ ggplot(data = gapminder, aes(pop)) +
         geom_histogram()
 
 ggplot(data = gapminder, aes(log(pop))) +
-        geom_histogram(col = "cyan", fill = "purple")
+        geom_histogram(col = "cyan", fill = "purple") # Histogram generation.
 
-ggplot(data = gapminder, aes(x = continent, y = lifeExp, fill  = continent)) +
+ggplot(data = gapminder, aes(x = continent, 
+                             y = lifeExp, 
+                             fill  = continent)) + # Generating boxplot.
         geom_boxplot()
 
 
