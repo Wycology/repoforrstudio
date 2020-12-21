@@ -5,9 +5,17 @@
 # wyclifeoluoch@gmail.com   #
 #############################
 
+library(tidyverse)
+
 data("Orange")     # Loading the inbuilt Orange data
+# The dataset is about circumference and ages of several orange plants
+
 head(Orange)       # First 6 rows of the dataframe
-length(Orange$age) # Checking the length of the dataframe
+# This is revealing the measurements of the first six individuals of orange.
+
+Orange %>% # Picking the right dataset, and then.
+        select(age) %>% # Selecting one of the columns, and then
+        nrow() # Returning number of rows in the selected column.
 
 Orangelm <- lm(circumference ~ age, data = Orange) # Regression model for orange
 summary(Orangelm) # Details of the regression model.
@@ -25,11 +33,16 @@ text(300, 200, "R^2 = 0.8345\nP<0.0001\ny = 17.4 + 0.107x")
 # \n indicates line break to shift the next component to next line.
 
 # Checking the largest tree circumference
-max(Orange$circumference) # This gives a value of 214 mm. 
+Orange %>% # Picking teh dataset, and then.
+        select(circumference) %>% # Selecting the right column, and then.
+        max() # Returning the maximum value in the circumference column. 
 
 # Checking the oldest orange tree
-max(Orange$age)/365 # This gives 1582 days. About 4.3 years. Dividing days by 365.
 
+Orange %>% # Picks the dataset, and then.
+        select(age) %>%  # Picks the age column to work with.
+        max()/365 # Divides the maximum age by 365 to convert days to years.
+        
 
 library(tidyverse)
 head(diamonds)
