@@ -155,13 +155,33 @@ ggscatterstats(
         marginal.type = 'density' # Can also be histogram, boxplot, violin, densigram
 )
 
+# Working with ggcorrmat
 
+ggcorrmat(dplyr::starwars)
 
+# To give output as dataframe
 
+ggcorrmat(
+        data = dplyr::select(msleep, sleep_rem, awake, brainwt),
+        type = 'bf',
+        output = 'dataframe'
+)
 
+#Working with ggpiestats
 
+ggpiestats(
+        data = dplyr::filter(.data = movies_long,
+                             genre %in% c("Drama", "Comedy")),
+        x = mpaa,
+        y = genre
+)
 
-
+ggpiestats(
+        data = as.data.frame(Titanic),
+        x = Class,
+        counts = Freq,
+        label = "both"
+)
 
 
 
