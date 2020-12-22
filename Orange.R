@@ -144,5 +144,32 @@ ggdotplotstats(
         test.value.line = TRUE,
 )
 
+ggscatterstats(
+        data = movies_long,
+        x = budget,
+        y = rating,
+        type = 'r',
+        label.var = title,
+        label.expression = budget > 150
+        & rating > 7.5,
+        marginal.type = 'density' # Can also be histogram, boxplot, violin, densigram
+)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
