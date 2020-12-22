@@ -100,3 +100,49 @@ ggbetweenstats(
         pairwise.display = 'all', # Can also set to "ns" or "s"
         p.adjust.method = 'fdr'
 )
+
+# Working with outlier tagging! Super cool, Ooh my!
+
+ggbetweenstats(
+        data = movies_long,
+        
+        x = mpaa,
+        y = rating,
+        type = 'np',
+        pairwise.display = "all",
+        p.adjust.method = "fdr",
+        outlier.tagging = TRUE,
+        outlier.label = title, # Picks the column to tag/name the outliers by.
+        outlier.coef = 2
+)
+
+# Working with ggwithinstats
+
+ggwithinstats(
+        data = WRS2::WineTasting,
+        x = Wine,
+        y = Taste
+)
+
+install.packages("BayesFactor")
+
+# Working with gghistostats
+
+gghistostats(
+        data = movies_long,
+        x = budget,
+        test.value = 30
+)
+
+# Working with ggdotplotstats
+
+ggdotplotstats(
+        data = movies_long,
+        x = budget,
+        y = genre,
+        test.value = 52,
+        test.value.line = TRUE,
+)
+
+
+
