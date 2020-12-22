@@ -77,6 +77,15 @@ ggplot(data = gapminder, aes(x = continent,
                              fill  = continent)) + # Generating boxplot.
         geom_boxplot()
 
+# Working with ggstatsplot ----
 
+install.packages("ggstatsplot") # This will install the package into R.
 
+library(ggstatsplot) # This is loading the package to avail its functions.
+library(ggplot2) # This is rendering the functions in ggplot2 package available.
 
+ggbetweenstats(
+        data = movies_long, # Picks the dataset to be plotted.
+        x = mpaa, # States the variable on the x-axis (factors)
+        y = rating # States the y-axis variable (response variable)
+)
