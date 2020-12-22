@@ -204,8 +204,30 @@ grouped_ggpiestats(
         data = mtcars,
         x = cyl,
         grouping.var = am
+) # This is also available for grouped_ggdotplotstats, grouped_ggbarstats, 
+# grouped_ggscatterstats, grouped_gghistostats, grouped_ggbetweenstats,
+# grouped_ggwithinstats, and grouped_cormat
+
+# CUSTOMIZING THE PLOTS TO MY LIKING
+
+ggbetweenstats(
+        data = movies_long,
+        x = mpaa, 
+        y = rating,
+        results.subtitle = FALSE,
+        ggtheme = hrbrthemes::theme_ipsum_tw(),
+        palette = 'Darjeeling2',
+        package = 'wesanderson'
 )
 
+# More playing
+ggbetweenstats(
+        data = mtcars,
+        x = am,
+        y = wt,
+        type = 'bf'
+) +
+        scale_y_continuous(sec.axis = dup_axis())
 
 
 
