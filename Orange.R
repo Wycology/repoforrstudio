@@ -89,3 +89,14 @@ ggbetweenstats(
         x = mpaa, # States the variable on the x-axis (factors)
         y = rating # States the y-axis variable (response variable)
 )
+
+# Going a step further with the same data:
+
+ggbetweenstats(
+        data = movies_long,
+        x = mpaa,
+        y = rating,
+        type = 'np', # Can also be "p", "r" or "bf"
+        pairwise.display = 'all', # Can also set to "ns" or "s"
+        p.adjust.method = 'fdr'
+)
