@@ -183,12 +183,28 @@ ggpiestats(
         label = "both"
 )
 
+# Working with ggbarstats
+ggbarstats(
+        data = movies_long,
+        x = genre,
+        y = mpaa,
+        package = 'ggsci',
+        palette = 'default_igv'
+)
 
+mod <- stats::aov(
+        formula = rating ~ mpaa * genre,
+        data = movies_long
+)
+ggcoefstats(mod)
 
+# Working with grouped ggpiestats
 
-
-
-
+grouped_ggpiestats(
+        data = mtcars,
+        x = cyl,
+        grouping.var = am
+)
 
 
 
