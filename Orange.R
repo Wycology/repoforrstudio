@@ -229,5 +229,25 @@ ggbetweenstats(
 ) +
         scale_y_continuous(sec.axis = dup_axis())
 
+# Extracting only the useful statistics from ggplot using ggstatsplot
+results <- 
+        ggstatsplot::ggpiestats(
+                data = Titanic_full,
+                x = Survived,
+                y = Sex,
+                output = 'subtitile'
+        )
+ggiraphExtra::ggSpine(
+        data = Titanic_full,
+        aes(x = Sex, fill = Survived),
+        addlabel = TRUE,
+        interactive = FALSE
+) +
+        labs(subtitle = results)
+
+
+
+
+
 
 
