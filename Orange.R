@@ -79,7 +79,12 @@ ggplot(data = gapminder, aes(x = continent,
 
 # Working with ggstatsplot ----
 
-install.packages("ggstatsplot") # This will install the package into R.
+
+remotes::install_github(
+        repo = "IndrajeetPatil/ggstatsplot", # package path on GitHub
+        dependencies = TRUE, # installs packages which ggstatsplot depends on
+        upgrade_dependencies = TRUE # updates any out of date dependencies
+)
 
 library(ggstatsplot) # This is loading the package to avail its functions.
 library(ggplot2) # This is rendering the functions in ggplot2 package available.
