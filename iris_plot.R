@@ -105,5 +105,5 @@ ggplot(data = diamonds) +
   geom_bar(mapping = aes(x = cut, fill = cut), show.legend = FALSE, width = 1) +
   theme(aspect.ratio = 1) +
   labs(x = NULL, y = NULL) +
-  coord_polar()
+  coord_polar() # coord_flip() can also work well with the data depending on need.
   
