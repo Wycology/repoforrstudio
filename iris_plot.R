@@ -11,6 +11,8 @@
 library(patchwork)
 library(ggforce)
 library(ggplot2)
+library(tidyverse)
+library(modelr)
 
 str(iris) # Checking the structure of the dataset. Returned in Console.
 
@@ -107,3 +109,40 @@ ggplot(data = diamonds) +
   labs(x = NULL, y = NULL) +
   coord_polar() # coord_flip() can also work well with the data depending on need.
   
+# Cool/crazy plot with modelr 
+
+library(modelr)
+options(na.action = na.warn)
+
+ggplot(data = sim1, mapping = aes(x = x, y = y)) +
+  geom_point() # There is some visible correlation between the variables
+
+models <- tibble(
+  a1 = runif(250, -20, 40),
+  a2 = runif(250, -5, 5)
+)
+
+ggplot(data = sim1, mapping = aes(x = x, y =y)) +
+  geom_abline(mapping = aes(intercept = a1, slope = a2),
+              data = models, alpha = 1/4) +
+  geom_point(col = 'purple', pch = 18, size = 5)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
