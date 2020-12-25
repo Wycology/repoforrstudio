@@ -125,7 +125,8 @@ models <- tibble(
 ggplot(data = sim1, mapping = aes(x = x, y =y)) +
   geom_abline(mapping = aes(intercept = a1, slope = a2),
               data = models, alpha = 1/4) +
-  geom_point(col = 'purple', pch = 18, size = 5)
+  geom_point(col = 'purple', pch = 18, size = 5) +
+  labs(x = 'The x-axis', y = 'The y-axis', title = 'Crazy model')
 
 
 
