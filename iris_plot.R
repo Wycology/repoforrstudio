@@ -117,7 +117,7 @@ ggplot(data = diamonds) +
   labs(x = NULL, y = NULL) +
   coord_polar() # coord_flip() can also work well with the data depending on need.
   
-# Cool/crazy plot with modelr 
+# Cool/crazy plot with modelr package.
 
 library(modelr)
 options(na.action = na.warn)
