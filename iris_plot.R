@@ -1,6 +1,8 @@
 # IRIS PLOT ----
 
-# I will use three packages
+# I will use three packages in this plotting exercise
+
+# Install them in case you still don't have them already
 
 # install.packages("patchwork")
 # install.packages("ggforce")
@@ -37,10 +39,12 @@ separate_smooth <- ggplot(data = iris,    # Specifying the data to be plotted.
                         description = "Medium species")) +
   geom_mark_ellipse(aes(fill = Species,
                         filter = Species == "virginica",
-                        label = "Iiris virginica",
+                        label = "Iris virginica",
                         description = "Tallest species")) +
   theme_classic() +                      # Having publication ready background.
-  geom_smooth()                          # Adding smooth line around 95% level.
+  geom_smooth()
+# Adding smooth line around 95% level.
+separate_smooth
 
 # In the above plot, having color within the aes() breakes the data into 
 # species-wise groups. Meaning each species group will be smoothed separately.
