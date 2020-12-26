@@ -80,6 +80,7 @@ uniform_smooth # This is looking cool!
 
 combined_plots <- separate_smooth + uniform_smooth # Adding plots.
 
+combined_plots # Even cooler than I thought!
 # Now I want to give the plots title and tags or labels to identify them
 
 combined_plots_labeled <- combined_plots +
