@@ -93,7 +93,8 @@ combined_plots_labeled <- combined_plots +
 # Now I want to remove the legends since the species labels are visible
 
 combined_plots_labeled_no_legend <- combined_plots_labeled &
-  theme(legend.position = "none") # Removes legends from the plots.
+  theme(legend.position = "none") # Removes legends from the plots. I do not 
+# need the legends since the species are labeled in the plots.
 
 combined_plots_labeled_no_legend # This will print out the final product.
 
