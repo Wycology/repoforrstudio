@@ -70,6 +70,8 @@ uniform_smooth <- ggplot(data = iris,
   theme_classic() +
   geom_smooth()
 
+uniform_smooth # This is looking cool!
+
 # Avoiding the color parameter in the aes() ensures all species are considered
 # together in the subsequent layers arguments. No grouping by species.
 
