@@ -45,7 +45,7 @@ separate_smooth <- ggplot(data = iris,    # Specifying the data to be plotted.
   theme_classic() +                      # Having publication ready background.
   geom_smooth() # Adding smooth line around 95% level on the plot.
 
-separate_smooth
+separate_smooth # Generates the plot output of the dataset 
 
 # In the above plot, having color within the aes() breakes the data into 
 # species-wise groups. Meaning each species group will be smoothed separately.
