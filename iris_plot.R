@@ -10,13 +10,14 @@
 
 # Let me load the packages using library() function.
 
+library(modelr)
 library(patchwork)
 library(ggforce)
 library(ggplot2)
 library(tidyverse)
-library(modelr)
 
 str(iris) # Checking the structure of the dataset. Returned in Console.
+
 
 plot(iris$Sepal.Length, iris$Petal.Width) # Basic plot within the R base.
 
@@ -42,8 +43,8 @@ separate_smooth <- ggplot(data = iris,    # Specifying the data to be plotted.
                         label = "Iris virginica",
                         description = "Tallest species")) +
   theme_classic() +                      # Having publication ready background.
-  geom_smooth()
-# Adding smooth line around 95% level.
+  geom_smooth() # Adding smooth line around 95% level on the plot.
+
 separate_smooth
 
 # In the above plot, having color within the aes() breakes the data into 
