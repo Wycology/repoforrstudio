@@ -126,10 +126,12 @@ options(na.action = na.warn)
 ggplot(data = sim1, mapping = aes(x = x, y = y)) +
   geom_point() # There is some visible correlation between the variables
 
-models <- tibble(
-  a1 = runif(250, -20, 40),
-  a2 = runif(250, -5, 5)
+models <- tibble( # Creating some random tibble dataset for plotting.
+  a1 = runif(250, -20, 40), # Generates 250 random numbers between -20 and 40
+  a2 = runif(250, -5, 5) 
 )
+
+min(models$a1)
 
 ggplot(data = sim1, mapping = aes(x = x, y =y)) +
   geom_abline(mapping = aes(intercept = a1, slope = a2),
