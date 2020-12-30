@@ -86,7 +86,7 @@ combined_plots # Even cooler than I thought!
 
 combined_plots_labeled <- combined_plots +
   plot_annotation(
-    title = "Relationships among dimensions of three iris species", # Title of both plots.
+    title = "Relationships among dimensions of the three iris species", # Title of both plots.
     tag_levels = "A" # Indicates that the plots will be labelled A, B, C etc.
   ) # This makes the first plot to be A and the next to be B. Checking on 
 # documentation will help know more arguments in this function.
