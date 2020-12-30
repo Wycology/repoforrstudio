@@ -128,10 +128,8 @@ ggplot(data = sim1, mapping = aes(x = x, y = y)) +
 
 models <- tibble( # Creating some random tibble dataset for plotting.
   a1 = runif(250, -20, 40), # Generates 250 random numbers between -20 and 40
-  a2 = runif(250, -5, 5) 
+  a2 = runif(250, -5, 5) # Generates 250 random numbers between -5 and 5
 )
-
-min(models$a1)
 
 ggplot(data = sim1, mapping = aes(x = x, y =y)) +
   geom_abline(mapping = aes(intercept = a1, slope = a2),
