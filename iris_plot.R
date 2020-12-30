@@ -37,7 +37,7 @@ separate_smooth <- ggplot(data = iris,    # Specifying the data to be plotted.
   geom_mark_ellipse(aes(fill = Species,
                         filter = Species == "versicolor",
                         label = "Iris versicolor",
-                        description = "Medium species")) +
+                        description = "Moderate species")) +
   geom_mark_ellipse(aes(fill = Species,
                         filter = Species == "virginica",
                         label = "Iris virginica",
@@ -137,23 +137,3 @@ ggplot(data = sim1, mapping = aes(x = x, y =y)) +
   geom_point(col = 'purple', pch = 18, size = 5) +
   labs(x = 'The x-axis', y = 'The y-axis', title = 'Crazy model in deed') +
   theme_classic()
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
