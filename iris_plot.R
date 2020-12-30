@@ -41,7 +41,7 @@ separate_smooth <- ggplot(data = iris,    # Specifying the data to be plotted.
   geom_mark_ellipse(aes(fill = Species,
                         filter = Species == "virginica",
                         label = "Iris virginica",
-                        description = "Tallest species")) +
+                        description = "Largest species")) +
   theme_classic() +                      # Having publication ready background.
   geom_smooth() # Adding smooth line around 95% level on the plot.
 
