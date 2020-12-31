@@ -1,6 +1,7 @@
 # Combining both boxplot and violin plots in one.
 
 library(tidyverse)
+
 diamonds_df <- diamonds
 
 diamonds_df %>% 
@@ -11,6 +12,21 @@ diamonds_df %>%
   theme_classic() +
   theme(legend.position = "none") +
   labs(x = "Cut of the diamond",
-       y = "Price of the diamond (USD)",
+       y = "Price of the diamonds (USD)",
        title = "Cut of the diamond against price",
-       subtitle = "Such a cool graph")
+       subtitle = "Such a cool graph",
+       caption = "Data source: gglot2 dataset") +
+  theme(axis.text=element_text(size=16),
+        axis.title=element_text(size=16,face="bold")) +
+  theme(plot.title = element_text(color = 'red', size = 18, face = 'bold'),
+        plot.subtitle = element_text(color = 'green', size = 14, face = 'italic'))
+
+diamonds %>% 
+  filter(cut == 'Very Good') %>% 
+  nrow()
+
+
+diamonds %>% 
+  select(cut) %>% 
+  table() %>% 
+  barplot(col = c('green', 'red', 'blue', 'yellow', 'purple'))
