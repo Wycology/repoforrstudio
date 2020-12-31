@@ -12,4 +12,5 @@ diamonds_df %>%
   theme(legend.position = "none") +
   labs(x = "Cut of the diamond",
        y = "Price of the diamond (USD)",
-       title = "Cut of the diamond against price")
+       title = "Cut of the diamond against price",
+       subtitle = "Such a cool graph")
