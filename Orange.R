@@ -11,7 +11,9 @@ library(tidyverse)
 library(datasets)
 data("Orange")     # Loading the inbuilt Orange data
 # The dataset is about circumference and ages of several orange plants
+attach(Orange)
 
+str(Orange)
 
 head(Orange)       # First 6 rows of the dataframe
 # This is revealing the measurements of the first six individuals of orange.
