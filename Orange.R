@@ -13,19 +13,25 @@ data("Orange")     # Loading the inbuilt Orange data
 # The dataset is about circumference and ages of several orange plants
 attach(Orange)
 
-str(Orange)
+str(Orange) # Checking the structure of the dataset.
 
-head(Orange)       # First 6 rows of the dataframe
+orange_data <- Orange
+
+orange_data <- as.data.frame(orange_data)
+
+str(orange_data)
+
+head(orange_data)       # First 6 rows of the dataframe
 # This is revealing the measurements of the first six individuals of orange.
 
-Orange %>% # Picking the right dataset, and then.
+orange_data %>% # Picking the right dataset, and then.
         select(age) %>% # Selecting one of the columns, and then
         nrow() # Returning number of rows in the selected column.
 
-Orangelm <- lm(circumference ~ age, data = Orange) # Regression model for orange
+Orangelm <- lm(circumference ~ age, data = orange_data) # Regression model for orange
 summary(Orangelm) # Details of the regression model.
 
-plot(Orange$circumference ~ Orange$age, 
+plot(orange_data$circumference ~ orange_data$age, 
      col = "purple",
      pch = 19,
      cex = 2,
@@ -38,13 +44,13 @@ text(300, 200, "R^2 = 0.8345\nP<0.0001\ny = 17.4 + 0.107x")
 # \n indicates line break to shift the next component to next line.
 
 # Checking the largest tree circumference
-Orange %>% # Picking teh dataset, and then.
+orange_data %>% # Picking teh dataset, and then.
         select(circumference) %>% # Selecting the right column, and then.
         max() # Returning the maximum value in the circumference column. 
 
 # Checking the oldest orange tree
 
-Orange %>% # Picks the dataset, and then.
+orange_data %>% # Picks the dataset, and then.
         select(age) %>%  # Picks the age column to work with.
         max()/365 # Divides the maximum age by 365 to convert days to years.
         
