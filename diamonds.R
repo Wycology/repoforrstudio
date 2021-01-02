@@ -19,7 +19,8 @@ diamonds_df %>%
   theme(axis.text=element_text(size=16),
         axis.title=element_text(size=16,face="bold")) +
   theme(plot.title = element_text(color = 'red', size = 18, face = 'bold'),
-        plot.subtitle = element_text(color = 'green', size = 14, face = 'italic'))
+        plot.subtitle = element_text(color = 'green', size = 14, face = 'italic'),
+        plot.caption = element_text(color = 'blue', face = 'italic'))
 
 diamonds %>% 
   filter(cut == 'Very Good') %>% 
