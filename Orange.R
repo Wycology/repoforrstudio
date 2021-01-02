@@ -37,7 +37,7 @@ plot(orange_data$circumference ~ orange_data$age,
      cex = 2,
      xlab = "Age (days)",
      ylab = "Circumference (mm)",
-     main = "Relationship between age and cricumference of oranges")
+     main = "Relationship between age and cricumference of oranges trees")
 abline(Orangelm, lwd = 4, lty = "dotted", col = "magenta") # Adding the lm as abline
 text(300, 200, "R^2 = 0.8345\nP<0.0001\ny = 17.4 + 0.107x")
 # Annotating text on the graph.
