@@ -1,11 +1,11 @@
 #### I am working on this to demonstrate the power of R in plotting ####
 
-#############################
-# Wyclife Agumba Oluoch     #
-# wyclifeoluoch@gmail.com   #
-# Last modified 01/01/2021  #
-# Task: Plot generation R   #
-#############################
+################################
+# Wyclife Agumba Oluoch        #
+# wyclifeoluoch@gmail.com      #
+# Last modified 02nd Feb 2021  #
+# Task: Plot generation R      #
+################################
 
 library(tidyverse)
 library(datasets)
@@ -38,7 +38,7 @@ plot(orange_data$circumference ~ orange_data$age,
      xlab = "Age (days)",
      ylab = "Circumference (mm)",
      main = "Relationship between age and cricumference of oranges")
-abline(Orangelm, lwd = 3, lty = "dashed", col = "cyan") # Adding the lm as abline
+abline(Orangelm, lwd = 4, lty = "dotted", col = "magenta") # Adding the lm as abline
 text(300, 200, "R^2 = 0.8345\nP<0.0001\ny = 17.4 + 0.107x")
 # Annotating text on the graph.
 # \n indicates line break to shift the next component to next line.
