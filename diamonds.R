@@ -14,7 +14,7 @@ diamonds_df <- diamonds
 diamonds_df %>% 
   ggplot(aes(x = cut, y = price, color = cut)) +
   geom_point(position = "jitter", alpha = 0.2) +
-  geom_boxplot(alpha = 0.8, width = 0.5) +
+  geom_boxplot(alpha = 0.1, width = 0.5) +
   geom_violin(alpha = 0.5) +
   theme_classic() +
   theme(legend.position = "none") +
