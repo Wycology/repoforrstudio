@@ -15,7 +15,7 @@ diamonds_df %>%
        y = "Price of the diamonds (USD)",
        title = "Diamond cut against price",
        subtitle = "Diamond cut versus price",
-       caption = "Data source: gglot2 diamond dataset") +
+       caption = "Data source: gglot2 package's diamond dataset") +
   theme(axis.text=element_text(size=16),
         axis.title=element_text(size=16,face="bold")) +
   theme(plot.title = element_text(color = 'red', size = 18, face = 'bold'),
