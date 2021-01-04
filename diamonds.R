@@ -1,4 +1,11 @@
-# Combining both boxplot and violin plots in one.
+#########################################
+# Name: Wyclife Agumba Oluoch           #   
+# E-mail: wyclifeoluoch@gmail.com       #
+# GitHub: https://github.com/Wycology   #
+# Task: Boxplot and violin plots in one #
+# Date: 4th Jan 2020                    #
+# Last edited: 4th Jan 2020             #
+#########################################
 
 library(tidyverse)
 
