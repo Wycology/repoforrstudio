@@ -13,8 +13,8 @@ diamonds_df %>%
   theme(legend.position = "none") +
   labs(x = "Cut of the diamond",
        y = "Price of the diamonds (USD)",
-       title = "Cut of the diamond against price",
-       subtitle = "Such a cool graph",
+       title = "Diamond cut against price",
+       subtitle = "Diamond cut versus price",
        caption = "Data source: gglot2 dataset") +
   theme(axis.text=element_text(size=16),
         axis.title=element_text(size=16,face="bold")) +
