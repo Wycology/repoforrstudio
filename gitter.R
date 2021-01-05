@@ -15,7 +15,8 @@ data("iris") # This is one of the datasets which is available and ready for use.
 
 # Drawing regression line on a plot
 
-Reg <-  lm(Sepal.Length ~ Petal.Width, data = iris)
+Reg <-  lm(Sepal.Length ~ Petal.Width, data = iris) # simple linear regression.
+
 plot(iris$Sepal.Length ~ iris$Petal.Width, 
      col = "purple",
      pch = 23)
