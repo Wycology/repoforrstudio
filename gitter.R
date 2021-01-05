@@ -7,6 +7,10 @@
 # Edited: 5th Jan 2021        #
 ###############################
 
+# Loading in the iris data which comes with the base R.
+
+data() # To view a list of available datasets in the base R.
+
 data("iris")
 # Drawing regression line on a plot
 
