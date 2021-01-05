@@ -11,7 +11,8 @@
 
 data() # To view a list of available datasets in the base R.
 
-data("iris")
+data("iris") # This is one of the datasets which is available and ready for use.
+
 # Drawing regression line on a plot
 
 Reg <-  lm(Sepal.Length ~ Petal.Width, data = iris)
