@@ -25,7 +25,7 @@ plot(iris$Sepal.Length ~ iris$Petal.Width, # Simple plotting procedure
 abline(Reg, # Passing regression line as the best line of fit.
        col = "blue", # Assigning blue color to the abline.
        lwd = 2.5, # Increasing line width to my taste.
-       lty = "dotted",
+       lty = "dotted", # Could also set is as 'dashed'. default is solid line
        v = 1.6,
        h = 7.2)
 
