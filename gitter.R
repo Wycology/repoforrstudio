@@ -1,9 +1,11 @@
-#############################
-# Eyclife Agumba Oluoch 
+###############################
+# Eyclife Agumba Oluoch       #
 # wyclifeoluoch@gmail.com
-# https://github.com/Wycology
+# https://github.com/Wycology #
 # Task: Plotting some data
 # Created: 30th Nov 2020
+# Edited: 5th Jan 2021
+##############################
 
 data("iris")
 # Drawing regression line on a plot
