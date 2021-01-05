@@ -17,12 +17,14 @@ data("iris") # This is one of the datasets which is available and ready for use.
 
 Reg <-  lm(Sepal.Length ~ Petal.Width, data = iris) # simple linear regression.
 
-plot(iris$Sepal.Length ~ iris$Petal.Width, 
-     col = "purple",
-     pch = 23)
-abline(Reg, 
-       col = "blue", 
-       lwd = 2.5, 
+summary(Reg) # Looking at the regression results.
+
+plot(iris$Sepal.Length ~ iris$Petal.Width, # Simple plotting procedure
+     col = "purple", # Adding my favorite color to the plot
+     pch = 23) # Selecting my desired point character for plotting.
+abline(Reg, # Passing regression line as the best line of fit.
+       col = "blue", # Assigning blue color to the abline.
+       lwd = 2.5, # Increasing line width to my taste.
        lty = "dotted",
        v = 1.6,
        h = 7.2)
