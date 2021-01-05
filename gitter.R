@@ -27,7 +27,7 @@ abline(Reg, # Passing regression line as the best line of fit.
        lwd = 2.5, # Increasing line width to my taste.
        lty = "dotted", # Could also set is as 'dashed'. default is solid line
        v = 1.6, # Drawing vertical abline at x = 1.6
-       h = 7.2)
+       h = 7.2) # Adding another horizontal line at y = 7.2, just for fun.
 
 # Adding beautiful violin plots on boxplots in R Studio
 
