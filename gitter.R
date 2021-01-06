@@ -4,12 +4,14 @@
 # https://github.com/Wycology #
 # Task: Playing with iris data#
 # Created: 30th Nov 2020      #
-# Edited: 5th Jan 2021        #
+# Edited: 6th Jan 2021        #
 ###############################
 
-# Loading in the iris data which comes with the base R.
+# Checking all the available data in base R
 
 data() # To view a list of available datasets in the base R.
+
+# Loading in the iris data which comes with the base R.
 
 data("iris") # This is one of the datasets which is available and ready for use.
 
@@ -24,7 +26,7 @@ plot(iris$Sepal.Length ~ iris$Petal.Width, # Simple plotting procedure
      pch = 23) # Selecting my desired point character for plotting.
 abline(Reg, # Passing regression line as the best line of fit.
        col = "blue", # Assigning blue color to the abline.
-       lwd = 2.5, # Increasing line width to my taste.
+       lwd = 4, # Increasing line width to my taste.
        lty = "dotted", # Could also set is as 'dashed'. default is solid line
        v = 1.6, # Drawing vertical abline at x = 1.6
        h = 7.2) # Adding another horizontal line at y = 7.2, just for fun.
