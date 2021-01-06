@@ -80,9 +80,37 @@ for (i in 1:length(volumes)){   # length of vector volumes is 3
   print(mass)                   # printing the final output to whole numbers
 }
 
+# Now we might need to store output of our for loop in some vector
+# So we start by creating an empty vector
 
+masses <- vector(mode = 'numeric', length = length(volumes))
+# This is an empty object
+print(masses) # zero zero zero
 
+for (i in 1:length(volumes)){
+  mass <- 2.65 * volumes[i]^0.9
+  masses[i] <- mass
+}
+print(masses)
+print(round(masses))
 
+# This is enough for a single vector, let us now try multiple vectors
+# Indexing can be used to iterate through multiple vectors
+# Let us create additional vectors
+
+b0 <- c(2.65, 1.28, 3.29)
+b1 <- c(0.9, 1.1, 1.2)
+
+masses <- vector(mode = 'numeric', length = length(volumes))
+
+for (i in seq_along(volumes)){# This is seq_along(volumes) similar to # 1:length(volumes)
+  mass <- b0[i] * volumes[i] ^ b1[i]
+  masses[i] <- mass
+} 
+masses
+
+# Looping over files -  I could have done this but I do not like to do it so that
+# I don't push so many files to the github.
 
 
 
