@@ -59,6 +59,17 @@ for (volume in volumes){
 
 # Super simple... :)
 
+# Now we can do more with the for loop including creating outputs which we save 
+# to objects and other objects, and other objects.....
+
+for (volume in volumes){         # Picking each element in the volumes vector
+  mass_kgs <- 2.65 * volume^0.9  # Creates mass in Kgs using some formula
+  mass_lb <- mass_kgs * 2.2      # Changing mass in kgs to mass in pounds
+  mass_whole <- round(mass_lb)   # Setting output to whole number
+  print(mass_whole)              # Printing the final output.
+}
+
+# I cannot imagine doing this manually by picking each element and doing the maths
 
 
 
