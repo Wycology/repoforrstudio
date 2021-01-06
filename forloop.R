@@ -20,9 +20,9 @@ for (item in list_of_items){
 
 volumes <- c(1.6, 3, 8)
 
-for (volume in volumes){
-  print(2.65 * volume^0.9)
-}
+for (volume in volumes){  # I have just replaced item with volume, list_of_items
+  print(2.65 * volume^0.9)# with volumes and do_something with print with some
+}                         # math on the items
 
 # What is going on in the above code is that every element in the volumes vector
 # is raised to power 0.9 then multiplied by 2.65 and printed out.
