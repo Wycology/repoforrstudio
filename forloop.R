@@ -72,12 +72,13 @@ for (volume in volumes){         # Picking each element in the volumes vector
 # I cannot imagine doing this manually by picking each element and doing the maths
 
 
+# One more step....using index in for loop. 
 
-
-
-
-
-
+for (i in 1:length(volumes)){   # length of vector volumes is 3
+  mass <- 2.65 * volumes[i]^0.9 # i in [] stands for every item in volumes
+  mass <- round(mass)           # rounding to whole numbers
+  print(mass)                   # printing the final output to whole numbers
+}
 
 
 
