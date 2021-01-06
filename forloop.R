@@ -51,6 +51,25 @@ print(2.65 * volume^0.9) # Doing the math on that third element picked from volu
 # So in the end, we are sweating and at the back of our minds we wish we could go 
 # back to the for loop.
 
+# There we go...
+
+for (volume in volumes){
+  print(2.65 * volume^0.9)
+}
+
+# Super simple... :)
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
