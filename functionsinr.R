@@ -71,5 +71,15 @@ shrub_mass # Confirms everything went on well.
 shrub_mass <- est_shrub_mass(calc_shrub_vol(1.8, 1.2, 2.0)) # two nested functions
 shrub_mass
 
+est_shrub_mass_dim  <- function(length, width, height) {
+  volume <- calc_shrub_vol(length, width, height)
+  mass <- est_shrub_mass(volume)
+  return(mass)
+}
 
+est_shrub_mass_dim(1.8, 1.2, 2.0) # This gets volume then mass then prints
+# Super good way of having all the functions together and getting the single result.
 
+# That is it for today, I enjoyed it and I hope you too.
+# Note: when one of the inputs is negative value or NA then problems arise
+# Those can be handled later.
