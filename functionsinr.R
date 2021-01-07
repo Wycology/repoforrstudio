@@ -66,7 +66,10 @@ shrub_mass <- calc_shrub_vol(1.8, 1.2, 2.0) %>% # Perfect and the output piped d
   est_shrub_mass() # receives output from the above function and calculates mass
 shrub_mass # Confirms everything went on well.
 
+# Now let us do actual nesting of out two functions we created so far.
 
+shrub_mass <- est_shrub_mass(calc_shrub_vol(1.8, 1.2, 2.0)) # two nested functions
+shrub_mass
 
 
 
