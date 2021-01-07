@@ -10,3 +10,9 @@
 # R has thousands of inbuilt functions, how to write them is important just to
 # be sure of what a function does.
 
+# Let us start with a basic structure of a function.
+
+function_name <- function(inputs){
+  output_value <- do_something(inputs)
+  return(output_value)
+}
