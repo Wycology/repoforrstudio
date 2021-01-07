@@ -56,7 +56,9 @@ est_shrub_mass <- function(volume){
 
 # Great, the function is built.
 
-
+shrub_volume <- calc_shrub_vol(1.8, 1.2, 2.0) # calculate shrub volume
+shrub_mass <- est_shrub_mass(shrub_volume) # feed volume to mass function
+shrub_mass # print the output (mass of the shrub)
 
 
 
