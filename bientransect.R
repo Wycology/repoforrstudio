@@ -42,5 +42,15 @@ plot(sites_spatial, add = TRUE)
 bioclim_gentry <- raster::extract(bioclim, sites_spatial) %>% 
   cbind(sites)
 
+# Combining with the species richness data
 
+richness_with_env <- inner_join(rich_data, bioclim_gentry)
+
+# See how richness relate to precipitation which is bio 12
+
+ggplot(richness_with_env, aes(x = bio12, y = richness)) +
+  geom_point() +
+  theme_classic() +
+  labs(x = 'Precipitation',
+       y = 'Richness')
 
