@@ -23,11 +23,11 @@ sites <- na.omit(unique(gentry[c('plot_name',
                                  'longitude')]))
 
 # Calculating species richness
-rich_data <- gentry %>% 
-  filter(is_new_world == 1) %>% 
-  group_by(county, plot_name) %>% 
-  summarise(richness = n()) %>% 
-  collect()
+rich_data <- gentry %>%           # Picks the gentry data
+  filter(is_new_world == 1) %>%   # filter where newworld is 1
+  group_by(county, plot_name) %>% # grouping by the two variables
+  summarise(richness = n()) %>%   # counting richness per group
+  collect()                       # rendering output as table
 
 # Download environmental data from worldclim
 bioclim <- getData('worldclim', var = 'bio', res = 10 )
