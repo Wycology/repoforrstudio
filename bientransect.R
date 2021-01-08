@@ -22,3 +22,25 @@ sites <- na.omit(unique(gentry[c('plot_name',
                                  'latitude', 
                                  'longitude')]))
 
+# Calculating species richness
+rich_data <- gentry %>% 
+  filter(is_new_world == 1) %>% 
+  group_by(county, plot_name) %>% 
+  summarise(richness = n()) %>% 
+  collect()
+
+# Download environmental data from worldclim
+bioclim <- getData('worldclim', var = 'bio', res = 10 )
+
+sites_spatial <- SpatialPointsDataFrame(sites[c('longitude', 'latitude')], sites)
+
+plot(bioclim$bio12)
+plot(sites_spatial, add = TRUE)
+
+# Extract environmental data for each transect
+
+bioclim_gentry <- raster::extract(bioclim, sites_spatial) %>% 
+  cbind(sites)
+
+
+
