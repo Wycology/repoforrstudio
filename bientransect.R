@@ -51,6 +51,6 @@ richness_with_env <- inner_join(rich_data, bioclim_gentry)
 ggplot(richness_with_env, aes(x = bio12, y = richness)) +
   geom_point() +
   theme_classic() +
-  labs(x = 'Precipitation',
+  labs(x = 'Precipitation', # Adding labels to the plot.
        y = 'Richness')
 
