@@ -21,7 +21,10 @@ dim(data) # Checking the dimension of the data set.
 # To do this, we need the sum of the frequency variable
 
 number_passengers <- summarise(data, number_passengers = sum(Freq))
-number_passengers
+number_passengers # Returns the total passangers to be 2201.
+
+# This can also be made more readable using the pipe (%>%) operator
+
 
 
 
