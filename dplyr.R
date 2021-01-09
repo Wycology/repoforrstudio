@@ -7,4 +7,23 @@
 # Last edited: 9th Jan 2020             #
 #########################################
 
-library(dplyr)
+library(dplyr) # The great package for data wrangling
+
+# I will use the Titanic data
+
+data <- data.frame(Titanic) # Loading the Titanic data as data.frame
+
+data <- tibble(data) # Here is the tibble form of the data.
+
+
+
+
+
+
+
+
+
+
+
+
+
