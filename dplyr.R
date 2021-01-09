@@ -28,6 +28,8 @@ number_passengers # Returns the total passangers to be 2201.
 number_passengers <- data %>%  # Super clear to read and understand what happens.
   summarise(number_passengers = sum(Freq))
 
+# Working with the group_by verb
+
 
 
 
