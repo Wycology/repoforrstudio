@@ -15,6 +15,8 @@ data <- data.frame(Titanic) # Loading the Titanic data as data.frame
 
 data <- tibble(data) # Here is the tibble form of the data.
 
+dim(data) # Checking the dimension of the data set.
+
 
 
 
