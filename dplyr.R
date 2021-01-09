@@ -30,9 +30,12 @@ number_passengers <- data %>%  # Super clear to read and understand what happens
 
 # Working with the group_by verb
 
+number_passengers_class <- data %>% # Picking the data data set
+  group_by(Class) %>%  # Grouping the data by titanic ship classes
+  summarise(number_passengers = sum(Freq)) # Creating sum of frequency per class 
 
-
-
+number_passengers_class # Returning the sum of passengers per class which is 
+# the grouping variable.
 
 
 
