@@ -25,8 +25,8 @@ number_passengers # Returns the total passangers to be 2201.
 
 # This can also be made more readable using the pipe (%>%) operator
 
-
-
+number_passengers <- data %>%  # Super clear to read and understand what happens.
+  summarise(number_passengers = sum(Freq))
 
 
 
