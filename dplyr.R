@@ -43,6 +43,45 @@ number_passengers_class # Returning the sum of passengers per class which is
 data_sex_age_freq <- data %>% # Takes the Titanic data set
   select(Sex, Age, Freq) # Picking the three columns only.
 
+# The next one is mutate
+# This is a verb which is used to add variables in the dataframe which are 
+# usually functions of already existing dataframes. We do this my creating data2
 
+data2 <- data %>% 
+  mutate(Freq_10 = Freq * 10) # Creates new variable called Freq_10 which is 
+# former Freq in data multiplied by 10.
 
+head(data2) # Freq_10 is added to the data set as the last column.
 
+# Filter verb is the next one to have a close look at
+
+# This is returning observations in the dataset which are meeting specific 
+# conditions in one or more columns.
+# For example if we need subdata having only female then we filter Sex by the
+# word Female.
+
+data_female <- data %>%   # Picks the whole data set
+  filter(Sex == 'Female') # Picks rows with Sex as Female
+
+head(data_female) # Returns the filtered data set
+
+# Arrange is the next verb we are having a look at
+
+data <- data.frame(Titanic) # Reloading the data. I noticed the grouped data issue
+
+data <- tibble(data) # Having the data as tibble
+
+data <- data %>% # Picks the data
+  arrange(Freq) # Arranges the data in ascending order of Frequency
+  
+head(data) # Indicates the zeroes
+tail(data) # Indicates increasing values down the tail up to max of 670.
+
+# It is also possible to reverse the order to descending by adding desc as follows
+
+data <- data %>% 
+  arrange(desc(Freq)) # Including the desc in the arrange verb
+
+head(data) # Now the highest value of 670 comes first and the zeroes are down.
+
+# Cool, so that was a simple one for today, Regards :)
