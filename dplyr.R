@@ -38,6 +38,10 @@ number_passengers_class # Returning the sum of passengers per class which is
 # the grouping variable.
 
 
+# Using the select verb to have only relevant variables for my need
+
+data_sex_age_freq <- data %>% # Takes the Titanic data set
+  select(Sex, Age, Freq) # Picking the three columns only.
 
 
 
