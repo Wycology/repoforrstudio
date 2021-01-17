@@ -49,8 +49,8 @@ data_sex_age_freq <- data %>% # Takes the Titanic data set
   select(Sex, Age, Freq) # Picking the three columns of my interest only.
 
 # The next one is mutate
-# This is a verb which is used to add variables in the dataframe which are 
-# usually functions of already existing dataframes. We do this my creating data2
+# This is a verb which is used to add variables to the dataframe which are 
+# usually functions of already existing dataframes. I do this my creating data2
 
 data2 <- data %>% 
   mutate(Freq_10 = Freq * 10) # Creates new variable called Freq_10 which is 
@@ -90,3 +90,16 @@ data <- data %>%
 head(data) # Now the highest value of 670 comes first and the zeroes are down.
 
 # Cool, so that was a simple one for today, Regards :)
+
+
+# Should I want to get height of trees given inclinometer up (angle of elevation),
+# inclinometer down (angle of depression) and distance to the base of the tree
+# from the point of observation.
+
+tree_height <- data.frame(up = c(13, 14, 15, 8, 15),
+                          down = c(5, 7, 7, 4, 6),
+                          dist = c(20, 20, 20, 20, 20))
+
+tree_height_value <- tree_height %>% 
+  mutate(height = 20*(tan(up*pi/180) + tan(down*pi/180)))
+head(tree_height_value)
