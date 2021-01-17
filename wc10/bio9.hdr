@@ -24,6 +24,6 @@ MinX          -180
 MaxX          180
 MinY          -60
 MaxY          90
-MinValue      0
-MaxValue      261
-Variable      BIO15 = Precipitation Seasonality (Coefficient of Variation)
+MinValue      -450
+MaxValue      364
+Variable      BIO9 = Mean Temperature of Driest Quarter

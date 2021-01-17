@@ -24,6 +24,6 @@ MinX          -180
 MaxX          180
 MinY          -60
 MaxY          90
-MinValue      0
-MaxValue      261
-Variable      BIO15 = Precipitation Seasonality (Coefficient of Variation)
+MinValue      9
+MaxValue      211
+Variable      BIO2 = Mean Diurnal Range (Mean of monthly (max temp - min temp))

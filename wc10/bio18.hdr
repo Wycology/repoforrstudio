@@ -25,5 +25,5 @@ MaxX          180
 MinY          -60
 MaxY          90
 MinValue      0
-MaxValue      261
-Variable      BIO15 = Precipitation Seasonality (Coefficient of Variation)
+MaxValue      4001
+Variable      BIO18 = Precipitation of Warmest Quarter

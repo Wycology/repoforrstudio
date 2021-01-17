@@ -24,6 +24,6 @@ MinX          -180
 MaxX          180
 MinY          -60
 MaxY          90
-MinValue      0
-MaxValue      261
-Variable      BIO15 = Precipitation Seasonality (Coefficient of Variation)
+MinValue      8
+MaxValue      95
+Variable      BIO3 = Isothermality (BIO2/BIO7) (* 100)
