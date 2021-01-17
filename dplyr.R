@@ -96,10 +96,13 @@ head(data) # Now the highest value of 670 comes first and the zeroes are down.
 # inclinometer down (angle of depression) and distance to the base of the tree
 # from the point of observation.
 
-tree_height <- data.frame(up = c(13, 14, 15, 8, 15),
-                          down = c(5, 7, 7, 4, 6),
-                          dist = c(20, 20, 20, 20, 20))
+tree_height <- data.frame(up = c(13, 14, 15, 8, 15), # Random inclinometer up
+                          down = c(5, 7, 7, 4, 6), # Random inclinometer down
+                          dist = rep(20,5)) # Constant distance to tree base
 
-tree_height_value <- tree_height %>% 
-  mutate(height = 20*(tan(up*pi/180) + tan(down*pi/180)))
-head(tree_height_value)
+tree_height_value <- tree_height %>% # Usind dataframe above
+  mutate(height = 20*(tan(up*pi/180) + tan(down*pi/180))) # Creating new variable
+
+head(tree_height_value) # Confirming the output values are as desired.
+
+
