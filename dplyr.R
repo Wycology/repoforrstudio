@@ -22,7 +22,7 @@ dim(data) # Checking the dimension of the data set.
 # Checking the total number of passangers in the Titanic
 # To do this, I need the sum of the frequency variable
 
-head(data, 20) # To appreciate the variables within the tibble to wrangle
+head(data) # To appreciate the variables within the tibble to wrangle
 
 number_passengers <- summarise(data, number_passengers = sum(Freq))
 number_passengers # Returns the total passangers to be 2201.
@@ -32,20 +32,21 @@ number_passengers # Returns the total passangers to be 2201.
 number_passengers <- data %>%  # Super clear to read and understand what happens.
   summarise(number_passengers = sum(Freq))
 
-# Working with the group_by verb
+# Working with the group_by verb to further get summary of the data
 
-number_passengers_class <- data %>% # Picking the data data set
-  group_by(Class) %>%  # Grouping the data by titanic ship classes
-  summarise(number_passengers = sum(Freq)) # Creating sum of frequency per class 
+number_passengers_survived <- data %>% # Picking the data data set
+  group_by(Survived) %>%  # Grouping the data by titanic ship Survived variable
+  summarise(Survival = sum(Freq)) # Creating sum of based on whether 
+# they survived or not.
 
-number_passengers_class # Returning the sum of passengers per class which is 
+number_passengers_survived # Returning the sum of passengers by survival which is 
 # the grouping variable.
 
 
 # Using the select verb to have only relevant variables for my need
 
 data_sex_age_freq <- data %>% # Takes the Titanic data set
-  select(Sex, Age, Freq) # Picking the three columns only.
+  select(Sex, Age, Freq) # Picking the three columns of my interest only.
 
 # The next one is mutate
 # This is a verb which is used to add variables in the dataframe which are 
