@@ -139,7 +139,7 @@ head(data) # Now the highest value of 670 comes first and the zeroes are down.
 data %>% 
   arrange(desc(Freq), Survived) # Quite doable
 
-?dplyr::arrange
+?dplyr::arrange # Quite rich source of information.
 
 # Cool, so that was a simple one for today, Regards :)
 
