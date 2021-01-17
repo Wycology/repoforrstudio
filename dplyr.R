@@ -87,24 +87,34 @@ data2 <- data2 %>%
 
 head(data2)
 
-# Retuturning back Age to its original place
+# Returning back Age to its original place
 
 data2 <- data2 %>% 
   relocate(Age, .after = Sex)
 
-head(data2)# Filter verb is the next one to have a close look at
+head(data2)
+
+# Filter verb is the next one to have a close look at.
 
 # This is returning observations in the dataset which are meeting specific 
 # conditions in one or more columns.
-# For example if we need subdata having only female then we filter Sex by the
+# For example if we need sub-data having only female then we filter Sex by the
 # word Female.
 
 data_female <- data %>%   # Picks the whole data set
   filter(Sex == 'Female') # Picks rows with Sex as Female
 
-head(data_female) # Returns the filtered data set
+head(data_female) # Returns the filtered data set 
 
-# Arrange is the next verb we are having a look at
+# In case I need only adult females who survived in 1st class:
+
+data %>% 
+  filter(Age == 'Child' & Sex == 'Female' & Survived == 'Yes' & Class == '1st')
+
+data %>% 
+  filter(Age == 'Child' & Sex == 'Male' & Survived == 'Yes' & Class == '1st')
+
+# Arrange is the next verb we are having a close look at
 
 data <- data.frame(Titanic) # Reloading the data. I noticed the grouped data issue
 
@@ -116,12 +126,20 @@ data <- data %>% # Picks the data
 head(data) # Indicates the zeroes
 tail(data) # Indicates increasing values down the tail up to max of 670.
 
-# It is also possible to reverse the order to descending by adding desc as follows
+# Reverse the order to descending by adding desc as follows
 
 data <- data %>% 
   arrange(desc(Freq)) # Including the desc in the arrange verb
 
 head(data) # Now the highest value of 670 comes first and the zeroes are down.
+
+# Can we arrange by one column ascending and the other column descending, let me
+# give it a try
+
+data %>% 
+  arrange(desc(Freq), Survived) # Quite doable
+
+?dplyr::arrange
 
 # Cool, so that was a simple one for today, Regards :)
 
