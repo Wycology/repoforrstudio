@@ -10,16 +10,19 @@
 library(dplyr) # For data wrangling in the code
 
 
-# I will use the Titanic data
+# I will use the Titanic data for today's exploration
 
-data <- data.frame(Titanic) # Loading the Titanic data as data.frame
+data <- data.frame(Titanic) # Loading the Titanic data as a dataframe object
 
+# Once it is a dataframe, I can set is as a tibble which is my preferred structure
 data <- tibble(data) # Here is the tibble form of the data.
 
 dim(data) # Checking the dimension of the data set.
 
 # Checking the total number of passangers in the Titanic
 # To do this, I need the sum of the frequency variable
+
+head(data, 20) # To appreciate the variables within the tibble to wrangle
 
 number_passengers <- summarise(data, number_passengers = sum(Freq))
 number_passengers # Returns the total passangers to be 2201.
