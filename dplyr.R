@@ -50,7 +50,9 @@ data_sex_age_freq <- data %>% # Takes the Titanic data set
 
 # The next one is mutate
 # This is a verb which is used to add variables to the dataframe which are 
-# usually functions of already existing dataframes. I do this my creating data2
+# usually functions of already existing dataframes. I do this my creating data2.
+# This is what I applied on my research to get tree heights from inclinometer
+# values.
 
 data2 <- data %>% 
   mutate(Freq_10 = Freq * 10) # Creates new variable called Freq_10 which is 
@@ -58,7 +60,39 @@ data2 <- data %>%
 
 head(data2) # Freq_10 is added to the data set as the last column.
 
-# Filter verb is the next one to have a close look at
+# If I want the just created column to fit as first in the dataframe, then I can
+# add the .after or .before argument in the mutate function:
+
+data2 <- data %>% 
+  mutate(Freq_10 = Freq * 10, .after = 1) # Makes it the second
+
+head(data2)
+
+data2 <- data %>% 
+  mutate(Freq_10 = Freq * 10, .before = 1) # Makes it the first
+
+head(data2)
+
+
+data2 <- data %>% 
+  mutate(Freq_10 = Freq * 10, .after = Age) # Puts it after Age variable within
+# the dataframe.
+head(data2)
+
+# Without mutation, columns can be rearranged using relocate().
+head(data2)
+
+data2 <- data2 %>% 
+  relocate(Age, .before = Sex) # Cool, that worked fine. 
+
+head(data2)
+
+# Retuturning back Age to its original place
+
+data2 <- data2 %>% 
+  relocate(Age, .after = Sex)
+
+head(data2)# Filter verb is the next one to have a close look at
 
 # This is returning observations in the dataset which are meeting specific 
 # conditions in one or more columns.
