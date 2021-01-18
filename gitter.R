@@ -56,6 +56,7 @@ diamonds_df %>%
 library(shiny)
 library(shinythemes)
 
+# From online to geom_hex plots ----
 # Plotting beautiful hexagons
 # Reading data from url
 chic <- readr::read_csv("https://raw.githubusercontent.com/Z3tt/R-Tutorials/master/ggplot2/chicago-nmmaps.csv")
@@ -72,7 +73,6 @@ ggplot(data = chic, aes(x = temp, y = o3)) +
        y = "Ozone Level (I don't know the units)") +
   theme_classic()
 
-# install.packages("vioplot")
 
 library(vioplot)
 library(ggplot2)
