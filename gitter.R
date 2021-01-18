@@ -4,7 +4,7 @@
 # https://github.com/Wycology #
 # Task: Playing with iris data#
 # Created: 30th Nov 2020      #
-# Edited: 6th Jan 2021        #
+# Edited: 18th Jan 2021       #
 ###############################
 
 # Checking all the available data in base R
