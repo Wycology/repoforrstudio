@@ -28,14 +28,15 @@ plot(iris$Sepal.Length ~ iris$Petal.Width, # Simple plotting procedure
      col = "purple", # Adding my favorite color to the plot
      pch = 23) # Selecting my desired point character for plotting.
 
-# Some relationship can be seen between the two variables
+# Some relationship can be seen between the two variables on the plot
 
 abline(Reg, # Passing regression line as the best line of fit.
        col = "blue", # Assigning blue color to the abline.
        lwd = 4, # Increasing line width to my taste.
-       lty = "dotted", # Could also set is as 'dashed'. default is solid line
+       lty = "dotted", # Could also set it as 'dashed'. default is solid line
        v = 1.6, # Drawing vertical abline at x = 1.6
        h = 7.2) # Adding another horizontal line at y = 7.2, just for fun.
+# I think the plot is fine depending on the need.
 
 # Adding beautiful violin plots on boxplots in R Studio
 
