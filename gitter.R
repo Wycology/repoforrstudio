@@ -51,7 +51,7 @@ diamonds_df %>%
   geom_jitter(alpha = 0.2) +                     # Showing points as jitter
   geom_boxplot(alpha = 0, width = 0.15) +        # Adding boxplots
   geom_violin(alpha = 0.1) +                     # Adds the violin plots
-  theme(legend.position = "none")
+  theme(legend.position = "none")                # Does away with legend
 
 library(shiny)
 library(shinythemes)
