@@ -57,8 +57,11 @@ library(shiny)
 library(shinythemes)
 
 # Plotting beautiful hexagons
+# Reading data from url
 chic <- readr::read_csv("https://raw.githubusercontent.com/Z3tt/R-Tutorials/master/ggplot2/chicago-nmmaps.csv")
-tibble::glimpse(chic)
+
+tibble::glimpse(chic) # Quick look at the data we got
+
 ggplot(chic, aes(temp, o3)) +
         geom_hex(color = "grey") +
         scale_fill_distiller(palette = "RdPu", direction = 1) +
