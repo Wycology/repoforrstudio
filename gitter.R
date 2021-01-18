@@ -60,14 +60,20 @@ library(shinythemes)
 # Reading data from url
 chic <- readr::read_csv("https://raw.githubusercontent.com/Z3tt/R-Tutorials/master/ggplot2/chicago-nmmaps.csv")
 
-tibble::glimpse(chic) # Quick look at the data we got
+tibble::glimpse(chic) # Quick look at the data we got from the website
 
-ggplot(chic, aes(temp, o3)) +
-        geom_hex(color = "grey") +
-        scale_fill_distiller(palette = "RdPu", direction = 1) +
-        labs(x = "Temperature (°F)", y = "Ozone Level") +
+ggplot(data = chic, aes(x = temp, y = o3)) +
+  geom_hex(color = "grey") +
+  scale_fill_distiller(palette = "RdPu", direction = 1) +
+  labs(title = 'My Honeycomb Plot kind of :)',
+       subtitle = 'I think it is cool',
+       caption = 'Data source: Somewhere',
+       x = "Temperature (°F)",
+       y = "Ozone Level") +
   theme_classic()
+
 # install.packages("vioplot")
+
 library(vioplot)
 library(ggplot2)
 library(readxl)
