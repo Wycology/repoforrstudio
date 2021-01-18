@@ -69,7 +69,7 @@ ggplot(data = chic, aes(x = temp, y = o3)) +
        subtitle = 'I think it is cool',
        caption = 'Data source: Somewhere',
        x = "Temperature (°F)",
-       y = "Ozone Level") +
+       y = "Ozone Level (I don't know the units)") +
   theme_classic()
 
 # install.packages("vioplot")
