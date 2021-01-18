@@ -7,6 +7,7 @@
 # Edited: 18th Jan 2021       #
 ###############################
 
+# Abine in R ----
 # Checking all the available data in base R, of course iris is one of them
 
 data() # To view a list of available datasets in the base R.
@@ -36,18 +37,21 @@ abline(Reg, # Passing regression line as the best line of fit.
        lty = "dotted", # Could also set it as 'dashed'. default is solid line
        v = 1.6, # Drawing vertical abline at x = 1.6
        h = 7.2) # Adding another horizontal line at y = 7.2, just for fun.
+
 # I think the plot is fine depending on the need.
 
+# Boxplots in R ----
 # Adding beautiful violin plots on boxplots in R Studio
 
 library(tidyverse) # Loading the necessary libraries
 diamonds_df <- diamonds # Creating a copy of the diamonds data to manipulate
 
-diamonds_df %>% 
-        ggplot(aes(x = cut, y = price, color = cut)) +
-        geom_boxplot(alpha = 0, width = 0.15) +
-        geom_violin(alpha = 0.1) +
-        theme(legend.position = "none")
+diamonds_df %>%
+  ggplot(aes(x = cut, y = price, color = cut)) + # Adding the aesthetics
+  geom_jitter(alpha = 0.2) +                     # Showing points as jitter
+  geom_boxplot(alpha = 0, width = 0.15) +        # Adding boxplots
+  geom_violin(alpha = 0.1) +                     # Adds the violin plots
+  theme(legend.position = "none")
 
 library(shiny)
 library(shinythemes)
