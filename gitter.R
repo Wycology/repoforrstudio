@@ -119,7 +119,7 @@ vioplot(graph7, graph8, graph9, graph10,
         col = "purple")
 title("Tool Rentals by Season")
 
-# Time to try histograms
+# Time to try histograms too
 
 qplot(testData1$temp,
       xlab = "Temperature",
