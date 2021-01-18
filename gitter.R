@@ -7,23 +7,29 @@
 # Edited: 18th Jan 2021       #
 ###############################
 
-# Checking all the available data in base R
+# Checking all the available data in base R, of course iris is one of them
 
 data() # To view a list of available datasets in the base R.
 
-# Loading in the iris data which comes with the base R.
+# Loading the iris data which comes with the base R.
 
 data("iris") # This is one of the datasets which is available and ready for use.
 
-# Drawing regression line on a plot
+# Let me start by running regression line on the data
 
 Reg <-  lm(Sepal.Length ~ Petal.Width, data = iris) # simple linear regression.
 
 summary(Reg) # Looking at the regression results.
 
+# For every increase in width of petals, there is a significant increase in
+# sepal length.
+
 plot(iris$Sepal.Length ~ iris$Petal.Width, # Simple plotting procedure
      col = "purple", # Adding my favorite color to the plot
      pch = 23) # Selecting my desired point character for plotting.
+
+# Some relationship can be seen between the two variables
+
 abline(Reg, # Passing regression line as the best line of fit.
        col = "blue", # Assigning blue color to the abline.
        lwd = 4, # Increasing line width to my taste.
