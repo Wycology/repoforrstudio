@@ -7,6 +7,13 @@
 # Edited: 18th Jan 2021       #
 ###############################
 
+# Loading the necessary libraries 
+library(vioplot)
+library(ggplot2)
+library(readxl)
+library(tidyverse)
+
+
 # Abine in R ----
 # Checking all the available data in base R, of course iris is one of them
 
@@ -72,12 +79,6 @@ ggplot(data = chic, aes(x = temp, y = o3)) +
        x = "Temperature (°F)",
        y = "Ozone Level (I don't know the units)") +
   theme_classic()
-
-
-library(vioplot)
-library(ggplot2)
-library(readxl)
-library(tidyverse)
 
 testData1 <- read_xlsx("CommercialToolRentals2016and2017.xlsx")
         
