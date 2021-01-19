@@ -35,16 +35,28 @@ diamonds %>%
   filter(cut == 'Very Good') %>% 
   nrow()
 
-
 diamonds %>% 
   select(cut) %>% 
   table() %>% 
   barplot(col = c('green', 'red', 'blue', 'yellow', 'purple'))
 
-# Instead of specifying the colors, we can use the color brewer panel 
+# Instead of specifying the colors, we can simply use the color brewer panel 
 
 diamonds %>% 
   select(cut) %>% 
   table() %>% 
   barplot(col = brewer.pal(n = 5, name = "Dark2"))
+
+# Can also use rainbow colors
+
+diamonds %>% 
+  select(cut) %>% 
+  table() %>% 
+  barplot(col = rainbow(5))
+
+# Can also use heat.colors
+diamonds %>% 
+  select(cut) %>% 
+  table() %>% 
+  barplot(col = heat.colors(5))
 
