@@ -8,13 +8,13 @@
 ###############################
 
 # Loading the necessary libraries 
+
 library(vioplot)
 library(ggplot2)
 library(readxl)
 library(tidyverse)
 
-
-# Abine in R ----
+# abline in R ----
 # Checking all the available data in base R, of course iris is one of them
 
 data() # To view a list of available datasets in the base R.
@@ -50,7 +50,6 @@ abline(Reg, # Passing regression line as the best line of fit.
 # Boxplots in R ----
 # Adding beautiful violin plots on boxplots in R Studio
 
-library(tidyverse) # Loading the necessary libraries
 diamonds_df <- diamonds # Creating a copy of the diamonds data to manipulate
 
 diamonds_df %>%
@@ -59,9 +58,6 @@ diamonds_df %>%
   geom_boxplot(alpha = 0, width = 0.15) +        # Adding boxplots
   geom_violin(alpha = 0.1) +                     # Adds the violin plots
   theme(legend.position = "none")                # Does away with legend
-
-library(shiny)
-library(shinythemes)
 
 # From online to geom_hex plots ----
 # Plotting beautiful hexagons
@@ -73,7 +69,7 @@ tibble::glimpse(chic) # Quick look at the data we got from the website
 ggplot(data = chic, aes(x = temp, y = o3)) +
   geom_hex(color = "grey") +
   scale_fill_distiller(palette = "RdPu", direction = 1) +
-  labs(title = 'My Honeycomb Plot kind of :)',
+  labs(title = 'My Honeycomb Plot, kind of :)',
        subtitle = 'I think it is such a cool plot',
        caption = 'Data source: Somewhere',
        x = "Temperature (°F)",
@@ -137,6 +133,15 @@ qplot(testData1$temp,
       fill = I("steel blue"),
       col = I("black"))
 
+# Doing the same with density plot
+
+qplot(testData1$temp,
+      xlab = "Temperature",
+      geom = "density",
+      ylab = "Count",
+      fill = I("steel blue"),
+      col = I("black"))
+
 # Try a bar plot. I must admit that I rarely draw bar plots
 
 barplot(testData1$newrentals) # This is horrible
@@ -158,7 +163,7 @@ barplot(height = testData1$newrentals,
         ylab = "Rentals",
         xlab = "Date") # Super cool
 
-# Practising with tapply function
+# Practicing with tapply function
 # Let me create a dataframe
 
 tea_yield <- data.frame(Yield = c(20, 27, 25, 21, 25, 28, 29, 35, 36, 33),
@@ -175,7 +180,8 @@ tapply(tea_yield$Yield, tea_yield$Site, mean, simplify = TRUE) # Applies a
 tapply(tea_yield$Temp, tea_yield$Site, mean, simplify = TRUE)
 
 apply(tea_yield[,1:2], 2, FUN = mean) # Finds means of columns in a dataframe
-library(dplyr)
+
+# An interesting one is a stem plot
 
 stemdata <-  tea_yield %>% 
   filter(Site == "Sotik") %>% 
