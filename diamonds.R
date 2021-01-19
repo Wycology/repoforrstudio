@@ -45,7 +45,10 @@ diamonds %>%
 diamonds %>% 
   select(cut) %>% 
   table() %>% 
-  barplot(col = brewer.pal(n = 5, name = "Dark2"))
+  barplot(col = brewer.pal(n = 5, name = "RdBu"))
+# To display more brewer colors options to use, run the following function:
+
+display.brewer.all()
 
 # Can also use rainbow colors
 
@@ -59,4 +62,23 @@ diamonds %>%
   select(cut) %>% 
   table() %>% 
   barplot(col = heat.colors(5))
+
+# Can also use topographic colors
+
+diamonds %>% 
+  select(cut) %>% 
+  table() %>% 
+  barplot(col = topo.colors(5))
+
+# Can also use terrain colors
+diamonds %>% 
+  select(cut) %>% 
+  table() %>% 
+  barplot(col = terrain.colors(5))
+
+# Can also use cm.colors
+diamonds %>% 
+  select(cut) %>% 
+  table() %>% 
+  barplot(col = cm.colors(5))
 
