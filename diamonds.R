@@ -4,10 +4,12 @@
 # GitHub: https://github.com/Wycology   #
 # Task: Boxplot and violin plots in one #
 # Date: 4th Jan 2020                    #
-# Last edited: 4th Jan 2020             #
+# Last edited: 19th Jan 2020            #
 #########################################
 
+# Loading the necessary libraries
 library(tidyverse)
+library(RColorBrewer)
 
 diamonds_df <- diamonds
 
@@ -38,3 +40,11 @@ diamonds %>%
   select(cut) %>% 
   table() %>% 
   barplot(col = c('green', 'red', 'blue', 'yellow', 'purple'))
+
+# Instead of specifying the colors, we can use the color brewer panel 
+
+diamonds %>% 
+  select(cut) %>% 
+  table() %>% 
+  barplot(col = brewer.pal(n = 5, name = "Dark2"))
+
