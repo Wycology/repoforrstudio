@@ -67,7 +67,7 @@ ggplot(data = chic, aes(x = temp, y = o3)) +
   geom_hex(color = "grey") +
   scale_fill_distiller(palette = "RdPu", direction = 1) +
   labs(title = 'My Honeycomb Plot kind of :)',
-       subtitle = 'I think it is cool',
+       subtitle = 'I think it is such a cool plot',
        caption = 'Data source: Somewhere',
        x = "Temperature (°F)",
        y = "Ozone Level (I don't know the units)") +
