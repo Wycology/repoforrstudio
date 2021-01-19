@@ -9,15 +9,7 @@
 
 # IRIS PLOT ----
 
-# I will use three packages in this plotting exercise
-
-# Install them in case you still don't have them already
-
-# install.packages("patchwork")
-# install.packages("ggforce")
-# install.packages("ggplot2")
-
-# Let me load the packages using library() function.
+# Loading necessary packages.
 
 library(modelr)
 library(patchwork)
@@ -26,7 +18,6 @@ library(ggplot2)
 library(tidyverse)
 
 str(iris) # Checking the structure of the dataset. Returned in Console.
-
 
 plot(iris$Sepal.Length, iris$Petal.Width) # Basic plot within the R base.
 
@@ -109,7 +100,6 @@ combined_plots_labeled_no_legend <- combined_plots_labeled &
 combined_plots_labeled_no_legend # This will print out the final product.
 
 # Showing that in ggplot2 we can use & instead of plus (+)
-library(ggplot2)
 attach(iris)
 
 ggplot(data = iris, mapping = aes(x = Sepal.Length, y = Petal.Width)) +
