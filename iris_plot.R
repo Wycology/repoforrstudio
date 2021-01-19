@@ -1,3 +1,12 @@
+###############################
+# Wyclife Agumba Oluoch       #
+# wyclifeoluoch@gmail.com     #
+# https://github.com/Wycology #
+# Task: Playing with iris data#
+# Created: 30th Dec 2020      #
+# Edited: 19th Jan 2021       #
+###############################
+
 # IRIS PLOT ----
 
 # I will use three packages in this plotting exercise
