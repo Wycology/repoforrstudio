@@ -98,7 +98,7 @@ for (i in 1:length(volumes)){
 }
 print(masses)
 print(round(masses))
-
+print(round(masses, digits = -1))
 # This is enough for a single vector, let us now try multiple vectors
 # Indexing can be used to iterate through multiple vectors
 # Let us create additional vectors
@@ -116,6 +116,3 @@ masses
 
 # Looping over files -  I could have done this but I do not like to do it so that
 # I don't push so many files to the github.
-
-
-
