@@ -18,7 +18,7 @@ for (item in list_of_items){
 
 # For better appreciation, let me create vector called volumes of three numbers.
 
-volumes <- c(1.6, 2, 8, 29)
+volumes <- c(1.6, 2, 29)
 
 for (volume in volumes){  # I have replaced item with volume, list_of_items
   print(2.65 * volume^0.9)# with volumes and do_something with print with some
@@ -37,7 +37,7 @@ volume <- volumes[2]     # Picking the second element in the volumes vector
 print(2.65 * volume^0.9) # Doing the math on that second element
 
 volume <- volumes[3]     # Picking the third element in the volumes vector
-print(2.65 * volume^0.9) # Doing the math on that third element picked from volumes
+print(2.65 * volume^0.9) # Doing the math on that third element 
 
 # It is clear that the second approach of doing the same thing is quite tiring.
 
@@ -45,8 +45,8 @@ print(2.65 * volume^0.9) # Doing the math on that third element picked from volu
 # the end result with plain math like this:
 
 2.65 * 1.6^0.9 # Really picking the first element in volumes vector manually
-2.65 * 3^0.9   # Picking the second element in the volumes vector by eye
-2.65 * 8^0.9   # Literally lifting the third element and doing the math.
+2.65 * 2^0.9   # Picking the second element in the volumes vector by eye
+2.65 * 29^0.9  # Literally lifting the third element and doing the math.
 
 # So in the end, we are sweating and at the back of our minds we wish we could go 
 # back to the for loop.
