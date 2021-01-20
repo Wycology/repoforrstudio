@@ -66,11 +66,11 @@ for (volume in volumes){         # Picking each element in the volumes vector
   mass_kgs <- 2.65 * volume^0.9  # Creates mass in Kgs using some formula
   mass_lb <- mass_kgs * 2.2      # Changing mass in kgs to mass in pounds
   mass_whole <- round(mass_lb)   # Setting output to whole number
-  print(mass_whole)              # Printing the final output.
+  mass_tens <- round(mass_whole, digits = -1) # Round to nearest tens
+  print(mass_tens)              # Printing the final output.
 }
 
-# I can't imagine doing this manually and doing the maths
-
+# I can't imagine doing this manually plus the math
 
 # One more step....using index in for loop. 
 
@@ -84,8 +84,13 @@ for (i in 1:length(volumes)){   # length of vector volumes is 3
 # So we start by creating an empty vector
 
 masses <- vector(mode = 'numeric', length = length(volumes))
-# This is an empty object
-print(masses) # zero zero zero
+# This is an empty object (having only three zero values). The three zeroes fill
+# up three spaces for the length of volumes vector. Can have one with 50 spaces
+
+masses2 <- vector(mode = 'numeric', length = 50)
+print(masses2)
+
+print(masses) # zero zero zero for the number of elements in volumes object
 
 for (i in 1:length(volumes)){
   mass <- 2.65 * volumes[i]^0.9
