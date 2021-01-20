@@ -16,11 +16,11 @@ for (item in list_of_items){
 # Like for every student in a class, vaccinate. So every student must get the 
 # vaccine. 
 
-# For better appreciation, let me create a vector called volumes of three numbers.
+# For better appreciation, let me create vector called volumes of three numbers.
 
-volumes <- c(1.6, 3, 8)
+volumes <- c(1.6, 2, 8, 29)
 
-for (volume in volumes){  # I have just replaced item with volume, list_of_items
+for (volume in volumes){  # I have replaced item with volume, list_of_items
   print(2.65 * volume^0.9)# with volumes and do_something with print with some
 }                         # math on the items.
 
