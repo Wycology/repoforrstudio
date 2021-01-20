@@ -2,9 +2,9 @@
 # Wyclife Agumba Oluoch       #
 # wyclifeoluoch@gmail.com     #
 # https://github.com/Wycology #
-# Task: Playing with iris data#
+# Task: Playing with some data#
 # Created: 30th Nov 2020      #
-# Edited: 18th Jan 2021       #
+# Edited: 19th Jan 2021       #
 ###############################
 
 # Loading the necessary libraries 

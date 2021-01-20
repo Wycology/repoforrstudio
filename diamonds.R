@@ -82,3 +82,4 @@ diamonds %>%
   table() %>% 
   barplot(col = cm.colors(5))
 
+?getData
