@@ -69,7 +69,7 @@ for (volume in volumes){         # Picking each element in the volumes vector
   print(mass_whole)              # Printing the final output.
 }
 
-# I cannot imagine doing this manually by picking each element and doing the maths
+# I can't imagine doing this manually and doing the maths
 
 
 # One more step....using index in for loop. 
