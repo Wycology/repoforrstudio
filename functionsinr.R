@@ -48,7 +48,6 @@ calc_shrub_vol(2.2, 1.2, 2.9) # the order follows that of stated arguments
 calc_shrub_vol(height = 2.2, length = 1.2, width = 2.9) # Same results. Care must
 # be taken when playing around with the input values to take care of the order.
 
-
 # Now we can go ahead and combine functions. That is, we can feed the output of 
 # the shrub's volume to another function which calculates mass of the bush
 
@@ -58,9 +57,13 @@ est_shrub_mass <- function(volume){
 
 # Great, the function is built.
 
-shrub_volume <- calc_shrub_vol(1.8, 1.2, 2.0) # calculate shrub volume
+shrub_volume <- calc_shrub_vol(2.2, 1.2, 2.9) # calculate shrub volume
 shrub_mass <- est_shrub_mass(shrub_volume) # feed volume to mass function
 shrub_mass # print the output (mass of the shrub)
+
+# We can prove the result by:
+
+2.65 * (2.2*1.2*2.9)^0.9 # This is giving the same result. Cool!
 
 # This our young function can also enjoy ride with pipe operator
 library(dplyr)
