@@ -67,14 +67,15 @@ shrub_mass # print the output (mass of the shrub)
 
 # This our young function can also enjoy a short ride with pipe operator which
 # sits in dplyr package.
+
 library(dplyr)
-shrub_mass <- calc_shrub_vol(1.8, 1.2, 2.0) %>% # Perfect and the output piped down
+shrub_mass <- calc_shrub_vol(2.2, 1.2, 2.9) %>% # Perfect and the output piped down
   est_shrub_mass() # receives output from the above function and calculates mass
 shrub_mass # Confirms everything went on well.
 
 # Now let us do actual nesting of out two functions we created so far.
 
-shrub_mass <- est_shrub_mass(calc_shrub_vol(1.8, 1.2, 2.0)) # two nested functions
+shrub_mass <- est_shrub_mass(calc_shrub_vol(2.2, 1.2, 2.9)) # two nested functions
 shrub_mass
 
 est_shrub_mass_dim  <- function(length, width, height) {
@@ -83,7 +84,7 @@ est_shrub_mass_dim  <- function(length, width, height) {
   return(mass)
 }
 
-est_shrub_mass_dim(1.8, 1.2, 2.0) # This gets volume then mass then prints
+est_shrub_mass_dim(2.2, 1.2, 2.9) # This gets volume, then mass, then prints
 # Super good way of having all the functions together and getting the single result.
 
 # That is it for today, I enjoyed it and I hope you too.
