@@ -3,7 +3,7 @@
 # wyclifeoluoch@gmail.com     #
 # Task: working with for loop #
 # Created 6th Jan 2021        #
-# Last edited 20th Jan 2021   #
+# Last edited 21st Jan 2021   #
 ###############################
 
 # The basic structure of a for loop is of the kind:
@@ -103,7 +103,7 @@ print(round(masses, digits = -1))
 # Indexing can be used to iterate through multiple vectors
 # Let us create additional vectors
 
-b0 <- c(2.65, 1.28, 3.29)
+b0 <- c(2.65, 1.28, 3.29) # A vector of three elements
 b1 <- c(0.9, 1.1, 1.2)
 
 masses <- vector(mode = 'numeric', length = length(volumes))
