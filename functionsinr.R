@@ -65,7 +65,8 @@ shrub_mass # print the output (mass of the shrub)
 
 2.65 * (2.2*1.2*2.9)^0.9 # This is giving the same result. Cool!
 
-# This our young function can also enjoy ride with pipe operator
+# This our young function can also enjoy a short ride with pipe operator which
+# sits in dplyr package.
 library(dplyr)
 shrub_mass <- calc_shrub_vol(1.8, 1.2, 2.0) %>% # Perfect and the output piped down
   est_shrub_mass() # receives output from the above function and calculates mass
