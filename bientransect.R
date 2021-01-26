@@ -23,7 +23,7 @@ sites <- na.omit(unique(gentry[c('plot_name',
                                  'longitude')]))
 
 # Checking the structure of the dataset
-str(gentry) # This is revealing that we have a dataframe at hand.
+str(gentry)  # This is revealing that we have a dataframe at hand.
 head(gentry) # Checking the first six observations.
 
 # Calculating species richness
@@ -39,7 +39,11 @@ rich_data %>% arrange(-richness) %>% head() # Descending order of richness
 # Download environmental data from worldclim
 bioclim <- getData('worldclim', var = 'bio', res = 10 )
 
-sites_spatial <- SpatialPointsDataFrame(sites[c('longitude', 'latitude')], sites)
+sites_spatial <- SpatialPointsDataFrame(sites[c('longitude', 'latitude')], 
+                                        sites)
+
+class(sites_spatial) # Checking whether making the data spatial succeeded. 
+head(sites_spatial) # Printing the first six rows of the sp.
 
 plot(bioclim$bio12)
 plot(sites_spatial, add = TRUE)
