@@ -24,6 +24,7 @@ sites <- na.omit(unique(gentry[c('plot_name',
 
 # Checking the structure of the dataset
 str(gentry) # This is revealing that we have a dataframe at hand.
+head(gentry) # Checking the first six observations.
 
 # Calculating species richness
 rich_data <- gentry %>%           # Picks the gentry data
@@ -31,6 +32,9 @@ rich_data <- gentry %>%           # Picks the gentry data
   group_by(county, plot_name) %>% # grouping by the two variables
   summarise(richness = n()) %>%   # counting richness per group
   collect()                       # rendering output as table
+
+rich_data %>% arrange(richness) %>% head() # Ascending order of richness
+rich_data %>% arrange(-richness) %>% head() # Descending order of richness
 
 # Download environmental data from worldclim
 bioclim <- getData('worldclim', var = 'bio', res = 10 )
