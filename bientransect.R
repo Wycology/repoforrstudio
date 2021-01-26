@@ -73,12 +73,13 @@ ggplot(data = richness_with_env, aes(x = bio10, y = richness, col = county)) +
   labs(x = 'Precipitation (mm)', # Adding labels to the plot.
        y = 'Richness')
 
-# I remember seeing a lot of NAs under county, let me omit the NAs and plot.
+# I see a lot of NAs (gray color points) under county, let me omit the NAs.
 
 richness_with_env %>% 
   na.omit() %>% 
   ggplot(aes(x = bio10, y = richness, col = county)) +
   geom_point() +
+  geom_abline() +
   theme_classic() +
   labs(x = 'Precipitation (mm)', # Adding labels to the plot.
        y = 'Richness')
