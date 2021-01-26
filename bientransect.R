@@ -67,9 +67,18 @@ tail(richness_with_env)
 
 # See how richness relate to precipitation which is bio 12
 
-ggplot(richness_with_env, aes(x = bio12, y = richness)) +
+ggplot(data = richness_with_env, aes(x = bio10, y = richness, col = county)) +
   geom_point() +
   theme_classic() +
-  labs(x = 'Precipitation', # Adding labels to the plot.
+  labs(x = 'Precipitation (mm)', # Adding labels to the plot.
        y = 'Richness')
 
+# I remember seeing a lot of NAs under county, let me omit the NAs and plot.
+
+richness_with_env %>% 
+  na.omit() %>% 
+  ggplot(aes(x = bio10, y = richness, col = county)) +
+  geom_point() +
+  theme_classic() +
+  labs(x = 'Precipitation (mm)', # Adding labels to the plot.
+       y = 'Richness')
