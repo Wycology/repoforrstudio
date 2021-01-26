@@ -106,9 +106,10 @@ print(round(masses, digits = -1))
 b0 <- c(2.65, 1.28, 3.29) # A vector of three elements
 b1 <- c(0.9, 1.1, 1.2)    # The second vector with similar length as previous
 
+# Creating an empty vector to store numeric elements of length same as volumes
 masses <- vector(mode = 'numeric', length = length(volumes))
 
-for (i in seq_along(volumes)){# seq_along(volumes) is same as 1:length(volumes)
+for (i in seq_along(volumes)){ # seq_along(volumes) is same as 1:length(volumes)
   mass <- b0[i] * volumes[i] ^ b1[i]
   masses[i] <- mass
 } 

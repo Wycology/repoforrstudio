@@ -3,7 +3,7 @@
 # wyclifeoluoch@gmail.com     #
 # Task working with BIEN  data#
 # Created 8th Jan 2021        #
-# Last edited 8th Jan 2021    #
+# Last edited 26th Jan 2021    #
 ###############################
 
 
@@ -21,6 +21,9 @@ gentry <- BIEN_plot_dataset('Gentry Transect Dataset',
 sites <- na.omit(unique(gentry[c('plot_name', 
                                  'latitude', 
                                  'longitude')]))
+
+# Checking the structure of the dataset
+str(gentry)
 
 # Calculating species richness
 rich_data <- gentry %>%           # Picks the gentry data
