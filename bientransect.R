@@ -54,9 +54,16 @@ plot(sites_spatial, add = TRUE) # Plotting the plot points on the raster data.
 bioclim_gentry <- raster::extract(bioclim, sites_spatial) %>% 
   cbind(sites)
 
+head(bioclim_gentry) # Checking how each of the raster layers has been extracted
+# and bound to the sites dataframe.
+tail(bioclim_gentry)
+
 # Combining with the species richness data
 
 richness_with_env <- inner_join(rich_data, bioclim_gentry)
+
+head(richness_with_env)
+tail(richness_with_env)
 
 # See how richness relate to precipitation which is bio 12
 
