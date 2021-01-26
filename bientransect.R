@@ -44,9 +44,10 @@ sites_spatial <- SpatialPointsDataFrame(sites[c('longitude', 'latitude')],
 
 class(sites_spatial) # Checking whether making the data spatial succeeded. 
 head(sites_spatial) # Printing the first six rows of the sp.
+nrow(sites_spatial) # This is returning number of rows of the sp dataset
 
-plot(bioclim$bio12)
-plot(sites_spatial, add = TRUE)
+plot(bioclim$bio12) # Plotting one of the bioclimate data downloaded.
+plot(sites_spatial, add = TRUE) # Plotting the plot points on the raster data.
 
 # Extract environmental data for each transect
 
