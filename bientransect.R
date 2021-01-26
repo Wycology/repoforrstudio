@@ -83,3 +83,5 @@ richness_with_env %>%
   theme_classic() +
   labs(x = 'Precipitation (mm)', # Adding labels to the plot.
        y = 'Richness')
+
+# That is good for the day. Kwy things here are just about data wrangling.
