@@ -23,7 +23,7 @@ sites <- na.omit(unique(gentry[c('plot_name',
                                  'longitude')]))
 
 # Checking the structure of the dataset
-str(gentry)
+str(gentry) # This is revealing that we have a dataframe at hand.
 
 # Calculating species richness
 rich_data <- gentry %>%           # Picks the gentry data
