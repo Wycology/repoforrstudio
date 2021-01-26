@@ -73,7 +73,9 @@ ggplot(data = richness_with_env, aes(x = bio10, y = richness, col = county)) +
   labs(x = 'Precipitation (mm)', # Adding labels to the plot.
        y = 'Richness')
 
-# I see a lot of NAs (gray color points) under county, let me omit the NAs.
+# I see a lot of NAs (gray color points) under county, let me omit the NAs. 
+# Remember the NAs are for the county names and not in about missing richness
+# nor precipitation data.
 
 richness_with_env %>% 
   na.omit() %>% 
@@ -84,4 +86,4 @@ richness_with_env %>%
   labs(x = 'Precipitation (mm)', # Adding labels to the plot.
        y = 'Richness')
 
-# That is good for the day. Kwy things here are just about data wrangling.
+# That is good for the day. Key things here are just about data wrangling.
