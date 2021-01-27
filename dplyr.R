@@ -154,6 +154,7 @@ tree_height <- data.frame(up = c(13, 14, 15, 8, 15), # Random inclinometer up
 tree_height_value <- tree_height %>% # Usind dataframe above
   mutate(height = 20*(tan(up*pi/180) + tan(down*pi/180))) # Creating new variable
 
-head(tree_height_value) # Confirming the output values are as desired.
+head(tree_height_value) # Confirming the output values are as desired. This has 
+# made my work easier to accomplish.
 
 
