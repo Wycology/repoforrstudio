@@ -4,7 +4,7 @@
 # GitHub: https://github.com/Wycology   #
 # Task: Boxplot and violin plots in one #
 # Date: 4th Jan 2020                    #
-# Last edited: 19th Jan 2020            #
+# Last edited: 27th Jan 2020            #
 #########################################
 
 # Loading the necessary libraries
@@ -28,7 +28,7 @@ diamonds_df %>%
   theme(axis.text=element_text(size=16),
         axis.title=element_text(size=16,face="bold")) +
   theme(plot.title = element_text(color = 'red', size = 18, face = 'bold'),
-        plot.subtitle = element_text(color = 'green', size = 14, face = 'italic'),
+        plot.subtitle = element_text(color = 'purple', size = 14, face = 'italic'),
         plot.caption = element_text(color = 'blue', face = 'italic'))
 
 diamonds %>% 
@@ -83,3 +83,4 @@ diamonds %>%
   barplot(col = cm.colors(5))
 
 ?getData
+# That is awesome. Good for the day.
