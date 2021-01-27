@@ -3,7 +3,7 @@
 # wyclifeoluoch@gmail.com     #
 # Task: working with for loop #
 # Created 6th Jan 2021        #
-# Last edited 21st Jan 2021   #
+# Last edited 27th Jan 2021   #
 ###############################
 
 # The basic structure of a for loop is of the kind:
@@ -11,14 +11,15 @@
 for (item in list_of_items){
   do_something(item)
   print()
-} # Simple yet powerful code
+} # Simple yet powerful code. Of course that throws an error when run because
+# we have not defined object to iterate.
 
 # Like for every student in a class, vaccinate. So every student must get the 
 # vaccine. 
 
 # For better appreciation, let me create vector called volumes of three numbers.
 
-volumes <- c(1.6, 2, 29)
+volumes <- c(22, 12, 29)
 
 for (volume in volumes){  # I have replaced item with volume, list_of_items
   print(2.65 * volume^0.9)# with volumes and do_something with print with some
@@ -44,8 +45,8 @@ print(2.65 * volume^0.9) # Doing the math on that third element
 # If subsetting with square brackets [] is still a nightmare, then we can 
 # achieve the end result with plain math like this:
 
-2.65 * 1.6^0.9 # Really picking the first element in volumes vector manually
-2.65 * 2^0.9   # Picking the second element in the volumes vector by eye
+2.65 * 22^0.9 # Really picking the first element in volumes vector manually
+2.65 * 12^0.9   # Picking the second element in the volumes vector by eye
 2.65 * 29^0.9  # Literally lifting the third element and doing the math.
 
 # So in the end, we are sweating and at the back of our minds we wish we could 
@@ -103,8 +104,8 @@ print(round(masses, digits = -1))
 # Indexing can be used to iterate through multiple vectors
 # Let us create additional vectors
 
-b0 <- c(2.65, 1.28, 3.29) # A vector of three elements
-b1 <- c(0.9, 1.1, 1.2)    # The second vector with similar length as previous
+b0 <- c(2.2, 1.2, 2.9) # A vector of three elements
+b1 <- c(0.22, 0.12, 0.29)    # The second vector with similar length as previous
 
 # Creating an empty vector to store numeric elements of length same as volumes
 masses <- vector(mode = 'numeric', length = length(volumes))
