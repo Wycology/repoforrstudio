@@ -62,8 +62,8 @@ tail(bioclim_gentry)
 
 richness_with_env <- inner_join(rich_data, bioclim_gentry)
 
-head(richness_with_env)
-tail(richness_with_env)
+head(richness_with_env) # First six rows.
+tail(richness_with_env) # Last six rows.
 
 # See how richness relate to precipitation which is bio 12
 
