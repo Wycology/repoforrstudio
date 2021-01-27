@@ -112,7 +112,7 @@ head(iris)
 # I used ggplot2:: so that I can be sure that the & is supported by ggplot2 and 
 # not any other loaded packages such ggforce and patchwork.
 
-ggplot(data = diamonds) +
+ggplot(data = diamonds) + # Feeding in the diamonds data for the plot.
   geom_bar(mapping = aes(x = cut, fill = cut), show.legend = FALSE, width = 1) +
   theme(aspect.ratio = 1) +
   labs(x = NULL, y = NULL) +
