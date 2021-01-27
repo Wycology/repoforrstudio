@@ -85,7 +85,8 @@ est_shrub_mass_dim  <- function(length, width, height) {
 }
 
 est_shrub_mass_dim(2.2, 1.2, 2.9) # This gets volume, then mass, then prints
-# Super good way of having all the functions together and getting the single result.
+# Super good way of having all the functions together and getting the single 
+# result.
 
 # That is it for today, I enjoyed it and I hope you too.
 # Note: when one of the inputs is negative value or NA then problems arise
