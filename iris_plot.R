@@ -4,7 +4,7 @@
 # https://github.com/Wycology #
 # Task: Playing with iris data#
 # Created: 30th Dec 2020      #
-# Edited: 19th Jan 2021       #
+# Edited: 27th Jan 2021       #
 ###############################
 
 # IRIS PLOT ----
@@ -19,9 +19,10 @@ library(tidyverse)
 
 str(iris) # Checking the structure of the dataset. Returned in Console.
 
-plot(iris$Sepal.Length, iris$Petal.Width) # Basic plot within the R base.
+plot(iris$Sepal.Length, iris$Petal.Width) # Basic plot within the R base. 
+# Positive relationship evident.
 
-# Creating the first plot of the iris data.
+# Creating cool plot of the iris data using ggplot2 package.
 
 separate_smooth <- ggplot(data = iris,    # Specifying the data to be plotted.
        mapping = aes(x = Sepal.Length,    # Stating the axes data.
