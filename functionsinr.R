@@ -4,14 +4,14 @@
 # GitHub: https://github.com/Wycology   #
 # Task: Creating functions in R         #
 # Date: 7th Jan 2020                    #
-# Last edited: 21st Jan 2020            #
+# Last edited: 27th Jan 2020            #
 #########################################
 
 # R has thousands of in-built functions as well as those inside various third 
 # party libraries, how to write them is important just to be sure of what a 
 # function does.
 
-# Let us start with a basic structure of a function.
+# Let me start with a basic structure of a function.
 
 function_name <- function(inputs){
   output_value <- do_something(inputs)
