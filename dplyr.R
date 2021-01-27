@@ -4,37 +4,36 @@
 # GitHub: https://github.com/Wycology   #
 # Task: Some data wrangling with dplyr  #
 # Date: 9th Jan 2020                    #
-# Last edited: 17th Jan 2020             #
+# Last edited: 27th Jan 2020             #
 #########################################
 
-library(dplyr) # For data wrangling in the code
-
+library(dplyr) # For data wrangling in the whole project.
 
 # I will use the Titanic data for today's exploration
 
-data <- data.frame(Titanic) # Loading the Titanic data as a dataframe object
+titanic_df <- data.frame(Titanic) # Loading the Titanic data as a dataframe object
 
 # Once it is a dataframe, I can set is as a tibble which is my preferred structure
-data <- tibble(data) # Here is the tibble form of the data.
+titanic_tibble <- tibble(titanic_df) # Here is the tibble form of the titanic_df
 
-dim(data) # Checking the dimension of the data set.
+dim(titanic_tibble) # Checking the dimension of the data set.
 
 # Checking the total number of passangers in the Titanic
 # To do this, I need the sum of the frequency variable
 
-head(data) # To appreciate the variables within the tibble to wrangle
+head(titanic_tibble) # To appreciate the variables within the tibble to wrangle
 
-number_passengers <- summarise(data, number_passengers = sum(Freq))
+number_passengers <- summarise(titanic_tibble, number_passengers = sum(Freq))
 number_passengers # Returns the total passangers to be 2201.
 
 # This can also be made more readable using the pipe (%>%) operator
 
-number_passengers <- data %>%  # Super clear to read and understand what happens.
+number_passengers <- titanic_tibble %>%  # Super clear to read and understand what happens.
   summarise(number_passengers = sum(Freq))
 
 # Working with the group_by verb to further get summary of the data
 
-number_passengers_survived <- data %>% # Picking the data data set
+number_passengers_survived <- titanic_tibble %>% # Picking the data data set
   group_by(Survived) %>%  # Grouping the data by titanic ship Survived variable
   summarise(Survival = sum(Freq)) # Creating sum of based on whether 
 # they survived or not.
@@ -45,7 +44,7 @@ number_passengers_survived # Returning the sum of passengers by survival which i
 
 # Using the select verb to have only relevant variables for my need
 
-data_sex_age_freq <- data %>% # Takes the Titanic data set
+data_sex_age_freq <- titanic_tibble %>% # Takes the Titanic data set
   select(Sex, Age, Freq) # Picking the three columns of my interest only.
 
 # The next one is mutate
@@ -54,45 +53,45 @@ data_sex_age_freq <- data %>% # Takes the Titanic data set
 # This is what I applied on my research to get tree heights from inclinometer
 # values.
 
-data2 <- data %>% 
+titanic_tibble_mutate <- titanic_tibble %>% 
   mutate(Freq_10 = Freq * 10) # Creates new variable called Freq_10 which is 
 # former Freq in data multiplied by 10.
 
-head(data2) # Freq_10 is added to the data set as the last column.
+head(titanic_tibble_mutate) # Freq_10 is added to the data set as the last column.
 
 # If I want the just created column to fit as first in the dataframe, then I can
 # add the .after or .before argument in the mutate function:
 
-data2 <- data %>% 
+titanic_tibble_mutate <- titanic_tibble %>% 
   mutate(Freq_10 = Freq * 10, .after = 1) # Makes it the second
 
-head(data2)
+head(titanic_tibble_mutate)
 
-data2 <- data %>% 
+titanic_tibble_mutate <- titanic_tibble %>% 
   mutate(Freq_10 = Freq * 10, .before = 1) # Makes it the first
 
-head(data2)
+head(titanic_tibble_mutate)
 
 
-data2 <- data %>% 
+titanic_tibble_mutate <- titanic_tibble %>% 
   mutate(Freq_10 = Freq * 10, .after = Age) # Puts it after Age variable within
 # the dataframe.
-head(data2)
+head(titanic_tibble_mutate)
 
 # Without mutation, columns can be rearranged using relocate().
-head(data2)
+head(titanic_tibble_mutate)
 
-data2 <- data2 %>% 
+titanic_tibble_mutate <- titanic_tibble_mutate %>% 
   relocate(Age, .before = Sex) # Cool, that worked fine. 
 
-head(data2)
+head(titanic_tibble_mutate)
 
 # Returning back Age to its original place
 
-data2 <- data2 %>% 
+titanic_tibble_mutate <- titanic_tibble_mutate %>% 
   relocate(Age, .after = Sex)
 
-head(data2)
+head(titanic_tibble_mutate)
 
 # Filter verb is the next one to have a close look at.
 
@@ -101,42 +100,42 @@ head(data2)
 # For example if we need sub-data having only female then we filter Sex by the
 # word Female.
 
-data_female <- data %>%   # Picks the whole data set
+titanic_female <- titanic_tibble %>%   # Picks the whole data set
   filter(Sex == 'Female') # Picks rows with Sex as Female
 
 head(data_female) # Returns the filtered data set 
 
 # In case I need only adult females who survived in 1st class:
 
-data %>% 
+titanic_tibble %>% 
   filter(Age == 'Child' & Sex == 'Female' & Survived == 'Yes' & Class == '1st')
 
-data %>% 
+titanic_tibble %>% 
   filter(Age == 'Child' & Sex == 'Male' & Survived == 'Yes' & Class == '1st')
 
 # Arrange is the next verb we are having a close look at
 
-data <- data.frame(Titanic) # Reloading the data. I noticed the grouped data issue
+titanic_tibble <- data.frame(Titanic) # Reloading the data. I noticed the grouped data issue
 
-data <- tibble(data) # Having the data as tibble
+titanic_tibble <- tibble(titanic_tibble) # Having the data as tibble
 
-data <- data %>% # Picks the data
+titanic_tibble <- titanic_tibble %>% # Picks the data
   arrange(Freq) # Arranges the data in ascending order of Frequency
   
-head(data) # Indicates the zeroes
-tail(data) # Indicates increasing values down the tail up to max of 670.
+head(titanic_tibble) # Indicates the zeroes
+tail(titanic_tibble) # Indicates increasing values down the tail up to max of 670.
 
 # Reverse the order to descending by adding desc as follows
 
-data <- data %>% 
+titanic_tibble <- titanic_tibble %>% 
   arrange(desc(Freq)) # Including the desc in the arrange verb
 
-head(data) # Now the highest value of 670 comes first and the zeroes are down.
+head(titanic_tibble) # Now the highest value of 670 comes first and the zeroes are down.
 
 # Can we arrange by one column ascending and the other column descending, let me
 # give it a try
 
-data %>% 
+titanic_tibble %>% 
   arrange(desc(Freq), Survived) # Quite doable
 
 ?dplyr::arrange # Quite rich source of information.
