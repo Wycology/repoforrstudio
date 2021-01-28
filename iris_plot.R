@@ -20,8 +20,8 @@ library(tidyverse)
 str(iris) # Checking the data structure. We can already see relatively higher 
 # values for sepal length variable.
 
-plot(iris$Sepal.Length, iris$Petal.Width) # Basic plot within the R base. 
-# Positive relationship evident.
+plot(iris$Sepal.Length, iris$Petal.Width, col = 'purple') # Basic plot within 
+# the R base with purple color added. Positive relationship evident.
 
 # Creating cool plot of the iris data using ggplot2 package.
 
