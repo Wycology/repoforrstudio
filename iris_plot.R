@@ -22,8 +22,15 @@ str(iris) # Checking the data structure. We can already see relatively higher
 
 plot(iris$Sepal.Length, iris$Petal.Width, # Variables to use on the plot
      col = 'purple', # Color for the plot points
+     main = 'Simple plot in R',
      cex = 2, # Double size of the points on the plot
-     pch = 19) # Pick the nineteenth point character
+     pch = 19,
+     bty = 'l', # Box type. Other options are 'o', 'n', 'l', '7', 'c', 'u', ']'
+     xlab = 'Sepal length (cm)',
+     ylab = 'Petal width (cm)',
+     cex.main = 2,
+     cex.lab = 1.5,
+     cex.axis = 1.5) # Pick the nineteenth point character
 
 # Creating cool plot of the iris data using ggplot2 package.
 
