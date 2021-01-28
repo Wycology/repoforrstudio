@@ -19,18 +19,20 @@ library(tidyverse)
 
 str(iris) # Checking the data structure. We can already see relatively higher 
 # values for sepal length variable.
-
+mysubtitle <- 'Is that possible'
 plot(iris$Sepal.Length, iris$Petal.Width, # Variables to use on the plot
      col = 'purple', # Color for the plot points
      main = 'Simple plot in R', # Title of the plot
+     sub = 'Subtitle at lower center of the plot',
      cex = 2, # Double size of the points on the plot
      pch = 19, # Picks the 19th character in terms of shape of points plotted
      bty = 'l', # Box type. Other options are 'o', 'n', 'l', '7', 'c', 'u', ']'
      xlab = 'Sepal length (cm)', # Labels x axis
      ylab = 'Petal width (cm)', # Labels y axis
+     las = 1, # Making y axis labels to stand upright
      cex.main = 2, # Doubles text size on title
      cex.lab = 1.5, # Increases labels text size by 50%
-     cex.axis = 1.5) # Increases axis labels text size by 50%
+     cex.axis = 1.5)
 
 # Creating cool plot of the iris data using ggplot2 package.
 
