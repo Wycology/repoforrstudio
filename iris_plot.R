@@ -20,8 +20,10 @@ library(tidyverse)
 str(iris) # Checking the data structure. We can already see relatively higher 
 # values for sepal length variable.
 
-plot(iris$Sepal.Length, iris$Petal.Width, col = 'purple', cex = 2) # Basic plot
-# within the R base with purple color added. Positive relationship evident.
+plot(iris$Sepal.Length, iris$Petal.Width, # Variables to use on the plot
+     col = 'purple', # Color for the plot points
+     cex = 2, # Double size of the points on the plot
+     pch = 19) # Pick the nineteenth point character
 
 # Creating cool plot of the iris data using ggplot2 package.
 
