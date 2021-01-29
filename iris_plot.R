@@ -21,7 +21,7 @@ str(iris) # Checking the data structure. We can already see relatively higher
 
 plot(iris$Sepal.Length, iris$Petal.Width, # Variables to use on the plot
      col = 'purple', # Color for the data points on the plot
-     main = "Simple plot in R \n Isn't it?", # Title of the plot
+     main = "Simple plot in R \n Isn't it?", # Title of the plot in two lines
      sub = 'Subtitle at lower center of the plot', # Adding subtitle to the plot
      cex = 2, # Double size of the points on the plot
      pch = 19, # Picks the 19th character in terms of shape of points plotted
