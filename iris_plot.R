@@ -12,7 +12,7 @@
 # Loading necessary packages.
 
 library(modelr)
-library(patchwork)
+library(patchwork) # Combining plots
 library(ggforce)
 library(tidyverse) # Huge library for wrangling and visualizing the data-set
 
