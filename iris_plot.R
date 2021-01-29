@@ -19,9 +19,12 @@ library(tidyverse) # Huge library for wrangling and visualizing the data-set
 str(iris) # Checking the data structure. We can already see relatively higher 
 # values for sepal length variable.
 
+reg <- lm(Petal.Width ~ Sepal.Length, data = iris)
+coeff <- coefficients(reg)
+eq <- paste0('y = ', round(coeff[2], 1), "*x ", round(coeff[1], 1))
 plot(iris$Sepal.Length, iris$Petal.Width, # Variables to use on the plot
      col = 'purple', # Color for the data points on the plot
-     main = "Simple plot in R \n Isn't it?", # Title of the plot in two lines
+     main = paste0("Simple plot in R \n Isn't it?\n", eq), # Title of the plot in two lines
      sub = 'Subtitle at lower center of the plot', # Adding subtitle to the plot
      cex = 2, # Double size of the points on the plot
      pch = 19, # Picks the 19th character in terms of shape of points plotted
@@ -29,13 +32,13 @@ plot(iris$Sepal.Length, iris$Petal.Width, # Variables to use on the plot
      xlab = 'Sepal length (cm)', # Labels x axis
      ylab = 'Petal width (cm)', # Labels y axis
      las = 1, # Making y axis labels to stand upright
-     cex.main = 2, # Doubles text size on title
+     cex.main = 1.5, # Doubles text size on title
      cex.lab = 1.5, # Increases labels text size by 50%
      cex.axis = 1.5
      # xlim = range(0:8), # Can easily set the limits of x-axis
      # ylim = range(0:2.6) # Can easily set the limits of y-axis
      )
-
+abline(reg, data = iris) # Best line of fit on the plot
 # Creating cool plot of the iris data using ggplot2 package.
 
 separate_smooth <- ggplot(data = iris,    # Specifying the data to be plotted.
