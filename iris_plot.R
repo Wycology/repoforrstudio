@@ -4,7 +4,7 @@
 # https://github.com/Wycology #
 # Task: Playing with iris data#
 # Created: 30th Dec 2020      #
-# Edited: 28th Jan 2021       #
+# Edited: 29th Jan 2021       #
 ###############################
 
 # IRIS PLOT ----
@@ -14,7 +14,7 @@
 library(modelr)
 library(patchwork)
 library(ggforce)
-library(ggplot2)
+library(ggplot2) # for generating the plots
 library(tidyverse)
 
 str(iris) # Checking the data structure. We can already see relatively higher 
