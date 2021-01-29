@@ -18,11 +18,11 @@ library(tidyverse) # Huge library for wrangling and visualizing the data-set
 
 str(iris) # Checking the data structure. We can already see relatively higher 
 # values for sepal length variable.
-mysubtitle <- 'Is that possible'
+
 plot(iris$Sepal.Length, iris$Petal.Width, # Variables to use on the plot
      col = 'purple', # Color for the plot points
      main = "Simple plot in R \n Isn't it?", # Title of the plot
-     sub = 'Subtitle at lower center of the plot',
+     sub = 'Subtitle at lower center of the plot', # Adding subtitle to the plot
      cex = 2, # Double size of the points on the plot
      pch = 19, # Picks the 19th character in terms of shape of points plotted
      bty = 'l', # Box type. Other options are 'o', 'n', 'l', '7', 'c', 'u', ']'
