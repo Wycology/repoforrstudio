@@ -38,7 +38,7 @@ plot(iris$Sepal.Length, iris$Petal.Width, # Variables to use on the plot
      # xlim = range(0:8), # Can easily set the limits of x-axis
      # ylim = range(0:2.6) # Can easily set the limits of y-axis
      )
-abline(reg, data = iris)# Best line of fit on the plot
+abline(reg, data = iris, lwd = 2, col = 'purple')# Best line of fit on the plot
 abline(v = mean(iris$Sepal.Length), col = 'red', lwd = 3, lty = 2)
 abline(h = mean(iris$Petal.Width), col = 'blue', lwd = 3, lty = 2)
 # Creating cool plot of the iris data using ggplot2 package.
