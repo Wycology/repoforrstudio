@@ -29,6 +29,7 @@ Reg <-  lm(Sepal.Length ~ Petal.Width, data = iris) # simple linear regression.
 
 summary(Reg) # Looking at the regression results.
 
+Eq <- 
 # For every increase in width of petals, there is a significant increase in
 # sepal length.
 
@@ -39,7 +40,8 @@ abline(lm(Sepal.Length ~ Petal.Width,
           data = iris), 
        col = "red",
        lty = 3,
-       lwd = 3)
+       lwd = 3,
+       main = 'Simple plot')
 
 # Some relationship can be seen between the two variables on the plot
 
