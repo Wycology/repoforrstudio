@@ -42,11 +42,7 @@ plot(iris$Sepal.Length ~ iris$Petal.Width, # Simple plotting procedure
      xlab = 'Petal width (cm)',
      xlim = range(0:2.5)
      )# Selecting my desired point character for plotting.
-abline(lm(Sepal.Length ~ Petal.Width, 
-          data = iris), 
-       col = "red",
-       lty = 3,
-       lwd = 3)
+abline(Reg, col = "red", lty = 3, lwd = 3)
 text(0.5, 7, "Wondering how this kind of plot looks")
 
 # Some relationship can be seen between the two variables on the plot
