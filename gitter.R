@@ -35,13 +35,14 @@ Eq <- paste0('y = ', round(coeff[2], 2), '*x + ', round(coeff[1], 2))
 
 plot(iris$Sepal.Length ~ iris$Petal.Width, # Simple plotting procedure
      col = "purple", # Adding my favorite color to the plot
-     pch = 23)# Selecting my desired point character for plotting.
+     pch = 23,
+     main = paste0('Simple plot', Eq)
+     )# Selecting my desired point character for plotting.
 abline(lm(Sepal.Length ~ Petal.Width, 
           data = iris), 
        col = "red",
        lty = 3,
-       lwd = 3,
-       main = 'Simple plot')
+       lwd = 3)
 
 # Some relationship can be seen between the two variables on the plot
 
