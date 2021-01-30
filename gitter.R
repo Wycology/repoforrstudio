@@ -28,8 +28,8 @@ data("iris") # This is one of the datasets which is available and ready for use.
 Reg <-  lm(Sepal.Length ~ Petal.Width, data = iris) # simple linear regression.
 
 summary(Reg) # Looking at the regression results.
-
-Eq <- 
+coeff <- coefficients(Reg)
+Eq <- paste0('y = ', round(coeff[2], 2), '*x + ', round(coeff[1], 2)) 
 # For every increase in width of petals, there is a significant increase in
 # sepal length.
 
