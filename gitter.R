@@ -34,7 +34,12 @@ summary(Reg) # Looking at the regression results.
 
 plot(iris$Sepal.Length ~ iris$Petal.Width, # Simple plotting procedure
      col = "purple", # Adding my favorite color to the plot
-     pch = 23) # Selecting my desired point character for plotting.
+     pch = 23)# Selecting my desired point character for plotting.
+abline(lm(Sepal.Length ~ Petal.Width, 
+          data = iris), 
+       col = "red",
+       lty = 3,
+       lwd = 3)
 
 # Some relationship can be seen between the two variables on the plot
 
