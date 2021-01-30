@@ -34,9 +34,9 @@ Eq <- paste0('y = ', round(coeff[2], 2), '*x + ', round(coeff[1], 2))
 # sepal length.
 
 plot(iris$Sepal.Length ~ iris$Petal.Width, # Simple plotting procedure
-     col = "purple", # Adding my favorite color to the plot
+     col = "yellow", # Adding my favorite color to the plot
      pch = 23,
-     bg = 'yellow',
+     bg = 'purple',
      bty = 'n',
      main = paste0('Simple plot \n', Eq)
      )# Selecting my desired point character for plotting.
