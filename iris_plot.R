@@ -38,9 +38,14 @@ plot(iris$Sepal.Length, iris$Petal.Width, # Variables to use on the plot
      # xlim = range(0:8), # Can easily set the limits of x-axis
      # ylim = range(0:2.6) # Can easily set the limits of y-axis
      )
-abline(reg, data = iris, lwd = 2, col = 'purple')# Best line of fit on the plot
+abline(reg, data = iris, lty = 5, lwd = 2, col = 'purple')# Best line of fit on the plot
 abline(v = mean(iris$Sepal.Length), col = 'red', lwd = 3, lty = 2)
+abline(v = median(iris$Sepal.Length), col = 'yellow', lwd = 3, lty = 3)
 abline(h = mean(iris$Petal.Width), col = 'blue', lwd = 3, lty = 2)
+abline(h = median(iris$Petal.Width), col = 'orange', lwd = 3, lty = 6)
+text(7, 0.5, "Such a simple plot to generate")
+text(5, 2.25, "I thought it was hard until I gave it a try")
+
 # Creating cool plot of the iris data using ggplot2 package.
 
 separate_smooth <- ggplot(data = iris,    # Specifying the data to be plotted.
@@ -156,3 +161,4 @@ ggplot(data = sim1, mapping = aes(x = x, y =y)) +
   geom_point(col = 'purple', pch = 18, size = 5) +
   labs(x = 'The x-axis', y = 'The y-axis', title = 'Crazy model in deed') +
   theme_classic()
+rm(list = ls())
