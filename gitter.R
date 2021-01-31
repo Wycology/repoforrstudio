@@ -38,7 +38,7 @@ plot(iris$Sepal.Length ~ iris$Petal.Width, # Simple plotting procedure
      pch = 23,
      bg = 'purple',
      bty = 'n',
-     main = paste0('Simple plot \n \n', Eq),
+     main = 'Simple plot \n Yeah!',
      xlab = 'Petal width (cm)',
      xlim = range(0:2.5)
      )# Selecting my desired point character for plotting.
@@ -48,6 +48,7 @@ abline(h = 6.5, col = 'purple', lty = 4, lwd = 5)
 text(0.3, 6.6, "y = 6.5")
 text(0.8, 5.2, paste0(Eq))
 text(1.41, 7.5, 'x = 1.3')
+text(1.3, 6.5, '.')
 text(0.5, 7, "Wondering how this kind of plot looks")
 
 # Some relationship can be seen between the two variables on the plot
