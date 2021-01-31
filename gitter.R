@@ -44,6 +44,9 @@ plot(iris$Sepal.Length ~ iris$Petal.Width, # Simple plotting procedure
      )# Selecting my desired point character for plotting.
 abline(Reg, col = "red", lty = 3, lwd = 3)
 abline(v = 1.3, col = 'blue', lty = 4, lwd = 5)
+abline(h = 6.5, col = 'purple', lty = 4, lwd = 5)
+text(0.3, 6.6, "y = 6.5")
+text(0.6, 5, paste0(Eq))
 text(0.5, 7, "Wondering how this kind of plot looks")
 
 # Some relationship can be seen between the two variables on the plot
