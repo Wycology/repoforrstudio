@@ -31,3 +31,6 @@ min(na_data$Post.Test)
 max(na_data$Post.Test)
 median(na_data$Post.Test)
 sd(na_data$Post.Test)
+
+# Removing the missing values and reruning the Post.Test values again.
+
