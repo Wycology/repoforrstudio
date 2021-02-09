@@ -24,3 +24,10 @@ min(na_data$Pre.Test)
 max(na_data$Pre.Test)
 median(na_data$Pre.Test)
 sd(na_data$Pre.Test)
+
+# Going for the Post.Test variable.
+mean(na_data$Post.Test)
+min(na_data$Post.Test)
+max(na_data$Post.Test)
+median(na_data$Post.Test)
+sd(na_data$Post.Test)
