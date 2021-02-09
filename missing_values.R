@@ -56,6 +56,28 @@ sd(na_omit_data$Post.Test)
 
 # Cool, that is now working pretty fine.
 
+# However, removing the row affects the results of some analyses on the data. 
+# Others like t.test can handle missing values well and no difference notable.
+
+t.test(na_data$Pre.Test, na_data$Post.Test, paired = TRUE)
+t.test(na_omit_data$Pre.Test, na_omit_data$Post.Test, paired = TRUE)
+
+# Now we want to replace the missing value with the mean of the available data.
+# This is done using the na.gam.replace().
+
+na_data_gam <- na.gam.replace(na_data)
+na_data_gam # The data which was missing at ID 5 is now 7 which is the mean of 
+# the available values in the dataset. Now if we run the t.test() on the data
+# again, we will notice a difference.
+
+t.test(na_data$Pre.Test, na_data$Post.Test, paired = TRUE)
+t.test(na_data_gam$Pre.Test, na_data_gam$Post.Test, paired = TRUE)
+
+# It is now clear that t, df, p-value, 95% confidence interval are all different.
+
+
+
+
 
 
 
