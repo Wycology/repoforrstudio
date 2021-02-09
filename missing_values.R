@@ -19,4 +19,8 @@ na_data <- tibble(ID = c(1:10),
                   Pre.Test = c(4, 5, 5, 4, 4, 3, 4, 4, 3, 4),
                   Post.Test = c(8, 7, 8, 7, NA, 6, 7, 6, 7, 7))
 
-
+mean(na_data$Pre.Test)
+min(na_data$Pre.Test)
+max(na_data$Pre.Test)
+median(na_data$Pre.Test)
+sd(na_data$Pre.Test)
