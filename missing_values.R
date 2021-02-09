@@ -39,3 +39,27 @@ min(na_data$Post.Test, na.rm = TRUE)
 max(na_data$Post.Test, na.rm = TRUE)
 median(na_data$Post.Test, na.rm = TRUE)
 sd(na_data$Post.Test, na.rm = TRUE)
+
+# This is working pretty fine for a single variable. However, the whole row can
+# be omitted using na.omit()
+
+na_omit_data <- na.omit(na_data)
+na_omit_data # ID 5 is now missing from the new dataset because we passed the 
+# dataset to na.omit() function.
+
+
+mean(na_omit_data$Post.Test)
+min(na_omit_data$Post.Test)
+max(na_omit_data$Post.Test)
+median(na_omit_data$Post.Test)
+sd(na_omit_data$Post.Test)
+
+# Cool, that is now working pretty fine.
+
+
+
+
+
+
+
+
