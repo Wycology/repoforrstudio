@@ -32,5 +32,10 @@ max(na_data$Post.Test)
 median(na_data$Post.Test)
 sd(na_data$Post.Test)
 
-# Removing the missing values and reruning the Post.Test values again.
-
+# Removing the missing values and re-running the Post.Test values again.
+# Going for the Post.Test variable.
+mean(na_data$Post.Test, na.rm = TRUE)
+min(na_data$Post.Test, na.rm = TRUE)
+max(na_data$Post.Test, na.rm = TRUE)
+median(na_data$Post.Test, na.rm = TRUE)
+sd(na_data$Post.Test, na.rm = TRUE)
