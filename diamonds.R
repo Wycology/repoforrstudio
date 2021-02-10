@@ -3,15 +3,15 @@
 # E-mail: wyclifeoluoch@gmail.com       #
 # GitHub: https://github.com/Wycology   #
 # Task: Boxplot and violin plots in one #
-# Date: 4th Jan 2020                    #
-# Last edited: 27th Jan 2020            #
+# Date: 4th Jan 2021                    #
+# Last edited: 10th Feb 2021            #
 #########################################
 
 # Loading the necessary libraries
 library(tidyverse)
 library(RColorBrewer)
 
-diamonds_df <- diamonds
+diamonds_df <- diamonds # Cloning the diamonds data to a new object
 
 diamonds_df %>% 
   ggplot(aes(x = cut, y = price, color = cut)) +
