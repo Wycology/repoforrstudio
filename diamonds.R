@@ -20,7 +20,7 @@ diamonds_df %>% # Picking the data
   geom_violin(alpha = 0.5) + # Adding violin plot on top of the box and jitter
   theme_classic() + # Adding my preferred theme for publication.
   theme(legend.position = "none") + # Removing the legend; it is on the x-axis
-  labs(x = "Cut of the diamond",
+  labs(x = "Cut of the diamond", # Having the best labels on the plot.
        y = "Price of the diamonds (USD)",
        title = "Diamond cut against price",
        subtitle = "Diamond cut versus price",
