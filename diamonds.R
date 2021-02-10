@@ -19,7 +19,7 @@ diamonds_df %>% # Picking the data
   geom_boxplot(alpha = 0.1, width = 0.5) + # Modifying dimensions of the boxplot 
   geom_violin(alpha = 0.5) + # Adding violin plot on top of the box and jitter
   theme_classic() + # Adding my preferred theme for publication.
-  theme(legend.position = "none") +
+  theme(legend.position = "none") + # Removing the legend; it is on the x-axis
   labs(x = "Cut of the diamond",
        y = "Price of the diamonds (USD)",
        title = "Diamond cut against price",
