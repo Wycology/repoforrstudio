@@ -16,7 +16,7 @@ diamonds_df <- diamonds # Cloning the diamonds data to a new object
 diamonds_df %>% # Picking the data
   ggplot(aes(x = cut, y = price, color = cut)) + # Adding the mapping variables
   geom_point(position = "jitter", alpha = 0.2) + # Adding jitter and alpha
-  geom_boxplot(alpha = 0.1, width = 0.5) +
+  geom_boxplot(alpha = 0.1, width = 0.5) + # Modifying dimensions of the boxplot 
   geom_violin(alpha = 0.5) +
   theme_classic() +
   theme(legend.position = "none") +
