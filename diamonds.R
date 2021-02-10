@@ -18,7 +18,7 @@ diamonds_df %>% # Picking the data
   geom_point(position = "jitter", alpha = 0.2) + # Adding jitter and alpha
   geom_boxplot(alpha = 0.1, width = 0.5) + # Modifying dimensions of the boxplot 
   geom_violin(alpha = 0.5) + # Adding violin plot on top of the box and jitter
-  theme_classic() +
+  theme_classic() + # Adding my preferred theme for publication.
   theme(legend.position = "none") +
   labs(x = "Cut of the diamond",
        y = "Price of the diamonds (USD)",
