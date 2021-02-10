@@ -1,10 +1,10 @@
-###############################
-# Wyclife Agumba Oluoch       #
-# wyclifeoluoch@gmail.com     #
-# Task working with BIEN  data#
-# Created 8th Jan 2021        #
+################################
+# Wyclife Agumba Oluoch        #
+# wyclifeoluoch@gmail.com      #
+# Task working with BIEN  data #
+# Created 8th Jan 2021         #
 # Last edited 27th Jan 2021    #
-###############################
+################################
 
 
 # Working with transect data in bien library
@@ -87,3 +87,31 @@ richness_with_env %>%
        y = 'Richness')
 
 # That is good for the day. Key things here are just about data wrangling.
+
+one_county <- nc %>% select(NAME) %>% filter(NAME == 'Ashe')
+
+two_county <- st_transform(one_county, 32119)
+
+two_county <- st_geometry(two_county)
+buf <- st_buffer(two_county, dist = 3000)
+plot(buf, border = 'red', col = 'purple')
+plot(two_county, add = TRUE, col = 'cyan')
+plot(st_buffer(two_county, dist = -3000), add = TRUE, border = 'blue', col = 'yellow')
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
