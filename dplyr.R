@@ -210,7 +210,7 @@ iris %>% # Pick the iris dataframe
   lm() %>% # Apply the lm function to the selected variables
   tidy() %>% # Make the output tidy using the tidy() function from broom
   ggplot() + # Invoke ggplot
-  geom_col(aes(x = term, y = statistic, fill = term)) # Give geometry & aesthetics
+  geom_col(aes(x = term, y = std.error, fill = term)) # Give geometry & aesthetics
 
 
 
