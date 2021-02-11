@@ -200,10 +200,17 @@ tidy(score_model) # This is tidying up the data. Comes from broom package.
 
 tidy(score_model) %>% # Generating the model output tibble
   ggplot() + # Calling for the ggplot
-  geom_col(aes(x = term, y = statistic)) # Bar plot using the statistic variable.
+  geom_col(aes(x = term, y = statistic, fill = term)) # Bar plot using the 
+# statistic variable.
 
+# How far can we make this simple
 
-
+iris %>% # Pick the iris dataframe
+  select(Sepal.Length, Petal.Width) %>% # Select the two variables to regress
+  lm() %>% # Apply the lm function to the selected variables
+  tidy() %>% # Make the output tidy using the tidy() function from broom
+  ggplot() + # Invoke ggplot
+  geom_col(aes(x = term, y = statistic, fill = term)) # Give geometry & aesthetics
 
 
 
