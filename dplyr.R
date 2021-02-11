@@ -169,7 +169,10 @@ data(flights)
 flights %>% 
   summarise(delay_cor = cor(dep_delay, arr_delay)) # This is returning NA.
 
+# To solve this problem, we need to set the function to use only complete cases
 
+flights %>% 
+  summarise(delay_cor = cor(dep_delay, arr_delay, use = 'complete.obs'))
 
 
 
