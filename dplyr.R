@@ -159,4 +159,21 @@ head(tree_height_value) # Confirming the output values are as desired. This has
 
 # Correlation within dplyr----
 
+# This will need two libraries
+
+library(dplyr)
+library(nycflights13)
+
+data(flights)
+
+flights %>% 
+  summarise(delay_cor = cor(dep_delay, arr_delay))
+
+
+
+
+
+
+
+
 
