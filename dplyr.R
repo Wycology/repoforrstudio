@@ -4,7 +4,7 @@
 # GitHub: https://github.com/Wycology   #
 # Task: Some data wrangling with dplyr  #
 # Date: 9th Jan 2020                    #
-# Last edited: 27th Jan 2020            #
+# Last edited: 11th Feb 2020            #
 #########################################
 
 library(dplyr) # For data wrangling in the whole project.
@@ -156,5 +156,7 @@ tree_height_value <- tree_height %>% # Usind dataframe above
 
 head(tree_height_value) # Confirming the output values are as desired. This has 
 # made my work easier to accomplish.
+
+# Correlation within dplyr----
 
 
