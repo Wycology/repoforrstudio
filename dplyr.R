@@ -180,4 +180,22 @@ flights %>%
   na.omit() %>% 
   summarise(delay_cor = cor(dep_delay, arr_delay))
 
+# Running a model and returning a tidy output
+
+data("iris") # This is loading 
+
+score_model <- lm(Sepal.Length ~ Petal.Width, data = iris)
+
+score_model %>% 
+  summary()
+
+
+tidy(score_model)
+
+
+
+
+
+
+
 
