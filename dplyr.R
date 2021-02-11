@@ -180,6 +180,4 @@ flights %>%
   na.omit() %>% 
   summarise(delay_cor = cor(dep_delay, arr_delay))
 
-  
-
 
