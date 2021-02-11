@@ -182,15 +182,16 @@ flights %>%
 
 # Running a model and returning a tidy output
 
-data("iris") # This is loading 
+data("iris") # This is loading the dataset that intend to model
 
-score_model <- lm(Sepal.Length ~ Petal.Width, data = iris)
+score_model <- lm(Sepal.Length ~ Petal.Width, data = iris) # The model
 
-score_model %>% 
+score_model %>% # This is spitting the normal output, good but not tidy.
   summary()
 
+#
 
-tidy(score_model)
+tidy(score_model) # This is tidying up the data. Comes from brrom package.
 
 
 
