@@ -161,8 +161,9 @@ head(tree_height_value) # Confirming the output values are as desired. This has
 
 # This will need two libraries
 
-library(dplyr)
+library(tidyverse)
 library(nycflights13)
+library(broom)
 
 data(flights)
 
@@ -189,10 +190,17 @@ score_model <- lm(Sepal.Length ~ Petal.Width, data = iris) # The model
 score_model %>% # This is spitting the normal output, good but not tidy.
   summary()
 
-#
+# Now we will make the data more tidy using tidy function from broom
 
-tidy(score_model) # This is tidying up the data. Comes from brrom package.
+library(broom)
 
+tidy(score_model) # This is tidying up the data. Comes from broom package.
+
+# This is now tidier. Pretty cool, let me try plotting it out.
+
+tidy(score_model) %>% # Generating the model output tibble
+  ggplot() + # Calling for the ggplot
+  geom_col(aes(x = term, y = statistic)) # Bar plot using the statistic variable.
 
 
 
