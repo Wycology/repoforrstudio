@@ -167,7 +167,7 @@ library(nycflights13)
 data(flights)
 
 flights %>% 
-  summarise(delay_cor = cor(dep_delay, arr_delay))
+  summarise(delay_cor = cor(dep_delay, arr_delay)) # This is returning NA.
 
 
 
