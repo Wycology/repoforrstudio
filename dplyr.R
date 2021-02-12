@@ -18,7 +18,7 @@ titanic_tibble <- tibble(titanic_df) # Here is the tibble form of the titanic_df
 
 dim(titanic_tibble) # Checking the dimension of the data set.
 
-# Checking the total number of passangers in the Titanic
+# Checking the total number of passengers in the Titanic
 # To do this, I need the sum of the frequency variable
 
 head(titanic_tibble) # To appreciate the variables within the tibble to wrangle
@@ -164,6 +164,7 @@ head(tree_height_value) # Confirming the output values are as desired. This has
 library(tidyverse)
 library(nycflights13)
 library(broom)
+library(moderndive)
 
 data(flights)
 
@@ -212,6 +213,15 @@ iris %>% # Pick the iris dataframe
   ggplot() + # Invoke ggplot
   geom_col(aes(x = term, y = std.error, fill = term)) # Give geometry & aesthetics
 
+glance(score_model) # This is also a tidy one to think about.
+
+get_regression_summaries(score_model) # The function is from moderndive package
+
+augment(score_model) # This is revealing a lot of information including fitted
+
+get_regression_points(score_model) # This is returning regression points and 
+# residual
 
 
-
+anova_iris <- aov(Sepal.Length ~ Petal.Width, data = iris)
+tidy(anova_iris)
