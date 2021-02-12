@@ -13,9 +13,9 @@
 library(tidyverse, warn.conflicts = FALSE)
 library(gam, warn.conflicts = FALSE)
 
-# Creating the dataset
+# Creating the data-set
 
-na_data <- tibble(ID = c(1:10),
+na_data <- tibble(ID = c(1:10), # First variable
                   Pre.Test = c(4, 5, 5, 4, 4, 3, 4, 4, 3, 4),
                   Post.Test = c(8, 7, 8, 7, NA, 6, 7, 6, 7, 7))
 # Starting with the Pre.Test variable.
@@ -25,7 +25,7 @@ max(na_data$Pre.Test)
 median(na_data$Pre.Test)
 sd(na_data$Pre.Test)
 
-# Going for the Post.Test variable.
+# Going for the Post.Test variable. Here we have a number of missing values
 mean(na_data$Post.Test)
 min(na_data$Post.Test)
 max(na_data$Post.Test)
