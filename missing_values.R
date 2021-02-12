@@ -65,7 +65,7 @@ t.test(na_omit_data$Pre.Test, na_omit_data$Post.Test, paired = TRUE)
 # Now I want to replace the missing value with the mean of the available data.
 # This is done using the na.gam.replace().
 
-na_data_gam <- na.gam.replace(na_data)
+na_data_gam <- na.gam.replace(na_data) # Uses the mean to impute missing values
 na_data_gam # The data which was missing at ID 5 is now 7 which is the mean of 
 # the available values in the dataset. Now if we run the t.test() on the data
 # again, we will notice a difference.
