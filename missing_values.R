@@ -62,7 +62,7 @@ sd(na_omit_data$Post.Test)
 t.test(na_data$Pre.Test, na_data$Post.Test, paired = TRUE)
 t.test(na_omit_data$Pre.Test, na_omit_data$Post.Test, paired = TRUE)
 
-# Now we want to replace the missing value with the mean of the available data.
+# Now I want to replace the missing value with the mean of the available data.
 # This is done using the na.gam.replace().
 
 na_data_gam <- na.gam.replace(na_data)
