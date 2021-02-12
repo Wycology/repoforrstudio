@@ -8,7 +8,7 @@
 
 # Here I am going to demonstrate how to work with missing data (NAs) in R
 
-# Loading the necessary libraries
+# Loading the necessary libraries for analyses
 
 library(tidyverse, warn.conflicts = FALSE)
 library(gam, warn.conflicts = FALSE)
