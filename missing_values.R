@@ -74,14 +74,5 @@ t.test(na_data$Pre.Test, na_data$Post.Test, paired = TRUE)
 t.test(na_data_gam$Pre.Test, na_data_gam$Post.Test, paired = TRUE)
 
 # It is now clear that t, df, p-value, 95% confidence interval are all different.
-
-
-
-
-
-
-
-
-
-
-
+# This is calling for maximum care when imputing missing values in a dataset
+# depending on the subsequent analyses to be conducted.
