@@ -13,7 +13,7 @@
 library(tidyverse, warn.conflicts = FALSE) # For data wrangling
 library(gam)
 
-# Creating the data-set
+# Creating the data-set with NA in post-test variable
 
 na_data <- tibble(ID = c(1:10), # First variable
                   Pre.Test = c(4, 5, 5, 4, 4, 3, 4, 4, 3, 4),
