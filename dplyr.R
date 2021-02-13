@@ -4,16 +4,16 @@
 # GitHub: https://github.com/Wycology   #
 # Task: Some data wrangling with dplyr  #
 # Date: 9th Jan 2020                    #
-# Last edited: 11th Feb 2020            #
+# Last edited: 13th Feb 2020            #
 #########################################
 
 library(dplyr) # For data wrangling in the whole project.
 
 # I will use the Titanic data for today's exploration
 
-titanic_df <- data.frame(Titanic) # Loading the Titanic data as a dataframe object
+titanic_df <- data.frame(Titanic) # Titanic data as a data.frame object
 
-# Once it is a dataframe, I can set is as a tibble which is my preferred structure
+# Once it is a data.frame, I can set it as a tibble which is my preferred structure
 titanic_tibble <- tibble(titanic_df) # Here is the tibble form of the titanic_df
 
 dim(titanic_tibble) # Checking the dimension of the data set.
