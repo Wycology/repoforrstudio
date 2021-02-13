@@ -10,7 +10,7 @@
 
 # Loading the necessary libraries for working with NA values
 
-library(tidyverse, warn.conflicts = FALSE)
+library(tidyverse, warn.conflicts = FALSE) # For data wrangling
 library(gam, warn.conflicts = FALSE)
 
 # Creating the data-set
