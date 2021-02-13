@@ -47,7 +47,7 @@ number_passengers_survived # Returning the sum of passengers by survival which i
 data_sex_age_freq <- titanic_tibble %>% # Takes the Titanic data set
   select(Sex, Age, Freq) # Picking the three columns of my interest only.
 
-# The next one is mutate
+# The next dplyr verb is mutate
 # This is a verb which is used to add variables to the dataframe which are 
 # usually functions of already existing dataframes. I do this my creating data2.
 # This is what I applied on my research to get tree heights from inclinometer
