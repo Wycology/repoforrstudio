@@ -11,7 +11,7 @@
 # Loading the necessary libraries for working with NA values
 
 library(tidyverse, warn.conflicts = FALSE) # For data wrangling
-library(gam, warn.conflicts = FALSE)
+library(gam)
 
 # Creating the data-set
 
