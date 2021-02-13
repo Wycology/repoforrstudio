@@ -20,7 +20,7 @@ na_data <- tibble(ID = c(1:10), # First variable
                   Post.Test = c(8, 7, 8, 7, NA, 6, 7, 6, 7, 7)) # With NA
 # Starting with the Pre.Test variable.
 mean(na_data$Pre.Test) # Works fine with the Pre-Test column
-min(na_data$Pre.Test)
+min(na_data$Pre.Test) # Runs pretty fine, this is also cool.
 max(na_data$Pre.Test)
 median(na_data$Pre.Test)
 sd(na_data$Pre.Test)
