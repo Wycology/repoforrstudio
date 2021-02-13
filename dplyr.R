@@ -7,8 +7,10 @@
 # Last edited: 13th Feb 2020            #
 #########################################
 
-library(dplyr) # For data wrangling in the whole project.
-
+library(tidyverse) # For data wrangling in the whole project.
+library(broom)
+library(nycflights13)
+library(moderndive)
 # I will use the Titanic data for today's exploration
 
 titanic_df <- data.frame(Titanic) # Titanic data as a data.frame object
@@ -63,12 +65,12 @@ head(titanic_tibble_mutate) # Freq_10 is added to the data set as the last colum
 # add the .after or .before argument in the mutate function:
 
 titanic_tibble_mutate <- titanic_tibble %>% 
-  mutate(Freq_10 = Freq * 10, .after = 1) # Makes it the second
+  mutate(Freq_10 = Freq * 10, .after = 1) # Makes it the second variable
 
 head(titanic_tibble_mutate)
 
 titanic_tibble_mutate <- titanic_tibble %>% 
-  mutate(Freq_10 = Freq * 10, .before = 1) # Makes it the first
+  mutate(Freq_10 = Freq * 10, .before = 1) # Makes it the first variable
 
 head(titanic_tibble_mutate)
 
@@ -159,13 +161,6 @@ head(tree_height_value) # Confirming the output values are as desired. This has
 
 # Correlation within dplyr----
 
-# This will need two libraries
-
-library(tidyverse)
-library(nycflights13)
-library(broom)
-library(moderndive)
-
 data(flights)
 
 flights %>% 
@@ -192,8 +187,6 @@ score_model %>% # This is spitting the normal output, good but not tidy.
   summary()
 
 # Now we will make the data more tidy using tidy function from broom
-
-library(broom)
 
 tidy(score_model) # This is tidying up the data. Comes from broom package.
 
