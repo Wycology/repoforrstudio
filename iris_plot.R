@@ -139,7 +139,8 @@ head(iris) # Checking the first few rows of the iris data-set, basically to get
 # I think it has taken me a long time to know this.
 # I used ggplot2:: so that I can be sure that the & is supported by ggplot2 and 
 # not any other loaded packages such ggforce and patchwork.
-diamonds %>% 
+
+diamonds %>% # Picking the diamonds data to run plotting on  
 ggplot() + # Feeding in the diamonds data for the plot.
   geom_bar(mapping = aes(x = cut, fill = cut), show.legend = FALSE, width = 1) +
   theme(aspect.ratio = 1) +
@@ -148,7 +149,7 @@ ggplot() + # Feeding in the diamonds data for the plot.
   
 # Cool/crazy plot with modelr package.
 
-library(modelr)
+library(modelr) # Loading the modeling library necessary for the analysis
 options(na.action = na.warn)
 
 ggplot(data = sim1, mapping = aes(x = x, y = y)) +
