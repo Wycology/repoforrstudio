@@ -22,7 +22,7 @@ diamonds_df %>% # Picking the data
   theme(legend.position = "none") + # Removing the legend; it is on the x-axis
   labs(x = "Cut of the diamond", # Having the best labels on the plot.
        y = "Price of the diamonds (USD)",
-       title = "Diamond cut against price",
+       title = "Diamond cut against price", # Setting titble of the plot
        subtitle = "Diamond cut versus price",
        caption = "Data source: gglot2 package's diamond dataset") +
   theme(axis.text=element_text(size=16),
