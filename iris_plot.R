@@ -4,7 +4,7 @@
 # https://github.com/Wycology #
 # Task: Playing with iris data#
 # Created: 30th Dec 2020      #
-# Edited: 29th Jan 2021       #
+# Edited: 14th Feb 2021       #
 ###############################
 
 # IRIS PLOT ----
@@ -150,7 +150,7 @@ options(na.action = na.warn)
 ggplot(data = sim1, mapping = aes(x = x, y = y)) +
   geom_point() # There is some visible correlation between the variables
 
-models <- tibble( # Creating some random tibble dataset for plotting.
+models <- tibble( # Creating some random tibble data-set for plotting.
   a1 = runif(250, -20, 40), # Generates 250 random numbers between -20 and 40
   a2 = runif(250, -5, 5) # Generates 250 random numbers between -5 and 5
 )
