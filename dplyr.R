@@ -215,6 +215,5 @@ augment(score_model) # This is revealing a lot of information including fitted
 get_regression_points(score_model) # This is returning regression points and 
 # residual
 
-
 anova_iris <- aov(Sepal.Length ~ Petal.Width, data = iris)
 tidy(anova_iris)
