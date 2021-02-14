@@ -3,7 +3,7 @@
 # wyclifeoluoch@gmail.com       # 
 # Task working with NAs in data #
 # Created 8th Jan 2021          #
-# Last edited 12th Feb 2021     #
+# Last edited 13th Feb 2021     #
 #################################
 
 # Here I am going to demonstrate how to work with missing data (NAs) in R
@@ -48,11 +48,11 @@ na_omit_data # ID 5 is now missing from the new dataset because we passed the
 # dataset to na.omit() function.
 
 
-mean(na_omit_data$Post.Test)
 min(na_omit_data$Post.Test)
 max(na_omit_data$Post.Test)
 median(na_omit_data$Post.Test)
 sd(na_omit_data$Post.Test)
+mean(na_omit_data$Post.Test)
 
 # Cool, that is now working pretty fine.
 
