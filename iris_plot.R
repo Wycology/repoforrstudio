@@ -125,9 +125,10 @@ combined_plots_labeled_no_legend <- combined_plots_labeled &
 combined_plots_labeled_no_legend # This will print out the final product.
 
 # Showing that in ggplot2 we can use & instead of plus (+)
-attach(iris) # Rendering iris data available for subsequent codes.
 
-ggplot(data = iris, mapping = aes(x = Sepal.Length, y = Petal.Width)) +
+attach(iris) # Rendering iris data available for subsequent codes.
+iris %>% 
+ggplot(aes(x = Sepal.Length, y = Petal.Width)) +
   geom_point() +
   theme_classic()
 
