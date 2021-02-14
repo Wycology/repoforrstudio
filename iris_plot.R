@@ -130,7 +130,9 @@ attach(iris)
 ggplot(data = iris, mapping = aes(x = Sepal.Length, y = Petal.Width)) +
   geom_point() +
   theme_classic()
-head(iris)
+
+head(iris) # Checking the first few rows of the iris data-set, basically to get 
+# the first six rows and the column names of the variables.
 
 # I think it has taken me a long time to know this.
 # I used ggplot2:: so that I can be sure that the & is supported by ggplot2 and 
