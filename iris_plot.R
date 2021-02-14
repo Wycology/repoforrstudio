@@ -139,8 +139,8 @@ head(iris) # Checking the first few rows of the iris data-set, basically to get
 # I think it has taken me a long time to know this.
 # I used ggplot2:: so that I can be sure that the & is supported by ggplot2 and 
 # not any other loaded packages such ggforce and patchwork.
-
-ggplot(data = diamonds) + # Feeding in the diamonds data for the plot.
+diamonds %>% 
+ggplot() + # Feeding in the diamonds data for the plot.
   geom_bar(mapping = aes(x = cut, fill = cut), show.legend = FALSE, width = 1) +
   theme(aspect.ratio = 1) +
   labs(x = NULL, y = NULL) +
@@ -159,8 +159,9 @@ models <- tibble( # Creating some random tibble data-set for plotting.
   a2 = runif(250, -5, 5) # Generates 250 random numbers between -5 and 5
 )
 
-ggplot(data = sim1, mapping = aes(x = x, y =y)) +
-  geom_abline(mapping = aes(intercept = a1, slope = a2),
+sim1 %>% 
+ggplot(aes(x = x, y =y)) +
+  geom_abline(aes(intercept = a1, slope = a2),
               data = models, alpha = 1/4) +
   geom_point(col = 'purple', pch = 18, size = 5) +
   labs(x = 'The x-axis', y = 'The y-axis', title = 'Crazy model in deed') +
