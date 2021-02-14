@@ -127,10 +127,11 @@ combined_plots_labeled_no_legend # This will print out the final product.
 # Showing that in ggplot2 we can use & instead of plus (+)
 
 attach(iris) # Rendering iris data available for subsequent codes.
-iris %>% 
-ggplot(aes(x = Sepal.Length, y = Petal.Width)) +
-  geom_point() +
-  theme_classic()
+
+iris %>% # Picking the iris data, and then
+ggplot(aes(x = Sepal.Length, y = Petal.Width)) + # Providing plotting variables.
+  geom_point() + # Specifying the geometry to use.
+  theme_classic() # Publication ready theme
 
 head(iris) # Checking the first few rows of the iris data-set, basically to get 
 # the first six rows and the column names of the variables.
