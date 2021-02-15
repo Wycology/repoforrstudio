@@ -4,7 +4,7 @@
 # GitHub: https://github.com/Wycology   #
 # Task: Boxplot and violin plots in one #
 # Date: 4th Jan 2021                    #
-# Last edited: 10th Feb 2021            #
+# Last edited: 14th Feb 2021            #
 #########################################
 
 # Loading the necessary libraries
