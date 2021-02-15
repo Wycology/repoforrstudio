@@ -13,7 +13,7 @@ library(RColorBrewer) # This is for generating color pallets for the plots.
 
 diamonds_df <- diamonds # Saving the diamonds data to a new object
 
-diamonds_df %>% # Picking the data
+diamonds_df %>% # Picking the diamonds data object
   ggplot(aes(x = cut, y = price, color = cut)) + # Adding the mapping variables
   geom_point(position = "jitter", alpha = 0.2) + # Adding jitter and alpha
   geom_boxplot(alpha = 0.1, width = 0.5) + # Modifying dimensions of the boxplot 
