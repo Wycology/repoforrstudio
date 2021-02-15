@@ -4,11 +4,11 @@
 # GitHub: https://github.com/Wycology   #
 # Task: Boxplot and violin plots in one #
 # Date: 4th Jan 2021                    #
-# Last edited: 14th Feb 2021            #
+# Last edited: 15th Feb 2021            #
 #########################################
 
-# Loading the necessary libraries
-library(tidyverse)
+# Loading the necessary libraries for the project
+library(tidyverse) # This is for data wrangling and plotting
 library(RColorBrewer)
 
 diamonds_df <- diamonds # Cloning the diamonds data to a new object
