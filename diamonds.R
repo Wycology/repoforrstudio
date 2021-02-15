@@ -9,9 +9,9 @@
 
 # Loading the necessary libraries for the project
 library(tidyverse) # This is for data wrangling and plotting
-library(RColorBrewer) # This is for generating color palletes for the plots.
+library(RColorBrewer) # This is for generating color pallets for the plots.
 
-diamonds_df <- diamonds # Cloning the diamonds data to a new object
+diamonds_df <- diamonds # Saving the diamonds data to a new object
 
 diamonds_df %>% # Picking the data
   ggplot(aes(x = cut, y = price, color = cut)) + # Adding the mapping variables
