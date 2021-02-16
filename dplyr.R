@@ -231,7 +231,7 @@ aggregate(x = iris$Sepal.Length, # Picks the column to be summarized
 # I want to attempt this using the other approach where I set group_by
 
 iris %>% # Picking the iris data.
-  group_by(Species) %>% 
+  group_by(Species) %>% # Grouping the data by the Species variable.
   summarise(x = sum(Sepal.Length))
 
 
