@@ -217,3 +217,8 @@ get_regression_points(score_model) # This is returning regression points and
 
 anova_iris <- aov(Sepal.Length ~ Petal.Width, data = iris)
 tidy(anova_iris)
+
+# Here comes the sum by group in dplyr----
+
+data(iris) # Loading the iris data
+head(iris)
