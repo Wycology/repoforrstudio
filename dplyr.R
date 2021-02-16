@@ -223,7 +223,7 @@ tidy(anova_iris)
 data(iris) # Loading the iris data
 head(iris) # Checking the first six observation in the iris data
 
-aggregate(x = iris$Sepal.Length, # Picks the column to be summarized
+aggregate(x = c(iris$Sepal.Length, iris$Sepal.Width), # Picks the column to be summarized
           by = list(iris$Species), # Picks the summarizing group
           FUN = sum)  # Gets the function to use in the summary
 
@@ -234,7 +234,15 @@ iris %>% # Picking the iris data.
   group_by(Species) %>% # Grouping the data by the Species variable.
   summarise(x = sum(Sepal.Length)) # Getting a summary of the expected output.
 
+# One thing to note is that the earlier one gave result to the first decimal 
+# value while the second gave only the whole number part.
 
+# We can force the dplyr to show the hidden decimal by
+
+iris %>% 
+  group_by(Species) %>% 
+  summarise(`sum(Sepal.Length)` = sprintf('%0.1f', sum(Sepal.Length)))
+# Great, that has worked.
 
 
 
