@@ -243,7 +243,11 @@ iris %>%
   group_by(Species) %>% 
   summarise(`sum(Sepal.Length)` = sprintf('%0.1f', sum(Sepal.Length)))
 # Great, that has worked.
-
+# We can alter the number of decimal places by varying the value 1 next to f.
+# For example, we can change it to 4.
+iris %>% 
+  group_by(Species) %>% 
+  summarise(`sum(Sepal.Length)` = sprintf('%0.4f', sum(Sepal.Length)))
 
 
 
