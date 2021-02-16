@@ -221,4 +221,4 @@ tidy(anova_iris)
 # Here comes the sum by group in dplyr----
 
 data(iris) # Loading the iris data
-head(iris)
+head(iris) # Checking the first six observation in the iris data
