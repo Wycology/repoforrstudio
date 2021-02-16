@@ -222,3 +222,26 @@ tidy(anova_iris)
 
 data(iris) # Loading the iris data
 head(iris) # Checking the first six observation in the iris data
+
+aggregate(x = iris$Sepal.Length, # Picks the column to be summarized
+          by = list(iris$Species), # Picks the summarizing group
+          FUN = sum)  # Gets the function to use in the summary
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
