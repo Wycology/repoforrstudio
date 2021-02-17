@@ -191,7 +191,7 @@ tea_yield <- data.frame(Yield = c(20, 27, 25, 21, 25, 28, 29, 35, 36, 33),
 tapply(tea_yield$Yield, tea_yield$Site, mean, simplify = TRUE) # Applies a 
 # function with respect to a factor.
 
-# Can do the same for Temp
+# Can do the same for Temp variable
 
 tapply(tea_yield$Temp, tea_yield$Site, mean, simplify = TRUE)
 
