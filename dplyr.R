@@ -105,7 +105,7 @@ head(titanic_tibble_mutate)
 titanic_female <- titanic_tibble %>%   # Picks the whole data set
   filter(Sex == 'Female') # Picks rows with Sex as Female
 
-head(data_female) # Returns the filtered data set 
+head(titanic_female) # Returns the filtered data set 
 
 # In case I need only adult females who survived in 1st class:
 
@@ -249,17 +249,3 @@ iris %>%
 iris %>% 
   group_by(Species) %>% 
   summarise(`sum(Sepal.Length)` = sprintf('%0.4f', sum(Sepal.Length)))
-
-
-
-
-
-
-
-
-
-
-
-
-
-
