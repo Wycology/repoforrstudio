@@ -205,4 +205,5 @@ stemdata <-  tea_yield %>%
 
 str(stemdata)
 
-stem(iris$Sepal.Width, scale = 5)
+stem(iris$Sepal.Width, scale = 5) # Looks cool
+
