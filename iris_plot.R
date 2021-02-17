@@ -4,7 +4,7 @@
 # https://github.com/Wycology #
 # Task: Playing with iris data#
 # Created: 30th Dec 2020      #
-# Edited: 14th Feb 2021       #
+# Edited: 17th Feb 2021       #
 ###############################
 
 # IRIS PLOT ----
@@ -13,11 +13,11 @@
 
 library(modelr)
 library(patchwork) # Combining plots
-library(ggforce)
+library(ggforce) 
 library(tidyverse) # Huge library for wrangling and visualizing the data-set
 
 str(iris) # Checking the data structure. We can already see relatively higher 
-# values for sepal length variable.
+# values for sepal length variable compared to the others.
 
 reg <- lm(Petal.Width ~ Sepal.Length, data = iris)
 coeff <- coefficients(reg)
