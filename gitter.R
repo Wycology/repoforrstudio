@@ -203,7 +203,7 @@ stemdata <-  tea_yield %>%
   filter(Site == "Sotik") %>% 
   select(Temp)
 
-str(stemdata)
+str(stemdata) # Checking for the structure of the stem data
 
 stem(iris$Sepal.Width, scale = 5) # Looks cool
 
