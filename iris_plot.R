@@ -19,7 +19,7 @@ library(tidyverse) # Huge library for wrangling and visualizing the data-set
 str(iris) # Checking the data structure. We can already see relatively higher 
 # values for sepal length variable compared to the others.
 
-reg <- lm(Petal.Width ~ Sepal.Length, data = iris)
+reg <- lm(Petal.Width ~ Sepal.Length, data = iris) # Creating a regression line
 coeff <- coefficients(reg)
 eq <- paste0('y = ', round(coeff[2], 1), "*x ", round(coeff[1], 1))
 plot(iris$Sepal.Length, iris$Petal.Width, # Variables to use on the plot
