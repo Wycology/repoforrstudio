@@ -11,7 +11,7 @@
 library(tidyverse) # This is for data wrangling and plotting
 library(RColorBrewer) # This is for generating color pallets for the plots.
 
-diamonds_df <- diamonds # Saving the diamonds data to a new object
+diamonds_df <- diamonds # Saving the diamonds data to a new object in R.
 
 head(diamonds) # Checking the variables in the data-set for subsequent analyses
 nrow(diamonds) # Checking for the number of rows in the data. 53940 observations
