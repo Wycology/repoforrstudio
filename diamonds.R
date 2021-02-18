@@ -30,7 +30,7 @@ diamonds_df %>% # Picking the diamonds data object, and then
        title = "Diamond cut against price", # Setting tibble of the plot
        subtitle = "Preview of diamond cut versus price",
        caption = "Data source: gglot2 package's diamond data") +
-  theme(axis.text = element_text(size=16),
+  theme(axis.text = element_text(size=16), # Size of labels on tick-marks
         axis.title = element_text(size=16,face="bold")) +
   theme(plot.title = element_text(color = 'red', size = 18, face = 'bold'),
         plot.subtitle = element_text(color = 'purple', size = 14, face = 'italic'),
