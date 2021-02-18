@@ -15,6 +15,7 @@ diamonds_df <- diamonds # Saving the diamonds data to a new object in R.
 
 head(diamonds) # Checking the variables in the data-set for subsequent analyses
 nrow(diamonds) # Checking for the number of rows in the data. 53940 observations
+ncol(diamonds) # Checking the number of variables in the data-set. 10 variables
 
 diamonds_df %>% # Picking the diamonds data object
   slice_sample(n = 0.01*(nrow(diamonds))) %>% # Picking a portion of the data-set
