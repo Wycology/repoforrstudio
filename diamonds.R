@@ -4,7 +4,7 @@
 # GitHub: https://github.com/Wycology   #
 # Task: Boxplot and violin plots in one #
 # Date: 4th Jan 2021                    #
-# Last edited: 15th Feb 2021            #
+# Last edited: 18th Feb 2021            #
 #########################################
 
 # Loading the necessary libraries for the project
@@ -17,7 +17,7 @@ head(diamonds) # Checking the variables in the data-set for subsequent analyses
 nrow(diamonds) # Checking for the number of rows in the data. 53940 observations
 
 diamonds_df %>% # Picking the diamonds data object
-  slice_sample(n = 0.1*(nrow(diamonds))) %>% # Picking a portion of the data-set
+  slice_sample(n = 0.01*(nrow(diamonds))) %>% # Picking a portion of the data-set
   ggplot(aes(x = cut, y = price, color = cut)) + # Adding the mapping variables
   geom_point(position = "jitter", alpha = 0.2) + # Adding jitter and alpha
   geom_boxplot(alpha = 0.1, width = 0.5) + # Modifying dimensions of the boxplot 
