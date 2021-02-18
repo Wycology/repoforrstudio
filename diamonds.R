@@ -28,7 +28,7 @@ diamonds_df %>% # Picking the diamonds data object, and then
   labs(x = "Diamond cut", # Labels the x-axis.
        y = "Diamonds price (USD)", # Labeling the y-axis
        title = "Diamond cut against price", # Setting tibble of the plot
-       subtitle = "Preview of diamond cut versus price",
+       subtitle = "Preview of diamond cut versus price", # Descriptive title beneath TITLE
        caption = "Data source: gglot2 package's diamond data") +
   theme(axis.text = element_text(size=16), # Size of labels on tick-marks
         axis.title = element_text(size=16,face="bold")) + # Size of axis labels
