@@ -36,7 +36,7 @@ diamonds_df %>% # Picking the diamonds data, and then
         plot.subtitle = element_text(color = 'purple', size = 14, face = 'italic'),
         plot.caption = element_text(color = 'blue', face = 'italic'))
 
-diamonds %>% 
+diamonds %>% # Picking 
   filter(cut == 'Very Good') %>% 
   nrow()
 
