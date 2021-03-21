@@ -23,10 +23,10 @@ mean(na_data$Pre.Test) # Works fine with the Pre-Test column
 min(na_data$Pre.Test) # Runs pretty fine, this is also cool.
 max(na_data$Pre.Test) # Cool
 median(na_data$Pre.Test) # Cooler
-sd(na_data$Pre.Test)
+sd(na_data$Pre.Test) # Coolest
 
 # Going for the Post.Test variable. Here we have a number of missing values
-mean(na_data$Post.Test)
+mean(na_data$Post.Test) # NA
 min(na_data$Post.Test)
 max(na_data$Post.Test)
 median(na_data$Post.Test)
