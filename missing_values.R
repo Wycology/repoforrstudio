@@ -22,7 +22,7 @@ na_data <- tibble(ID = c(1:10), # First variable
 mean(na_data$Pre.Test) # Works fine with the Pre-Test column
 min(na_data$Pre.Test) # Runs pretty fine, this is also cool.
 max(na_data$Pre.Test) # Cool
-median(na_data$Pre.Test)
+median(na_data$Pre.Test) # Cooler
 sd(na_data$Pre.Test)
 
 # Going for the Post.Test variable. Here we have a number of missing values
