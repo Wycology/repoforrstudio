@@ -47,7 +47,6 @@ na_omit_data <- na.omit(na_data) # This is also working pretty fine.
 na_omit_data # ID 5 is now missing from the new dataset because we passed the 
 # dataset to na.omit() function.
 
-
 min(na_omit_data$Post.Test)
 max(na_omit_data$Post.Test)
 median(na_omit_data$Post.Test)
