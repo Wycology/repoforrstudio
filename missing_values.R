@@ -29,7 +29,7 @@ sd(na_data$Pre.Test) # Coolest
 mean(na_data$Post.Test) # NA
 min(na_data$Post.Test) # Another NA
 max(na_data$Post.Test) # Checking for the max in the data-set
-median(na_data$Post.Test)
+median(na_data$Post.Test) # Also NA
 sd(na_data$Post.Test)
 
 # Removing the missing values and re-running the Post.Test values again.
