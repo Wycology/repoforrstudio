@@ -28,7 +28,7 @@ sd(na_data$Pre.Test) # Coolest
 # Going for the Post.Test variable. Here we have a number of missing values
 mean(na_data$Post.Test) # NA
 min(na_data$Post.Test) # Another NA
-max(na_data$Post.Test)
+max(na_data$Post.Test) 
 median(na_data$Post.Test)
 sd(na_data$Post.Test)
 
