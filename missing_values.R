@@ -24,6 +24,7 @@ min(na_data$Pre.Test) # Runs pretty fine, this is also cool.
 max(na_data$Pre.Test) # Cool
 median(na_data$Pre.Test) # Cooler
 sd(na_data$Pre.Test) # Coolest
+var(na_data$Pre.Test) # variance of the data
 
 # Going for the Post.Test variable. Here we have a number of missing values
 mean(na_data$Post.Test) # NA
