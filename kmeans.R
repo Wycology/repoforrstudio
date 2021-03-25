@@ -25,6 +25,6 @@ kmeans_layer <- raster.kmeans(x = stacked_rasters, # The stack
 
 kmeans_layer # Output is raster layer with four groups/clusters 
 
-plot(kmeans_layer) # Visualizing the output
+plot(kmeans_layer) # Visualizing the output as a plot
 
 writeRaster(kmeans_layer, 'output_clusters.tif') # Write raster to working dir.
