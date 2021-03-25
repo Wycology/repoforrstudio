@@ -2,6 +2,9 @@ library(dismo) # for the getData function
 library(raster) # for crop, mask and stack functions
 library(ecbtools) # for raster.kmeans function
 
+# ecbtools package is only available from gitHub repository at the time of 
+# writing
+
 # To install ecbtools, run this: remotes::install_github("ozjimbob/ecbtools")
 
 my_rasters <- getData('worldclim', res = 10, var = 'tmin') # worldclim rasters
