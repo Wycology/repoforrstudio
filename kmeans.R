@@ -3,7 +3,7 @@ library(raster) # for crop, mask and stack functions
 library(ecbtools) # for raster.kmeans function
 
 # ecbtools package is only available from gitHub repository at the time of 
-# writing
+# writing this code
 
 # To install ecbtools, run this: remotes::install_github("ozjimbob/ecbtools")
 
