@@ -23,7 +23,7 @@ kmeans_layer <- raster.kmeans(x = stacked_rasters, # The stack
                              geo = TRUE, # weighting by location (x,y coords)
                              geo.weight = 1) # wweight to location
 
-kmeans_layer # Output is raster layer
+kmeans_layer # Output is raster layer with four groups/clusters 
 
 plot(kmeans_layer) # Visualizing the output
 
