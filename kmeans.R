@@ -1,4 +1,4 @@
-library(dismo)
+library(dismo) # for the getData function
 library(raster)
 library(ecbtools)
 
