@@ -1,6 +1,6 @@
 library(dismo) # for the getData function
 library(raster) # for crop, mask and stack functions
-library(ecbtools)
+library(ecbtools) # for raster.kmeans function
 
 # To install ecbtools, run this: remotes::install_github("ozjimbob/ecbtools")
 
