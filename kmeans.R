@@ -1,0 +1,27 @@
+library(dismo)
+library(raster)
+library(ecbtools)
+
+# To install ecbtools, run this: remotes::install_github("ozjimbob/ecbtools")
+
+my_rasters <- getData('worldclim', res = 10, var = 'tmin') # worldclim rasters
+my_polygon <- getData('GADM', country = 'KEN', level = 0) # shapefile of my area
+
+cropped_rasters <- crop(my_rasters, my_polygon) # cropped rasters
+masked_rasters <- mask(cropped_rasters, my_polygon) # masked rasters
+
+plot(masked_rasters[[2]]) #Visual of one masked layer 
+
+stacked_rasters <- stack(masked_rasters) # Creating rasterStack from rasterBrick
+
+kmeans_layer <- raster.kmeans(x = stacked_rasters, # The stack
+                             k = 4,# Number of clusters
+                             nstart = 3, # random sets 
+                             geo = TRUE, # weighting by location (x,y coords)
+                             geo.weight = 1) # wweight to location
+
+kmeans_layer # Output is raster layer
+
+plot(kmeans_layer) # Visualizing the output
+
+writeRaster(kmeans_layer, 'output_clusters.tif') # Write raster to working dir.
