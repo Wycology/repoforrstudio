@@ -7,7 +7,7 @@
 # Last edited: 26th Mar 2021            #
 #########################################
 
-# Loading the necessary libraries for the project
+# Loading the necessary libraries for the project at
 library(tidyverse) # This is for data wrangling and plotting
 library(RColorBrewer) # This is for generating color pallets for the plots.
 
