@@ -89,4 +89,4 @@ diamonds %>%
 
 # That is awesome. Good for the day.
 
-of the 
+of th
