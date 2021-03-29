@@ -88,3 +88,5 @@ diamonds %>%
   barplot(col = cm.colors(5))
 
 # That is awesome. Good for the day.
+
+of the 
