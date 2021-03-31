@@ -7,3 +7,7 @@ Male <- data.frame(Gender = rep('Male', 10),
                    abundance = c(35, 40, 28, 38, 30, 35, 45, 20, 7, 17))
 Female <- data.frame(Gender = rep('Female', 10),
                    abundance = c(60, 20, 37, 19, 15, 4, 28, 18, 3, 35))
+
+bee.data <- rbind(Male, Female)
+
+
