@@ -10,4 +10,7 @@ Female <- data.frame(Gender = rep('Female', 10),
 
 bee.data <- rbind(Male, Female)
 
+head(bee.data)
+tail(bee.data)
+
 
