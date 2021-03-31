@@ -13,4 +13,11 @@ bee.data <- rbind(Male, Female)
 head(bee.data)
 tail(bee.data)
 
+# Normality check
+
+qqnorm(bee.data$abundance)
+qqline(bee.data$abundance)
+
+
+
 
