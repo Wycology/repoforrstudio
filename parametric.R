@@ -35,4 +35,22 @@ library(car)
 
 leveneTest(bee.data$abundance ~ bee.data$Gender)
 # p>a hence we fail to reject the null hypothesis and conclude that the data 
-# is parametric
+# have equal variance
+
+# Parametric t-test with equal variance
+
+t.test(abundance ~ Gender,
+       data = bee.data,
+       alternative = 'two.sided',
+       paired = F,
+       var.equal = T)
+
+# Non-parametric t-test with equal variance
+wilcox.test(abundance ~ Gender,
+       data = bee.data,
+       alternative = 'two.sided',
+       paired = F,
+       var.equal = T)
+# This is normally 
+
+
