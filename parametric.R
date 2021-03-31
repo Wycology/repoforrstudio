@@ -18,6 +18,6 @@ tail(bee.data)
 qqnorm(bee.data$abundance)
 qqline(bee.data$abundance)
 
-
+shapiro.test(bee.data$abundance)
 
 
