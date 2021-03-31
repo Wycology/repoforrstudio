@@ -18,6 +18,21 @@ tail(bee.data)
 qqnorm(bee.data$abundance)
 qqline(bee.data$abundance)
 
+# Normality check using shapiro test
 shapiro.test(bee.data$abundance)
+# p>a hence we fail to reject the null hypothesis and conclude that the data 
+# is parametric
 
+# Normality check using Anderson-Darling test
+library(nortest)
 
+ad.test(bee.data$abundance)
+# p>a hence we fail to reject the null hypothesis and conclude that the data 
+# is parametric
+
+# Test for equal variance using levene's test
+library(car)
+
+leveneTest(bee.data$abundance ~ bee.data$Gender)
+# p>a hence we fail to reject the null hypothesis and conclude that the data 
+# is parametric
