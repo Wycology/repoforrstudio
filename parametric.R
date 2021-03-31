@@ -51,6 +51,7 @@ wilcox.test(abundance ~ Gender,
        alternative = 'two.sided',
        paired = F,
        var.equal = T)
-# This is normally 
+# This is normally used when the data is non parametric, i.e. p<a in case of 
+# shapiro.test or ad.test results.
 
 
