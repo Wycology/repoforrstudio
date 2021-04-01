@@ -11,7 +11,7 @@
 for (item in list_of_items){
   do_something(item)
   print()
-} # Simple yet powerful code. Of course that throws an error when run because
+} # Simple but powerful code. Of course that throws an error when run because
 # we have not defined object to iterate.
 
 # Like for every student in a class, vaccinate. So every student must get the 
