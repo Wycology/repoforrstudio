@@ -6,7 +6,7 @@
 # Last edited 5th April 2021     #
 ##################################
 
-# Here I am going to demonstrate how to work with missing data (NAs) in R
+# I am going to demonstrate how to work with missing data (NAs) in R
 
 # Loading the necessary libraries for working with NA values
 
