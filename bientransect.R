@@ -100,5 +100,3 @@ plot(st_buffer(two_county, dist = -3000), add = TRUE, border = 'blue', col = 'ye
 
 
 
-
-
