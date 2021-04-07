@@ -97,6 +97,3 @@ buf <- st_buffer(two_county, dist = 3000)
 plot(buf, border = 'red', col = 'purple')
 plot(two_county, add = TRUE, col = 'cyan')
 plot(st_buffer(two_county, dist = -3000), add = TRUE, border = 'blue', col = 'yellow')
-
-
-
