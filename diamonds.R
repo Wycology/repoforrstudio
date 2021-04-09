@@ -86,6 +86,6 @@ diamonds %>%
 diamonds %>% 
   select(cut) %>% 
   table() %>% 
-  barplot(col = cm.colors(5)) 
+  barplot(col = cm.colors(5))
 
 # That is awesome. Good for the day.
