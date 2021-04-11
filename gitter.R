@@ -7,7 +7,7 @@
 # Edited: 11th April 2021     #
 ###############################
 
-# Loading the necessary libraries 
+# Loading the necessary libraries for the project
 
 library(vioplot)
 library(ggplot2)
