@@ -9,9 +9,9 @@
 
 # Loading the necessary libraries for the project
 
-library(vioplot)
-library(ggplot2)
-library(readxl)
+library(vioplot)   # version 0.3.6 
+library(ggplot2)   # version 3.3.3
+library(readxl)    
 library(tidyverse)
 
 # abline in R ----
