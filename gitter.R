@@ -11,8 +11,8 @@
 
 library(vioplot)   # version 0.3.6 
 library(ggplot2)   # version 3.3.3
-library(readxl)    
-library(tidyverse)
+library(readxl)    # version 1.3.1
+library(tidyverse) # version 1.3.1
 
 # abline in R ----
 # Checking all the available data in base R, of course iris is one of them
