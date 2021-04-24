@@ -137,7 +137,8 @@ title("Tool Rentals by Season")
 qplot(testData1$temp,
       xlab = "Temperature",
       geom = "histogram",
-      ylab = "Count")
+      ylab = "Count",
+      bins = 20)
 
 # Boosting the histogram with color and definition
 
