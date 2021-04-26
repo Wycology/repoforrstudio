@@ -170,7 +170,7 @@ barplot(testData1$newrentals, names.arg = testData1$date,
         ylab = "Rentals",
         xlab = "Date") # Somehow better
 
-# Same bar plot with added color layer by season
+# Same bar plot with added pretty color layer by season
 
 barplot(height = testData1$newrentals, 
         names.arg = testData1$date,
