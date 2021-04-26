@@ -62,7 +62,7 @@ abline(Reg, # Passing regression line as the best line of fit.
        v = 1.6, # Drawing vertical abline at x = 1.6
        h = 7.2) # Adding another horizontal line at y = 7.2, just for fun.
 
-# I think the plot is fine depending on the need.
+# I think the plot is fine depending on the need. All needs met
 
 # Boxplots in R ----
 # Adding beautiful violin plots on boxplots in R Studio
