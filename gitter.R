@@ -77,7 +77,7 @@ diamonds_df %>%
   theme(legend.position = "none")                # Does away with legend
 
 # From online to geom_hex plots ----
-# Plotting beautiful hexagons
+# Plotting beautiful hexagonal plots
 # Reading data from url
 chic <- readr::read_csv("https://raw.githubusercontent.com/Z3tt/R-Tutorials/master/ggplot2/chicago-nmmaps.csv")
 
