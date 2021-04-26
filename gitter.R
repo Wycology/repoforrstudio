@@ -182,7 +182,7 @@ barplot(height = testData1$newrentals,
         xlab = "Date") # Super cool
 
 # Practicing with tapply()
-# Let me create a dataframe
+# Let me create a data.frame
 
 tea_yield <- data.frame(Yield = c(20, 27, 25, 21, 25, 28, 29, 35, 36, 33),
                         Temp = c(12.5, 15, 11, 12, 16, 18, 17, 16, 19, 20),
