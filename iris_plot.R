@@ -14,7 +14,7 @@
 library(modelr)
 library(patchwork) # Combining plots using the package
 library(ggforce) 
-library(tidyverse) # Huge library for wrangling and visualizing the data-set
+library(tidyverse) # Huge library for wrangling and visualizing data the data-set
 
 str(iris) # Checking the data structure. We can already see relatively higher 
 # values for sepal length variable compared to the others.
