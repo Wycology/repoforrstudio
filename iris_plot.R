@@ -1,8 +1,8 @@
 ################################
-# Wyclife Agumba Oluoch       #
-# wyclifeoluoch@gmail.com     #
-# https://github.com/Wycology #
-# Task: Playing with iris data#
+# Wyclife Agumba Oluoch        #
+# wyclifeoluoch@gmail.com      #
+# https://github.com/Wycology  #
+# Task: Playing with iris data #
 # Created: 30th Dec 2020      #
 # Edited: 27th April 2021     #
 ###############################
