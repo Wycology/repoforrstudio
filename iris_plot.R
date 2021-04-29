@@ -11,7 +11,7 @@
 
 # Loading necessary packages.
 
-library(modelr)    # for modeling workflow
+library(modelr)    # for modeling work-flow
 library(patchwork) # Combining plots using the package
 library(ggforce)   # combining the plots 
 library(tidyverse) # Huge library for wrangling and visualizing data the data-set
