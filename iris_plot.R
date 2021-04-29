@@ -13,7 +13,7 @@
 
 library(modelr)    # for modeling work-flow
 library(patchwork) # Combining several plots using the package
-library(ggforce)   # working with   
+library(ggforce)   # working with plots 
 library(tidyverse) # Huge library for wrangling and visualizing data the data-set
 
 str(iris) # Checking the data structure. We can already see relatively higher 
