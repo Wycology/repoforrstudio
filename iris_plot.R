@@ -98,7 +98,7 @@ uniform_smooth <- ggplot(data = iris,
 
 uniform_smooth # This is looking cool!
 
-# Avoiding the color parameter in the aes() ensures all species are
+# Avoiding the color parameter in the aes() ensures all species
 # together in the subsequent layers arguments. No grouping by species.
 
 # Patchwork package allows for addition of two plots by their object names.
