@@ -2,7 +2,7 @@
 # Created on 31st March 2021
 # Last modified 16th May 2021
 
-# Creating the dataset
+# Creating the data-set
 
 Male <- data.frame(Gender = rep('Male', 10),
                    abundance = c(35, 40, 28, 38, 30, 35, 45, 20, 7, 17))
