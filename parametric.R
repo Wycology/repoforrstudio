@@ -21,6 +21,7 @@ qqline(bee.data$abundance)
 
 # Normality check using shapiro test
 shapiro.test(bee.data$abundance)
+
 # p>a hence we fail to reject the null hypothesis and conclude that the data 
 # is parametric
 
