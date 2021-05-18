@@ -1,8 +1,8 @@
 # Parametric and Non-parametric t-tests in r
 # Created on 31st March 2021
-# Last modified 17th May 2021
+# Last modified 18th May 2021
 
-# Creating the data-set
+# Creating the data-set from scratch
 
 Male <- data.frame(Gender = rep('Male', 10),
                    abundance = c(35, 40, 28, 38, 30, 35, 45, 20, 7, 17))
