@@ -4,10 +4,10 @@
 
 # Creating the data-set from scratch
 
-Male <- data.frame(Gender = rep('Male', 100),
-                   abundance = sample(x = 7:40, size = 100, replace = TRUE))
+Male <- data.frame(Gender = rep('Male', 10),
+                   abundance = sample(x = 7:40, size = 10, replace = TRUE))
 Female <- data.frame(Gender = rep('Female', 10),
-                   abundance = sample(x = 7:40, size = 100, replace = TRUE))
+                   abundance = sample(x = 7:40, size = 10, replace = TRUE))
 
 bee.data <- rbind(Male, Female)
 
@@ -22,8 +22,8 @@ qqline(bee.data$abundance)
 # Normality check using shapiro test
 shapiro.test(bee.data$abundance)
 
-# p>a hence we fail to reject the null hypothesis and conclude that the data 
-# is parametric
+# p<a hence we reject the null hypothesis and conclude that the data 
+# is no-parametric
 
 # Normality check using Anderson-Darling test
 library(nortest)
