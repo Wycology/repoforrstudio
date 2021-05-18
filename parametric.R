@@ -26,7 +26,7 @@ shapiro.test(bee.data$abundance)
 # is no-parametric
 
 # Normality check using Anderson-Darling test
-library(nortest) # for running pearson test
+library(nortest) # for running pearson test among other functionalities         
 
 ad.test(bee.data$abundance)
 # p>a hence we fail to reject the null hypothesis and conclude that the data 
