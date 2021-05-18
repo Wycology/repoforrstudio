@@ -4,10 +4,10 @@
 
 # Creating the data-set from scratch
 
-Male <- data.frame(Gender = rep('Male', 10),
-                   abundance = c(35, 40, 28, 38, 30, 35, 45, 20, 7, 17))
+Male <- data.frame(Gender = rep('Male', 100),
+                   abundance = sample(x = 7:40, size = 100, replace = TRUE))
 Female <- data.frame(Gender = rep('Female', 10),
-                   abundance = c(60, 20, 37, 19, 15, 4, 28, 18, 3, 35))
+                   abundance = sample(x = 7:40, size = 100, replace = TRUE))
 
 bee.data <- rbind(Male, Female)
 
