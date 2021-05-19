@@ -4,7 +4,7 @@
 # GitHub: https://github.com/Wycology   #
 # Task: Creating functions in R         #
 # Date: 7th Jan 2020                    #
-# Last edited: 18th May 2021            #
+# Last edited: 19th May 2021            #
 #########################################
 
 # R has thousands of in-built functions as well as those inside various third 
