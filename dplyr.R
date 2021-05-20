@@ -9,7 +9,7 @@
 
 library(tidyverse) # For data wrangling in the whole project.
 library(broom)
-library(nycflights13) # This is having
+library(nycflights13) # This is having the 
 library(moderndive)
 # I will use the Titanic data for today's exploration
 
