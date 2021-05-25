@@ -11,7 +11,7 @@ library(tidyverse) # For data wrangling in the whole project.
 library(broom)
 library(nycflights13) # This is having the titanic data-set.
 library(moderndive)  
-# I will use the Titanic data for today's
+# I will use the Titanic data
 
 titanic_df <- data.frame(Titanic) # Titanic data as a data.frame object
 
