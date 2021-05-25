@@ -28,7 +28,7 @@ head(titanic_tibble) # To appreciate the variables within the tibble to wrangle
 number_passengers <- summarise(titanic_tibble, number_passengers = sum(Freq))
 number_passengers # Returns the total passangers to be 2201.
 
-# This can also be made more readable using the pipe (%>%) operator
+# This can also be made more readable using the pipe (%>%)
 
 number_passengers <- titanic_tibble %>%  # Super clear to read and understand what happens.
   summarise(number_passengers = sum(Freq))
