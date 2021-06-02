@@ -10,7 +10,8 @@
 library(tidyverse) # For data wrangling in the whole project.
 library(broom) # For tidying model outputs. Kind of putting output in a tibble
 library(nycflights13) # This is having the titanic data-set.
-library(moderndive)  
+library(moderndive) # Almost the same role as broom of tidying model output 
+
 # I will use the Titanic data
 
 titanic_df <- data.frame(Titanic) # Titanic data as a data.frame object
