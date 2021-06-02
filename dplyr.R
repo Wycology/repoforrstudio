@@ -8,7 +8,7 @@
 #########################################
 
 library(tidyverse) # For data wrangling in the whole project.
-library(broom) # for tidying model outputs
+library(broom) # For tidying model outputs
 library(nycflights13) # This is having the titanic data-set.
 library(moderndive)  
 # I will use the Titanic data
