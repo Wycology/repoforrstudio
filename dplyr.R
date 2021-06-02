@@ -27,7 +27,7 @@ dim(titanic_tibble) # Checking the dimension of the data set; rows and columns.
 head(titanic_tibble) # To appreciate the variables within the tibble to wrangle
 
 number_passengers <- summarise(titanic_tibble, number_passengers = sum(Freq))
-number_passengers # Returns the total passangers to be 2201.
+number_passengers # Returns the total passengers to be 2201.
 
 # This can also be made more readable using the pipe (%>%)
 
@@ -74,7 +74,6 @@ titanic_tibble_mutate <- titanic_tibble %>%
   mutate(Freq_10 = Freq * 10, .before = 1) # Makes it the first variable
 
 head(titanic_tibble_mutate)
-
 
 titanic_tibble_mutate <- titanic_tibble %>% 
   mutate(Freq_10 = Freq * 10, .after = Age) # Puts it after Age variable within
