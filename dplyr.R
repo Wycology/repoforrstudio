@@ -26,8 +26,6 @@ dim(titanic_tibble) # Checking the dimension of the data set; rows and columns.
 # Checking the total number of passengers in the Titanic
 # To do this, I need the sum of the frequency variable
 
-head(titanic_tibble) # To appreciate the variables within the tibble to wrangle
-
 number_passengers <- summarise(titanic_tibble, number_passengers = sum(Freq))
 number_passengers # Returns the total passengers to be 2201.
 
