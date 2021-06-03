@@ -66,7 +66,7 @@ head(titanic_tibble_mutate) # Freq_10 is added to the data set as the last colum
 titanic_tibble_mutate <- titanic_tibble %>% 
   mutate(Freq_10 = Freq * 10, .after = 1) # Makes it the second variable
 
-head(titanic_tibble_mutate)
+head(titanic_tibble_mutate) # Checking the first few rows
 
 titanic_tibble_mutate <- titanic_tibble %>% 
   mutate(Freq_10 = Freq * 10, .before = 1) # Makes it the first variable
