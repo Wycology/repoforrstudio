@@ -43,8 +43,7 @@ number_passengers_survived <- titanic_tibble %>% # Picking the data data set
 number_passengers_survived # Returning the sum of passengers by survival which is 
 # the grouping variable.
 
-
-# Using the select verb to have only relevant variables for my need
+# Using the select verb to have only relevant variables
 
 data_sex_age_freq <- titanic_tibble %>% # Takes the Titanic data set
   select(Sex, Age, Freq) # Picking the three columns of my interest only.
