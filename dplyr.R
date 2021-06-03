@@ -52,7 +52,7 @@ data_sex_age_freq <- titanic_tibble %>% # Takes the Titanic data set
 # This is a verb which is used to add variables to the data.frame which are 
 # usually functions of already existing dataframes. I do this my creating data2.
 # This is what I applied on my research to get tree heights from inclinometer
-# values.
+# read values.
 
 titanic_tibble_mutate <- titanic_tibble %>% 
   mutate(Freq_10 = Freq * 10) # Creates new variable called Freq_10 which is 
