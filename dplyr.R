@@ -39,7 +39,6 @@ number_passengers <- titanic_tibble %>%  # Super clear to read and understand wh
 number_passengers_survived <- titanic_tibble %>% # Picking the data data set
   group_by(Survived) %>%  # Grouping the data by titanic ship Survived variable
   summarise(Survival = sum(Freq)) # Creating sum of based on whether 
-# they survived or not.
 
 number_passengers_survived # Returning the sum of passengers by survival which is 
 # the grouping variable.
