@@ -19,6 +19,7 @@ titanic_df <- data.frame(Titanic) # Titanic data as a data.frame object
 # Once it is a data.frame, I can set it as a tibble which is my preferred structure
 titanic_tibble <- tibble(titanic_df) # Here is the tibble form of the titanic_df
 
+titanic_tibble <- tibble(data.frame(Titanic)) # In a single line of code
 
 dim(titanic_tibble) # Checking the dimension of the data set; rows and columns.
 
