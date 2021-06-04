@@ -21,7 +21,7 @@ titanic_tibble <- tibble(titanic_df) # Tibble form of the titanic_df
 
 titanic_tibble <- tibble(data.frame(Titanic)) # In a single line of code
 
-dim(titanic_tibble) # Checking the dimension of the data set; rows and columns.
+dim(titanic_tibble) # Dimension of the data set; rows and columns.
 
 # Checking the total number of passengers in the Titanic
 # To do this, I need the sum of the frequency variable
