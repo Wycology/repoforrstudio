@@ -47,19 +47,20 @@ number_survived # Returning the sum of passengers by survival which is
 data_sex_age_freq <- titanic_tibble |> # Takes the Titanic data set
   select(Sex, Age, Freq) # Picking the three columns of my interest only.
 
-# The next dplyr verb is mutate
+# Using the mutate verb----
+
 # This is a verb which is used to add variables to the data.frame which are 
-# usually functions of already existing dataframes. I do this my creating data2.
+# usually functions of already existing data.frames. I do this by creating data2.
 # This is what I applied on my research to get tree heights from inclinometer
 # read values.
 
 titanic_tibble_mutate <- titanic_tibble |> 
   mutate(Freq_10 = Freq * 10) # Creates new variable called Freq_10 which is 
-# former Freq in data multiplied by 10.
+# former Freq in the titanic_tibble multiplied by 10.
 
-head(titanic_tibble_mutate) # Freq_10 is added to the data set as the last column.
+head(titanic_tibble_mutate) # Freq_10 is added to the data-set as the last column.
 
-# If I want the just created column to fit as first in the dataframe, then I can
+# If I want the just created column to fit as first in the tibble, then I can
 # add the .after or .before argument in the mutate function:
 
 titanic_tibble_mutate <- titanic_tibble |> 
@@ -78,7 +79,6 @@ titanic_tibble_mutate <- titanic_tibble |>
 head(titanic_tibble_mutate)
 
 # Without mutation, columns can be rearranged using relocate().
-head(titanic_tibble_mutate)
 
 titanic_tibble_mutate <- titanic_tibble_mutate |> 
   relocate(Age, .before = Sex) # Cool, that worked fine. 
@@ -92,9 +92,9 @@ titanic_tibble_mutate <- titanic_tibble_mutate |>
 
 head(titanic_tibble_mutate)
 
-# Filter verb is the next one to have a close look at.
+# Filter verb----
 
-# This is returning observations in the dataset which are meeting specific 
+# This is returning observations in the data.set which are meeting specific 
 # conditions in one or more columns.
 # For example if we need sub-data having only female then we filter Sex by the
 # word Female.
@@ -104,7 +104,7 @@ titanic_female <- titanic_tibble |>   # Picks the whole data set
 
 head(titanic_female) # Returns the filtered data set 
 
-# In case I need only adult females who survived in 1st class:
+# In case I need only child females who survived in 1st class:
 
 titanic_tibble |> 
   filter(Age == 'Child' & Sex == 'Female' & Survived == 'Yes' & Class == '1st')
@@ -112,7 +112,7 @@ titanic_tibble |>
 titanic_tibble |> 
   filter(Age == 'Child' & Sex == 'Male' & Survived == 'Yes' & Class == '1st')
 
-# Arrange is the next verb we are having a close look at
+# Using Arrange verb----
 
 titanic_tibble <- data.frame(Titanic) # Reloading the data. I noticed the grouped data issue
 
@@ -176,7 +176,7 @@ flights |>
 
 # Running a model and returning a tidy output
 
-data("iris") # This is loading the dataset that intend to model
+data("iris") # This is loading the data.set that intend to model
 
 score_model <- lm(Sepal.Length ~ Petal.Width, data = iris) # The model
 
