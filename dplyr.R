@@ -183,7 +183,7 @@ score_model <- lm(Sepal.Length ~ Petal.Width, data = iris) # The model
 score_model |> # This is spitting the normal output, good but not tidy.
   summary()
 
-# Now we will make the data more tidy using tidy function from broom
+# Now we will make the summary more tidy using tidy function from broom
 
 tidy(score_model) # This is tidying up the data. Comes from broom package.
 
