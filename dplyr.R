@@ -167,7 +167,8 @@ flights |>
 flights |> 
   summarise(delay_cor = cor(dep_delay, arr_delay, use = 'complete.obs'))
 
-# The same can also be achieved by
+# The same can also be achieved by omiting the rows with na values
+
 flights |> 
   select(dep_delay, arr_delay) |>
   na.omit() |> 
