@@ -141,8 +141,7 @@ titanic_tibble |>
 
 # Cool, so that was a simple one for today, Regards :)
 
-
-# Should I want to get height of trees given inclinometer up (angle of elevation),
+# Should I want to get heights of trees given inclinometer up (angle of elevation),
 # inclinometer down (angle of depression) and distance to the base of the tree
 # from the point of observation.
 
