@@ -60,7 +60,7 @@ titanic_tibble_mutate <- titanic_tibble |>
 
 head(titanic_tibble_mutate) # Freq_10 is added to the data-set as the last column.
 
-# If I want the just created column to fit as first in the tibble, then I can
+# If I want the created column to fit as first in the tibble, then I can
 # add the .after or .before argument in the mutate function:
 
 titanic_tibble_mutate <- titanic_tibble |> 
