@@ -143,7 +143,7 @@ titanic_tibble |>
 
 # Should I want to get heights of trees given inclinometer up (angle of elevation),
 # inclinometer down (angle of depression) and distance to the base of the tree
-# from the point of observation.
+# from the point of observation. Kind of my observations in Turkana
 
 tree_height <- data.frame(up = c(13, 14, 15, 8, 15), # Random inclinometer up
                           down = c(5, 7, 7, 4, 6), # Random inclinometer down
