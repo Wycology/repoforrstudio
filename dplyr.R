@@ -247,3 +247,4 @@ iris |>
 iris |> 
   group_by(Species) |> 
   summarise(`sum(Sepal.Length)` = sprintf('%0.4f', sum(Sepal.Length)))
+# Done for the day  
