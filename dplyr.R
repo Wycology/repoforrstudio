@@ -71,7 +71,7 @@ head(titanic_tibble_mutate) # Checking the first few rows
 titanic_tibble_mutate <- titanic_tibble |> 
   mutate(Freq_10 = Freq * 10, .before = 1) # Makes it the first variable
 
-head(titanic_tibble_mutate)
+head(titanic_tibble_mutate) # First six rows
 
 titanic_tibble_mutate <- titanic_tibble |> 
   mutate(Freq_10 = Freq * 10, .after = Age) # Puts it after Age variable within
