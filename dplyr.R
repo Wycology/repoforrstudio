@@ -150,7 +150,7 @@ tree_height <- data.frame(up = c(13, 14, 15, 8, 15), # Random inclinometer up
                           down = c(5, 7, 7, 4, 6), # Random inclinometer down
                           dist = rep(20,5)) # Constant distance to tree base
 
-tree_height_value <- tree_height |> # Usind dataframe above
+tree_height_value <- tree_height |> # Using the data.frame above
   mutate(height = 20*(tan(up*pi/180) + tan(down*pi/180))) # Creating new variable
 
 head(tree_height_value) # Confirming the output values are as desired. This has 
