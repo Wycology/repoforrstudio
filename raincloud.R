@@ -10,4 +10,5 @@ ggplot(iris, aes(Species, Sepal.Length)) +
   ggdist::stat_dots(side = 'left', 
                     justification = 1.1, 
                     binwidth = 0.05, 
-                    aes(col = Species)) + coord_cartesian(xlim = c(1., NA))
+                    aes(col = Species)) + 
+  coord_cartesian(xlim = c(1., NA))
