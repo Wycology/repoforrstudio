@@ -1,4 +1,4 @@
-# Revealing better information 
+# Revealing better information about data 
 ggplot(iris, aes(Species, Sepal.Length)) + 
   ggdist::stat_halfeye(adjust = .5, 
                        width = .6, 
