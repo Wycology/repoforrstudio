@@ -1,6 +1,6 @@
 # Revealing better information about data which may be hidden by boxplots
-library(ggplot2)
-library(ggdist)
+library(ggplot2) # For plotting 
+library(ggdist)  # For adding the stat_halfeye and stat_dots
 
 ggplot(iris, aes(Species, Sepal.Length)) + 
   stat_halfeye(adjust = .5, 
