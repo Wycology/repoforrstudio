@@ -22,4 +22,4 @@ iris |>
     binwidth = 0.05,
     aes(col = Species)
   ) +
-  coord_cartesian(xlim = c(1., NA))
+  coord_cartesian(xlim = c(1., NA))    # Adjusting the x-axis limits
