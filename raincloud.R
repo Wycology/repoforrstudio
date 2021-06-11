@@ -1,6 +1,6 @@
 # Revealing better information about data which may be hidden by boxplots
 library(ggplot2) # For plotting 
-library(ggdist)  # For adding the stat_halfeye and stat_dots
+library(ggdist)  # For adding the stat_halfeye and stat_dots functions
 
 
 iris |> 
