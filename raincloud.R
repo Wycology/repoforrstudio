@@ -14,7 +14,7 @@ iris |>
     point_color = NA,
     aes(fill = Species)
   ) +
-  geom_boxplot(width = .12,
+  geom_boxplot(width = .12,             # Adding the boxplot too
                outlier.shape = NA) +
   stat_dots(
     side = 'left',
