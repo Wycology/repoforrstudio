@@ -2,7 +2,9 @@
 library(ggplot2) # For plotting 
 library(ggdist)  # For adding the stat_halfeye and stat_dots
 
-ggplot(iris, aes(Species, Sepal.Length)) +
+
+iris |> 
+ggplot(aes(Species, Sepal.Length)) +
   stat_halfeye(
     adjust = .5,
     width = .6,
