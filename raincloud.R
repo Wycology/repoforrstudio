@@ -5,7 +5,7 @@ library(ggdist)  # For adding the stat_halfeye and stat_dots functions
 
 iris |> 
   select(Species, Sepal.Length) |>       # Picking the two columns
-  ggplot(aes(Species, Sepal.Length)) +
+  ggplot(aes(Species, Sepal.Length)) +   # Throwing them to aesthetics
   stat_halfeye(
     adjust = .5,
     width = .6,
