@@ -28,3 +28,4 @@ kmeans_layer # Output is raster layer with four groups/clusters
 plot(kmeans_layer) # Visualizing the output as a plot
 
 writeRaster(kmeans_layer, 'output_clusters.tif', overwrite = TRUE) # Write raster to working dir.
+
