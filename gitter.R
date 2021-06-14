@@ -7,7 +7,7 @@
 # Edited: 14th June 2021      #
 ###############################
 
-# Loading the necessary libraries for the project
+# Loading the libraries for the project
 
 library(vioplot)   # version 0.3.6 
 library(ggplot2)   # version 3.3.3
@@ -23,13 +23,16 @@ data() # To view a list of available data-sets in the base R.
 
 data("iris") # This is one of the data-sets which is available and ready for use.
 
-# Let me start by running regression line on the data
+# Let's start by running regression line on the data
 
 Reg <-  lm(Sepal.Length ~ Petal.Width, data = iris) # simple linear regression.
 
 summary(Reg) # Looking at the regression results.
+
 coeff <- coefficients(Reg)
+
 Eq <- paste0('y = ', round(coeff[2], 2), '*x + ', round(coeff[1], 2)) 
+
 Eq2 <- paste0('y = ', round(coeff[1], 2), ' + ', round(coeff[2], 2), '*x')
 # For every increase in width of petals of iris species, there is a 
 # significant increase in sepal length.
