@@ -1,6 +1,6 @@
 # Parametric and Non-parametric t-tests in r
 # Created on 31st March 2021
-# Last modified 18th May 2021
+# Last modified th May 2021
 
 # Creating the data-set from scratch
 
