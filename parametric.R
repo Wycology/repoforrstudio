@@ -9,9 +9,9 @@ Male <- data.frame(Gender = rep('Male', 10),
 Female <- data.frame(Gender = rep('Female', 10),
                    abundance = sample(x = 7:40, size = 10, replace = TRUE))
 
-bee.data <- rbind(Male, Female) # combining the two datasets
+bee.data <- rbind(Male, Female) # combining the two data-sets
 
-head(bee.data)
+head(bee.data) # Checking the head
 tail(bee.data)
 
 # Normality check
