@@ -29,7 +29,7 @@ Reg <-  lm(Sepal.Length ~ Petal.Width, data = iris) # simple linear regression.
 
 summary(Reg) # The regression results.
 
-coeff <- coefficients(Reg) # Saving the coefficients
+coeff <- coefficients(Reg) # Saving the coefficients to an object
 
 Eq <- paste0('y = ', round(coeff[2], 2), '*x + ', round(coeff[1], 2)) 
 
