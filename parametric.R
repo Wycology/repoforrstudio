@@ -56,3 +56,8 @@ wilcox.test(abundance ~ Gender,
        var.equal = T)
 # This is normally used when the data is non parametric, i.e. p<a in case of 
 # shapiro.test or ad.test results.
+
+mf_shadow(mtq)
+mapview(mf_map(mtq, type = 'choro', var = 'CHOM', add = TRUE))
+
+mapview(mf_shadow(mtq)) + mapview(mf_map(mtq))
