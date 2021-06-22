@@ -4,7 +4,7 @@
 # https://github.com/Wycology #
 # Task: Playing with some data#
 # Created: 30th Nov 2020      #
-# Edited: 14th June 2021      #
+# Edited:  June 2021      #
 ###############################
 
 # Loading the libraries for the project
