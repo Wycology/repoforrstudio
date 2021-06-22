@@ -27,7 +27,7 @@ data("iris") # This is one of the data-sets which is available and ready for use
 
 Reg <-  lm(Sepal.Length ~ Petal.Width, data = iris) # simple linear regression.
 
-summary(Reg) # Looking at the regression results.
+summary(Reg) # The regression results.
 
 coeff <- coefficients(Reg)
 
