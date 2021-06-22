@@ -15,7 +15,7 @@ library(readxl)    # version 1.3.1
 library(tidyverse) # version 1.3.1
 
 # abline in R ----
-# Checking all the available data in base R, of course iris is one of them
+# Check all the available data in base R, of course iris is one of them
 
 data() # To view a list of available data-sets in the base R.
 
