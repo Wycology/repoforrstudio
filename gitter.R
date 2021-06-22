@@ -10,7 +10,7 @@
 # Loading the libraries for the project
 
 library(vioplot)   # version 0.3.6 
-library(ggplot2)   # version 3.3.3
+library(ggplot2)   # version 3.3.4
 library(readxl)    # version 1.3.1
 library(tidyverse) # version 1.3.1
 
