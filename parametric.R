@@ -63,3 +63,4 @@ mtq <- mf_get_mtq()
 mf_shadow(mtq)
 mapview(mf_map(mtq, type = 'choro', var = 'CHOM', add = TRUE))
 mapview(mf_shadow(mtq)) + mapview(mf_map(mtq))
+#Done
