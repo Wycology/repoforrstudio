@@ -1,3 +1,5 @@
+# 29th June 2021
+
 library(dismo) # for the getData function
 library(raster) # for crop, mask and stack functions
 library(ecbtools) # for raster.kmeans function
