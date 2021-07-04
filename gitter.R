@@ -42,9 +42,10 @@ plot(Sepal.Length ~ Petal.Width,
      main = 'Simple plot \n Yeah!',
      xlab = 'Petal width (cm)',
      ylab = 'Sepal length (cm)',
-     xlim = range(0:2.5),
+     xlim = range(0:3),
      data = iris
-     )# Selecting my desired point character for plotting.
+     )
+
 abline(Reg, col = "red", lty = 3, lwd = 3)
 abline(v = 1.3, col = 'blue', lty = 4, lwd = 5)
 abline(h = 6.5, col = 'purple', lty = 4, lwd = 5)
