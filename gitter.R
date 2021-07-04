@@ -31,6 +31,7 @@ Eq <- paste0('y = ', round(coeff[2], 2), '*x + ', round(coeff[1], 2))
 
 Eq2 <- paste0('y = ', round(coeff[1], 2), ' + ', round(coeff[2], 2), '*x')
 
+# Plotting the scatter-----
 plot(iris$Sepal.Length ~ iris$Petal.Width, # Simple plotting procedure
      col = "yellow", # Adding my favorite color to the plot
      pch = 23,
