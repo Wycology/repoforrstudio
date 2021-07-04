@@ -53,9 +53,7 @@ text(0.3, 6.6, "y = 6.5", cex = 1.5)
 text(0.75, 5.6, paste0(Eq), cex = 1.5, srt = 20)
 text(1.42, 7.5, 'x = 1.3', cex = 1.5)
 text(1.3, 6.5, '.', cex = 15)
-text(0.6, 7.8, "Wondering how this kind of plot looks!", cex = 1.2)
-
-# Some relationship can be seen between the two variables on the plot
+text(0.6, 7.8, "Looks cool!", cex = 1.2)
 
 abline(Reg, # Passing regression line as the best line of fit.
        col = "blue", # Assigning blue color to the abline.
