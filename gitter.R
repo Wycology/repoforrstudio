@@ -208,4 +208,3 @@ stemdata <-  tea_yield %>%
 str(stemdata) # Checking for the structure of the stem data
 
 stem(iris$Sepal.Width, scale = 5) # Looks cool
-
