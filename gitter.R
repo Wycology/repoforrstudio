@@ -18,7 +18,7 @@ library(tidyverse) # version 1.3.1
 
 data() # To view a list of available data-sets in the base R.
 
-# Loading the iris data which comes with the base R.
+# Loading the iris data
 
 data("iris") # This is one of the data-sets which is available and ready for use.
 
