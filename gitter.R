@@ -10,12 +10,11 @@
 # Loading the libraries for the project
 
 library(vioplot)   # version 0.3.6 
-library(ggplot2)   # version 3.3.4
+library(ggplot2)   # version 3.3.5
 library(readxl)    # version 1.3.1
 library(tidyverse) # version 1.3.1
 
 # abline in R ----
-# Check all the available data in base R, of course iris is one of them
 
 data() # To view a list of available data-sets in the base R.
 
