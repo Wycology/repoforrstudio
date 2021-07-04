@@ -32,15 +32,18 @@ Eq <- paste0('y = ', round(coeff[2], 2), '*x + ', round(coeff[1], 2))
 Eq2 <- paste0('y = ', round(coeff[1], 2), ' + ', round(coeff[2], 2), '*x')
 
 # Plotting the scatter-----
-plot(iris$Sepal.Length ~ iris$Petal.Width, # Simple plotting procedure
-     col = "yellow", # Adding my favorite color to the plot
+
+plot(Sepal.Length ~ Petal.Width, 
+     col = "magenta",
      pch = 23,
+     cex = 2,
      bg = 'purple',
      bty = 'n',
      main = 'Simple plot \n Yeah!',
      xlab = 'Petal width (cm)',
      ylab = 'Sepal length (cm)',
-     xlim = range(0:2.5)
+     xlim = range(0:2.5),
+     data = iris
      )# Selecting my desired point character for plotting.
 abline(Reg, col = "red", lty = 3, lwd = 3)
 abline(v = 1.3, col = 'blue', lty = 4, lwd = 5)
