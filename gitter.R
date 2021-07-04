@@ -162,7 +162,7 @@ qplot(testData1$temp,
 
 # Try a bar plot. I must admit that I rarely draw bar plots
 
-barplot(testData1$newrentals) # This is horrible
+barplot(testData1$newrentals) # This is horrible ):
 
 barplot(testData1$newrentals, names.arg = testData1$date,
         col = "red", border = NA, 
