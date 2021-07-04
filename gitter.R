@@ -16,11 +16,9 @@ library(tidyverse) # version 1.3.1
 
 # abline in R ----
 
-data() # To view a list of available data-sets in the base R.
+data() # To view data-sets in R.
 
-# Loading the iris data
-
-data("iris") # This is one of the data-sets which is available and ready for use.
+data("iris") # Loading the iris data
 
 # Let's start by running regression line on the data
 
