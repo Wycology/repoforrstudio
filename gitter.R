@@ -7,7 +7,7 @@
 # Edited: 4th July 2021       #
 ###############################
 
-# Loading the libraries for the projec
+# Loading the libraries for the proje
 
 library(vioplot)   # version 0.3.6 
 library(ggplot2)   # version 3.3.5
