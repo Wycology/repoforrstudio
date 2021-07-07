@@ -16,7 +16,7 @@ library(tidyverse) # version 1.3.1
 
 # abline in R ----
 
-data() # To view data-sets in R.
+data() # To iew data-sets in R.
 
 data("iris") # Loading the iris data
 
