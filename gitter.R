@@ -7,7 +7,7 @@
 # Edited: 7th July 2021       #
 ###############################
 
-# Loading t libraries
+# Loading tlibraries
 
 library(vioplot)   # version 0.3.6 
 library(ggplot2)   # version 3.3.5
