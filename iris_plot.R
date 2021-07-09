@@ -4,7 +4,7 @@
 # https://github.com/Wycology  #
 # Task: Playing with iris data #
 # Created: 30th Dec 2020       #
-# Edited: 9r July 2021        #
+# Edited: 9 July 2021        #
 ################################
 
 # IRIS PLOT ----
