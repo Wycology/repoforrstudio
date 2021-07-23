@@ -150,56 +150,56 @@ tree_height <- base::data.frame(up = base::c(13, 14, 15, 8, 15), # Random inclin
                           dist = base::rep(20,5)) # Constant distance to tree base
 
 tree_height_value <- tree_height |> # Using the data.frame above
-  dplyr::mutate(height = 20*(tan(up*pi/180) + tan(down*pi/180))) # Creating new variable
+  dplyr::mutate(height = 20*(base::tan(up*pi/180) + base::tan(down*pi/180))) # Creating new variable
 
-head(tree_height_value) # Confirming the output values are as desired. This has 
+utils::head(tree_height_value) # Confirming the output values are as desired. This has 
 # made my work easier to accomplish.
 
 # Correlation within dplyr----
 
-data(flights)
+utils::data(flights)
 
 flights |> 
-  summarise(delay_cor = cor(dep_delay, arr_delay)) # This is returning NA.
+  dplyr::summarise(delay_cor = stats::cor(dep_delay, arr_delay)) # This is returning NA.
 
 # To resolve this problem, we need to set the function to use only complete cases
 
 flights |> 
-  summarise(delay_cor = cor(dep_delay, arr_delay, use = 'complete.obs'))
+  dplyr::summarise(delay_cor = stats::cor(dep_delay, arr_delay, use = 'complete.obs'))
 
 # The same can also be achieved by omiting the rows with na values
 
 flights |> 
-  select(dep_delay, arr_delay) |>
-  na.omit() |> 
-  summarise(delay_cor = cor(dep_delay, arr_delay))
+  dplyr::select(dep_delay, arr_delay) |>
+  stats::na.omit() |> 
+  dplyr::summarise(delay_cor = stats::cor(dep_delay, arr_delay))
 
 # Running a model and returning a tidy output
 
-data("iris") # This is loading the data.set that intend to model
+utils::data("iris") # This is loading the data.set that intend to model
 
-score_model <- lm(Sepal.Length ~ Petal.Width, data = iris) # The model
+score_model <- stats::lm(Sepal.Length ~ Petal.Width, data = iris) # The model
 
 score_model |> # This is spitting the normal output, good but not tidy.
-  summary()
+  base::summary()
 
 # Using tidy() from broom on model outputs
 
 # Now we will make the summary more tidy using tidy function from broom
 
-tidy(score_model) # This is tidying up the data. Comes from broom package.
+broom::tidy(score_model) # This is tidying up the data. Comes from broom package.
 
 # This is now tidier. Pretty cool, let me try plotting it out.
 
-tidy(score_model) |> # Generating the model output tibble
-  ggplot() + # Calling for the ggplot
-  geom_col(aes(x = term, y = statistic, fill = term)) # Bar plot using the 
+broom::tidy(score_model) |> # Generating the model output tibble
+  ggplot2::ggplot() + # Calling for the ggplot
+  ggplot2::geom_col(ggplot2::aes(x = term, y = statistic, fill = term)) # Bar plot using the 
 # statistic variable.
 
 # How far can we make this simple
 
 iris |> # Pick the iris dataframe
-  select(Sepal.Length, Petal.Width) |> # Select the two variables to regress
+  dplyr::select(Sepal.Length, Petal.Width) |> # Select the two variables to regress
   lm() |> # Apply the lm function to the selected variables
   tidy() |> # Make the output tidy using the tidy() function from broom
   ggplot() + # Invoke ggplot
