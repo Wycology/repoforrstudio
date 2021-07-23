@@ -200,37 +200,37 @@ broom::tidy(score_model) |> # Generating the model output tibble
 
 iris |> # Pick the iris dataframe
   dplyr::select(Sepal.Length, Petal.Width) |> # Select the two variables to regress
-  lm() |> # Apply the lm function to the selected variables
-  tidy() |> # Make the output tidy using the tidy() function from broom
-  ggplot() + # Invoke ggplot
-  geom_col(aes(x = term, y = std.error, fill = term)) # Give geometry & aesthetics
+  stats::lm() |> # Apply the lm function to the selected variables
+  broom::tidy() |> # Make the output tidy using the tidy() function from broom
+  ggplot2::ggplot() + # Invoke ggplot
+  ggplot2::geom_col(ggplot2::aes(x = term, y = std.error, fill = term)) # Give geometry & aesthetics
 
-glance(score_model) # This is also a tidy one to think about.
+broom::glance(score_model) # This is also a tidy one to think about.
 
-get_regression_summaries(score_model) # The function is from moderndive package
+moderndive::get_regression_summaries(score_model) # The function is from moderndive package
 
-augment(score_model) # This is revealing a lot of information including fitted
+broom::augment(score_model) # This is revealing a lot of information including fitted
 
-get_regression_points(score_model) # This is returning regression points and 
+moderndive::get_regression_points(score_model) # This is returning regression points and 
 # residual
 
-anova_iris <- aov(Sepal.Length ~ Petal.Width, data = iris)
-tidy(anova_iris)
+anova_iris <- stats::aov(Sepal.Length ~ Petal.Width, data = iris)
+broom::tidy(anova_iris)
 
 # Here comes the sum by group in dplyr----
 
-data(iris) # Loading the iris data
-head(iris) # Checking the first six observation in the iris data
+utils::data(iris) # Loading the iris data
+utils::head(iris) # Checking the first six observation in the iris data
 
-aggregate(x = c(iris$Sepal.Length, iris$Sepal.Width), # Picks the column to be summarized
-          by = list(iris$Species), # Picks the summarizing group
+stats::aggregate(x = base::c(iris$Sepal.Length), # Picks the column to be summarized
+          by = base::list(iris$Species), # Picks the summarizing group
           FUN = sum)  # Gets the function to use in the summary
 
 # I want to attempt this using the other approach where I set group_by
 
 iris |> # Picking the iris data.
-  group_by(Species) |> # Grouping the data by the Species variable.
-  summarise(x = sum(Sepal.Length)) # Getting a summary of the expected output.
+  dplyr::group_by(Species) |> # Grouping the data by the Species variable.
+  dplyr::summarise(x = base::sum(Sepal.Length)) # Getting a summary of the expected output.
 
 # One thing to note is that the earlier one gave result to the first decimal 
 # value while the second gave only the whole number part.
@@ -238,8 +238,8 @@ iris |> # Picking the iris data.
 # We can force the dplyr to show the hidden decimal by
 
 iris |> 
-  group_by(Species) |> 
-  summarise(`sum(Sepal.Length)` = sprintf('%0.1f', sum(Sepal.Length)))
+  dplyr::group_by(Species) |> 
+  dplyr::summarise(`sum(Sepal.Length)` = base::sprintf('%0.1f', base::sum(Sepal.Length)))
 # Great, that has worked.
 # We can alter the number of decimal places by varying the value 1 next to f.
 # For example, we can change it to 4.
