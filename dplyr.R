@@ -19,25 +19,25 @@ titanic_df <- base::data.frame(Titanic) # Titanic data as a data.frame object
 # Once it is a data.frame, I can set it as a tibble which is my preferred structure
 titanic_tibble <- tibble::tibble(titanic_df) # Tibble form of the titanic_df
 
-titanic_tibble <- tibble::tibble(data.frame(Titanic)) # In a single line of code
+titanic_tibble <- tibble::tibble(base::data.frame(Titanic)) # In a single line of code
 
 base::dim(titanic_tibble) # Dimension of the data set; rows and columns.
 
 # Checking the total number of passengers in the Titanic
 
-number_passengers <- summarise(titanic_tibble, number_passengers = sum(Freq))
+number_passengers <- dplyr::summarise(titanic_tibble, number_passengers = base::sum(Freq))
 number_passengers # Number of passengers.
 
 # This can also be made more readable using the pipe ( |> )
 
 number_passengers <- titanic_tibble |>  # Super clear to read and understand what happens.
-  summarise(number_passengers = sum(Freq))
+  dplyr::summarise(number_passengers = base::sum(Freq))
 
 # Working with the group_by verb to further get summary of the data
 
 number_survived <- titanic_tibble  |>  # Picking the data data set
-  group_by(Survived) |>  # Grouping the data by titanic ship Survived variable
-  summarise(Survival = sum(Freq)) # Creating sum of based on whether 
+  dplyr::group_by(Survived) |>  # Grouping the data by titanic ship Survived variable
+  dplyr::summarise(Survival = base::sum(Freq)) # Creating sum of based on whether 
 
 number_survived # Returning the sum of passengers by survival which is 
 # the grouping variable.
@@ -45,7 +45,7 @@ number_survived # Returning the sum of passengers by survival which is
 # Using the select verb----
 
 data_sex_age_freq <- titanic_tibble |> # Takes the Titanic data set
-  select(Sex, Age, Freq) # Picking the three columns of my interest only.
+  dplyr::select(Sex, Age, Freq) # Picking the three columns of my interest only.
 
 # Using the mutate verb----
 
@@ -55,40 +55,40 @@ data_sex_age_freq <- titanic_tibble |> # Takes the Titanic data set
 # read values.
 
 titanic_tibble_mutate <- titanic_tibble |> 
-  mutate(Freq_10 = Freq * 10) # Creates new variable called Freq_10 which is 
+  dplyr::mutate(Freq_10 = Freq * 10) # Creates new variable called Freq_10 which is 
 # former Freq in the titanic_tibble multiplied by 10.
 
-head(titanic_tibble_mutate) # Freq_10 is added to the data-set as the last column.
+utils::head(titanic_tibble_mutate) # Freq_10 is added to the data-set as the last column.
 
 # If I want the created column to fit as first in the tibble, then I can
 # add the .after or .before argument in the mutate function:
 
 titanic_tibble_mutate <- titanic_tibble |> 
-  mutate(Freq_10 = Freq * 10, .after = 1) # Makes it the second variable
+  dplyr::mutate(Freq_10 = Freq * 10, .after = 1) # Makes it the second variable
 
-head(titanic_tibble_mutate) # Checking the first few rows
-
-titanic_tibble_mutate <- titanic_tibble |> 
-  mutate(Freq_10 = Freq * 10, .before = 1) # Makes it the first variable
-
-head(titanic_tibble_mutate) # First six rows
+utils::head(titanic_tibble_mutate) # Checking the first few rows
 
 titanic_tibble_mutate <- titanic_tibble |> 
-  mutate(Freq_10 = Freq * 10, .after = Age) # Puts it after Age variable within
+  dplyr::mutate(Freq_10 = Freq * 10, .before = 1) # Makes it the first variable
+
+utils::head(titanic_tibble_mutate) # First six rows
+
+titanic_tibble_mutate <- titanic_tibble |> 
+  dplyr::mutate(Freq_10 = Freq * 10, .after = Age) # Puts it after Age variable within
 # the dataframe.
-head(titanic_tibble_mutate)
+utils::head(titanic_tibble_mutate)
 
 # Without mutation, columns can be rearranged using relocate().
 
 titanic_tibble_mutate <- titanic_tibble_mutate |> 
-  relocate(Age, .before = Sex) # Cool, that worked fine. 
+  dplyr::relocate(Age, .before = Sex) # Cool, that worked fine. 
 
-head(titanic_tibble_mutate)
+utils::head(titanic_tibble_mutate)
 
 # Returning back Age to its original place
 
 titanic_tibble_mutate <- titanic_tibble_mutate |> 
-  relocate(Age, .after = Sex)
+  dplyr::relocate(Age, .after = Sex)
 
 head(titanic_tibble_mutate)
 
