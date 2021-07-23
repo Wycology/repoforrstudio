@@ -245,6 +245,6 @@ iris |>
 # For example, we can change it to 4.
 
 iris |> 
-  group_by(Species) |> 
-  summarise(`sum(Sepal.Length)` = sprintf('%0.4f', sum(Sepal.Length)))
+  dplyr::group_by(Species) |> 
+  dplyr::summarise(`sum(Sepal.Length)` = base::sprintf('%0.4f', base::sum(Sepal.Length)))
 # Done for the day  
