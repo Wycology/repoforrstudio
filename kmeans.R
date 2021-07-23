@@ -9,17 +9,17 @@ library(ecbtools) # for raster.kmeans function
 
 # To install ecbtools, run this: remotes::install_github("ozjimbob/ecbtools")
 
-my_rasters <- getData('worldclim', res = 10, var = 'tmin') # worldclim rasters
-my_polygon <- getData('GADM', country = 'KEN', level = 0) # shapefile of my area
+my_rasters <- raster::getData('worldclim', res = 10, var = 'tmin') # worldclim rasters
+my_polygon <- raster::getData('GADM', country = 'KEN', level = 0) # shapefile of my area
 
-cropped_rasters <- crop(my_rasters, my_polygon) # cropped rasters
-masked_rasters <- mask(cropped_rasters, my_polygon) # masked rasters
+cropped_rasters <- raster::crop(my_rasters, my_polygon) # cropped rasters
+masked_rasters <- raster::mask(cropped_rasters, my_polygon) # masked rasters
 
-plot(masked_rasters[[2]]) #Visual of one masked layer 
+raster::plot(masked_rasters[[2]]) #Visual of one masked layer 
 
-stacked_rasters <- stack(masked_rasters) # Creating rasterStack from rasterBrick
+stacked_rasters <- raster::stack(masked_rasters) # Creating rasterStack from rasterBrick
 
-kmeans_layer <- raster.kmeans(x = stacked_rasters, # The stack
+kmeans_layer <- ecbtools::raster.kmeans(x = stacked_rasters, # The stack
                              k = 4,# Number of clusters
                              nstart = 3, # random sets 
                              geo = TRUE, # weighting by location (x,y coords)
@@ -27,7 +27,7 @@ kmeans_layer <- raster.kmeans(x = stacked_rasters, # The stack
 
 kmeans_layer # Output is raster layer with four groups/clusters 
 
-plot(kmeans_layer) # Visualizing the output as a plot
+raster::plot(kmeans_layer) # Visualizing the output as a plot
 
-writeRaster(kmeans_layer, 'output_clusters.tif', overwrite = TRUE) # Write raster to working dir.
+raster::writeRaster(kmeans_layer, 'output_clusters.tif', overwrite = TRUE) # Write raster to working dir.
 
