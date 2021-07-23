@@ -14,14 +14,14 @@ library(moderndive) # Almost the same role as broom of tidying model output
 
 # I will use the Titanic data.set which is a of class table
 
-titanic_df <- data.frame(Titanic) # Titanic data as a data.frame object
+titanic_df <- base::data.frame(Titanic) # Titanic data as a data.frame object
 
 # Once it is a data.frame, I can set it as a tibble which is my preferred structure
-titanic_tibble <- tibble(titanic_df) # Tibble form of the titanic_df
+titanic_tibble <- tibble::tibble(titanic_df) # Tibble form of the titanic_df
 
-titanic_tibble <- tibble(data.frame(Titanic)) # In a single line of code
+titanic_tibble <- tibble::tibble(data.frame(Titanic)) # In a single line of code
 
-dim(titanic_tibble) # Dimension of the data set; rows and columns.
+base::dim(titanic_tibble) # Dimension of the data set; rows and columns.
 
 # Checking the total number of passengers in the Titanic
 
