@@ -90,7 +90,7 @@ utils::head(titanic_tibble_mutate)
 titanic_tibble_mutate <- titanic_tibble_mutate |> 
   dplyr::relocate(Age, .after = Sex)
 
-head(titanic_tibble_mutate)
+utils::head(titanic_tibble_mutate)
 
 # Filter verb----
 
@@ -100,42 +100,42 @@ head(titanic_tibble_mutate)
 # word Female.
 
 titanic_female <- titanic_tibble |>   # Picks the whole data set
-  filter(Sex == 'Female') # Picks rows with Sex as Female
+  dplyr::filter(Sex == 'Female') # Picks rows with Sex as Female
 
-head(titanic_female) # Returns the filtered data set 
+utils::head(titanic_female) # Returns the filtered data set 
 
 # In case I need only child females who survived in 1st class:
 
 titanic_tibble |> 
-  filter(Age == 'Child' & Sex == 'Female' & Survived == 'Yes' & Class == '1st')
+  dplyr::filter(Age == 'Child' & Sex == 'Female' & Survived == 'Yes' & Class == '1st')
 
 titanic_tibble |> 
-  filter(Age == 'Child' & Sex == 'Male' & Survived == 'Yes' & Class == '1st')
+  dplyr::filter(Age == 'Child' & Sex == 'Male' & Survived == 'Yes' & Class == '1st')
 
 # Using Arrange verb----
 
-titanic_tibble <- data.frame(Titanic) # Reloading the data. I noticed the grouped data issue
+titanic_tibble <- base::data.frame(Titanic) # Reloading the data. I noticed the grouped data issue
 
-titanic_tibble <- tibble(titanic_tibble) # Having the data as tibble
+titanic_tibble <- tibble::tibble(titanic_tibble) # Having the data as tibble
 
 titanic_tibble <- titanic_tibble |> # Picks the data
-  arrange(Freq) # Arranges the data in ascending order of Frequency
+  dplyr::arrange(Freq) # Arranges the data in ascending order of Frequency
   
-head(titanic_tibble) # Indicates the zeroes
-tail(titanic_tibble) # Indicates increasing values down the tail up to max of 670.
+utils::head(titanic_tibble) # Indicates the zeroes
+utils::tail(titanic_tibble) # Indicates increasing values down the tail up to max of 670.
 
 # Reverse the order to descending by adding desc as follows
 
 titanic_tibble <- titanic_tibble |> 
-  arrange(desc(Freq)) # Including the desc in the arrange verb
+  dplyr::arrange(utils::desc(Freq)) # Including the desc in the arrange verb
 
-head(titanic_tibble) # Now the highest value of 670 comes first and the zeroes are down.
+utils::head(titanic_tibble) # Now the highest value of 670 comes first and the zeroes are down.
 
 # Can we arrange by one column ascending and the other column descending, let me
 # give it a try
 
 titanic_tibble |> 
-  arrange(desc(Freq), Survived) # Quite doable
+  dplyr::arrange(utils::desc(Freq), Survived) # Quite doable
 
 ?dplyr::arrange # Quite rich source of information.
 
@@ -145,12 +145,12 @@ titanic_tibble |>
 # inclinometer down (angle of depression) and distance to the base of the tree
 # from the point of observation. Kind of my observations in Turkana
 
-tree_height <- data.frame(up = c(13, 14, 15, 8, 15), # Random inclinometer up
-                          down = c(5, 7, 7, 4, 6), # Random inclinometer down
-                          dist = rep(20,5)) # Constant distance to tree base
+tree_height <- base::data.frame(up = base::c(13, 14, 15, 8, 15), # Random inclinometer up
+                          down = base::c(5, 7, 7, 4, 6), # Random inclinometer down
+                          dist = base::rep(20,5)) # Constant distance to tree base
 
 tree_height_value <- tree_height |> # Using the data.frame above
-  mutate(height = 20*(tan(up*pi/180) + tan(down*pi/180))) # Creating new variable
+  dplyr::mutate(height = 20*(tan(up*pi/180) + tan(down*pi/180))) # Creating new variable
 
 head(tree_height_value) # Confirming the output values are as desired. This has 
 # made my work easier to accomplish.
