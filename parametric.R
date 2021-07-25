@@ -7,49 +7,49 @@
 Male <- base::data.frame(Gender = base::rep('Male', 10),
                    abundance = base::sample(x = 7:40, size = 10, replace = TRUE))
 Female <- base::data.frame(Gender = base::rep('Female', 10),
-                   abundance = sample(x = 7:40, size = 10, replace = TRUE))
+                   abundance = base::sample(x = 7:40, size = 10, replace = TRUE))
 
-bee.data <- rbind(Male, Female) # combining the two data-sets
+bee.data <- base::rbind(Male, Female) # combining the two data-sets
 
-head(bee.data) # Checking the head
-tail(bee.data)
+utils::head(bee.data) # Checking the head
+utils::tail(bee.data)
 
 # Normality check
 
-qqnorm(bee.data$abundance)
-qqline(bee.data$abundance)
+stats::qqnorm(bee.data$abundance)
+stats::qqline(bee.data$abundance)
 
 # Normality check using shapiro test
-shapiro.test(bee.data$abundance)
+stats::shapiro.test(bee.data$abundance)
 
 # p<a hence we reject the null hypothesis and conclude that the data 
 # is no-parametric
 
 # Normality check using Anderson-Darling test
-library(nortest) # for running pearson test among other functionalities         
+base::library(nortest) # for running pearson test among other functionalities         
 
-ad.test(bee.data$abundance)
+nortest::ad.test(bee.data$abundance)
 # p>a hence we fail to reject the null hypothesis and conclude that the data 
 # is parametric
 
 # Test for equal variance using levene's test
-library(car)
+base::library(car)
 
-leveneTest(bee.data$abundance ~ bee.data$Gender) 
+car::leveneTest(bee.data$abundance ~ bee.data$Gender) 
 
 # p>a hence we fail to reject the null hypothesis and conclude that the data 
 # have equal variance
 
 # Parametric t-test with equal variance
 
-t.test(abundance ~ Gender,
+stats::t.test(abundance ~ Gender,
        data = bee.data,
        alternative = 'two.sided',
        paired = F,
        var.equal = T)
 
 # Non-parametric t-test with equal variance
-wilcox.test(abundance ~ Gender,
+stats::wilcox.test(abundance ~ Gender,
        data = bee.data,
        alternative = 'two.sided',
        paired = F,
@@ -57,10 +57,10 @@ wilcox.test(abundance ~ Gender,
 # This is normally used when the data is non parametric, i.e. p<a in case of 
 # shapiro.test or ad.test results.
 
-library(mapsf)
-library(mapview)
-mtq <- mf_get_mtq()
-mf_shadow(mtq)
-mapview(mf_map(mtq, type = 'choro', var = 'CHOM', add = TRUE))
-mapview(mf_shadow(mtq)) + mapview(mf_map(mtq))
+base::library(mapsf)
+base::library(mapview)
+mtq <- mapsf::mf_get_mtq()
+mapsf::mf_shadow(mtq)
+mapview::mapview(mapsf::mf_map(mtq, type = 'choro', breaks = 'quantile', nbreaks = 5, var = 'MED', add = TRUE))
+mapview::mapview(mapsf::mf_shadow(mtq)) + mapview::mapview(mapsf::mf_map(mtq))
 #Done
