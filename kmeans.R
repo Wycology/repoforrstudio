@@ -1,5 +1,5 @@
 # 3rd July 2021
-# Created by Wyclife Agumba Oluoch
+# Created by Wyclife Agumba Oluoch (wyclifeoluoch@gmail.com)
 # 25th July 2021
 
 library(dismo) # for the getData function
