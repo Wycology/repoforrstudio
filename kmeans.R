@@ -1,5 +1,5 @@
 # 3rd July 2021
-# 24th July 2021
+# 25th July 2021
 
 library(dismo) # for the getData function
 library(raster) # for crop, mask and stack functions
@@ -31,4 +31,3 @@ kmeans_layer # Output is raster layer with four groups/clusters
 raster::plot(kmeans_layer) # Visualizing the output as a plot
 
 raster::writeRaster(kmeans_layer, 'output_clusters.tif', overwrite = TRUE) # Write raster to working dir.
-
