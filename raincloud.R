@@ -25,6 +25,6 @@ gapminder |>
     caption = base::paste0('Source: Data from gapminder, Version ', utils::packageVersion('gapminder')
     ), x = 'Continent', y = 'Life expectancy (years)') +
   ggplot2::coord_cartesian(xlim = c(0.6, NA)) +  
-  theme_classic() +
-  theme(legend.position = 'none',
-        text = element_text(size = 20)) 
+  ggplot2::theme_classic() +
+  ggplot2::theme(legend.position = 'none',
+        text = ggplot2::element_text(size = 20)) 
