@@ -1,4 +1,5 @@
 # 3rd July 2021
+# 24th July 2021
 
 library(dismo) # for the getData function
 library(raster) # for crop, mask and stack functions
