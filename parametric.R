@@ -4,9 +4,9 @@
 
 # Creating the data-set 
 
-Male <- data.frame(Gender = rep('Male', 10),
+Male <- base::data.frame(Gender = base::rep('Male', 10),
                    abundance = sample(x = 7:40, size = 10, replace = TRUE))
-Female <- data.frame(Gender = rep('Female', 10),
+Female <- base::data.frame(Gender = rep('Female', 10),
                    abundance = sample(x = 7:40, size = 10, replace = TRUE))
 
 bee.data <- rbind(Male, Female) # combining the two data-sets
