@@ -22,9 +22,9 @@ gapminder |>
   ggtext::geom_richtext(data = annotation, ggplot2::aes(x = x, y = y, label = label), color = 'orange',
                 size = 7, angle = 0, fontface = 'bold') +
   ggplot2::labs(title = 'Distribution of life expectancy across continents', subtitle = 'Between 1952 and 2007',
-    caption = paste0('Source: Data from gapminder, Version ', packageVersion('gapminder')
+    caption = base::paste0('Source: Data from gapminder, Version ', utils::packageVersion('gapminder')
     ), x = 'Continent', y = 'Life expectancy (years)') +
-  coord_cartesian(xlim = c(0.6, NA)) +  
+  ggplot2::coord_cartesian(xlim = c(0.6, NA)) +  
   theme_classic() +
   theme(legend.position = 'none',
         text = element_text(size = 20)) 
