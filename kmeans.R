@@ -1,10 +1,10 @@
 # 3rd July 2021
 # Created by Wyclife Agumba Oluoch (wyclifeoluoch@gmail.com)
-# 25th July 2021
+# 29th July 2021
 
-library(dismo) # for the getData function
-library(raster) # for crop, mask and stack functions
-library(ecbtools) # for raster.kmeans function
+base::library(dismo) # for the getData function
+base::library(raster) # for crop, mask and stack functions
+base::library(ecbtools) # for raster.kmeans function
 
 # ecbtools package is only available from gitHub repository at the time of 
 # writing this code
