@@ -2,8 +2,8 @@
 # Last edited 23rd July 2021
 # By Wyclife Agumba Oluoch (wyclifeoluoch@gmail.com)
 
-library(tidyverse) # For wrangling the data
-library(plyr) # For lapply function
+base::library(tidyverse) # For wrangling the data
+base::library(plyr) # For lapply function
 
 # I have 4 .csv files in my working directory "D:/FILES"
 
