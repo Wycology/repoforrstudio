@@ -9,7 +9,7 @@ base::library(ggtext)     # For making annotation on the plot
 base::library(gapminder)  # For getting the data to plot
 base::library(glue)       # For handling the text labels on the plot
 
-annotation <- base::data.frame(x = 4.5, y = 35, label = c(glue::glue(
+annotation <- base::data.frame(x = 4.5, y = 35, label = base::c(glue::glue(
   "The data is from the <br> gapminder package<br> which you can easily install")))
 
 gapminder |>
