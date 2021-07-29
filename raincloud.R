@@ -3,7 +3,7 @@
 
 # Revealing better information about data which may be hidden by boxplots
 
-library(tidyverse)  # For wrangling the data and plotting 
+base::library(tidyverse)  # For wrangling the data and plotting 
 library(ggdist)     # For adding the stat_halfeye and stat_dots functionalities
 library(ggtext)     # For making annotation on the plot
 library(gapminder)  # For getting the data to plot
