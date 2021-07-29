@@ -6,7 +6,7 @@
 base::library(tidyverse)  # For wrangling the data and plotting 
 base::library(ggdist)     # For adding the stat_halfeye and stat_dots functionalities
 base::library(ggtext)     # For making annotation on the plot
-library(gapminder)  # For getting the data to plot
+base::library(gapminder)  # For getting the data to plot
 library(glue)       # For handling the text labels on the plot
 
 annotation <- base::data.frame(x = 4.5, y = 35, label = c(glue::glue(
