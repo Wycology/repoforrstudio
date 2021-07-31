@@ -30,7 +30,7 @@ stats::var(na_data$Pre.Test) # variance of the data
 base::mean(na_data$Post.Test) # NA
 base::min(na_data$Post.Test) # Another NA
 base::max(na_data$Post.Test) # Checking for the max in the data-set
-median(na_data$Post.Test) # Also NA
+stats::median(na_data$Post.Test) # Also NA
 sd(na_data$Post.Test)
 var(na_data$Post.Test, use = 'complete.obs') # complete.obs returns a value
 
