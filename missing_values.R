@@ -22,7 +22,7 @@ na_data <- tibble::tibble(ID = base::c(1:10), # First variable
 base::mean(na_data$Pre.Test) # Works fine with the Pre-Test column
 base::min(na_data$Pre.Test) # Runs pretty fine, this is also cool.
 base::max(na_data$Pre.Test) # Cool
-median(na_data$Pre.Test) # Cooler
+base::median(na_data$Pre.Test) # Cooler
 sd(na_data$Pre.Test) # Coolest
 var(na_data$Pre.Test) # variance of the data
 
