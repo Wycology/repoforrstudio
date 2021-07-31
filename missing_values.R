@@ -27,7 +27,7 @@ stats::sd(na_data$Pre.Test) # Coolest
 stats::var(na_data$Pre.Test) # variance of the data
 
 # Going for the Post.Test variable. Here we have a number of missing values
-mean(na_data$Post.Test) # NA
+base::mean(na_data$Post.Test) # NA
 min(na_data$Post.Test) # Another NA
 max(na_data$Post.Test) # Checking for the max in the data-set
 median(na_data$Post.Test) # Also NA
