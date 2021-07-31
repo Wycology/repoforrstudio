@@ -3,19 +3,19 @@
 # wyclifeoluoch@gmail.com        # 
 # Task: working with NAs in data #
 # Created 8th Jan 2021           #
-# Last edited 29th July 2021      #
+# Last edited 31st July 2021      #
 ##################################
 
 # I am going to demonstrate how to work with missing data (NAs) in R
 
 # Loading the necessary libraries for working with NA values
 
-library(tidyverse, warn.conflicts = FALSE) # For data wrangling
-library(gam)
+base::library(tidyverse, warn.conflicts = FALSE) # For data wrangling
+base::library(gam)
 
 # Creating the data-set with NA in post-test variable
 
-na_data <- tibble(ID = c(1:10), # First variable
+na_data <- tibble::tibble(ID = c(1:10), # First variable
                   Pre.Test = c(4, 5, 5, 4, 4, 3, 4, 4, 3, 4), # Complete set
                   Post.Test = c(8, 7, 8, 7, NA, 6, 7, 6, 7, 7)) # With NA
 # Starting with the Pre.Test variable.
