@@ -31,7 +31,7 @@ base::mean(na_data$Post.Test) # NA
 base::min(na_data$Post.Test) # Another NA
 base::max(na_data$Post.Test) # Checking for the max in the data-set
 stats::median(na_data$Post.Test) # Also NA
-sd(na_data$Post.Test)
+stats::sd(na_data$Post.Test)
 var(na_data$Post.Test, use = 'complete.obs') # complete.obs returns a value
 
 # Removing the missing values and re-running the Post.Test values again.
