@@ -15,8 +15,8 @@ base::library(gam)
 
 # Creating the data-set with NA in post-test variable
 
-na_data <- tibble::tibble(ID = c(1:10), # First variable
-                  Pre.Test = c(4, 5, 5, 4, 4, 3, 4, 4, 3, 4), # Complete set
+na_data <- tibble::tibble(ID = base::c(1:10), # First variable
+                  Pre.Test = base::c(4, 5, 5, 4, 4, 3, 4, 4, 3, 4), # Complete set
                   Post.Test = c(8, 7, 8, 7, NA, 6, 7, 6, 7, 7)) # With NA
 # Starting with the Pre.Test variable.
 mean(na_data$Pre.Test) # Works fine with the Pre-Test column
