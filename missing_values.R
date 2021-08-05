@@ -39,8 +39,8 @@ stats::var(na_data$Post.Test, use = 'complete.obs') # complete.obs returns a val
 base::mean(na_data$Post.Test, na.rm = TRUE) # Handling NA in the data-set 
 base::min(na_data$Post.Test, na.rm = TRUE)
 base::max(na_data$Post.Test, na.rm = TRUE)
-median(na_data$Post.Test, na.rm = TRUE)
-sd(na_data$Post.Test, na.rm = TRUE)
+stats::median(na_data$Post.Test, na.rm = TRUE)
+stats::sd(na_data$Post.Test, na.rm = TRUE)
 
 # This is working pretty fine for a single variable. However, the whole row can
 # be omitted using na.omit()
