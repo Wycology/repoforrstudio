@@ -50,7 +50,7 @@ na_omit_data # ID 5 is now missing from the new dataset because we passed the
 # dataset to na.omit() function.
 
 base::min(na_omit_data$Post.Test)
-max(na_omit_data$Post.Test)
+base::max(na_omit_data$Post.Test)
 median(na_omit_data$Post.Test)
 sd(na_omit_data$Post.Test)
 mean(na_omit_data$Post.Test)
