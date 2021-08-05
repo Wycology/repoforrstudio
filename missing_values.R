@@ -38,7 +38,7 @@ stats::var(na_data$Post.Test, use = 'complete.obs') # complete.obs returns a val
 # Going for the Post.Test variable.
 base::mean(na_data$Post.Test, na.rm = TRUE) # Handling NA in the data-set 
 base::min(na_data$Post.Test, na.rm = TRUE)
-max(na_data$Post.Test, na.rm = TRUE)
+base::max(na_data$Post.Test, na.rm = TRUE)
 median(na_data$Post.Test, na.rm = TRUE)
 sd(na_data$Post.Test, na.rm = TRUE)
 
