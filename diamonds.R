@@ -10,7 +10,7 @@
 # Loading the necessary libraries for the project
 
 base::library(tidyverse) # This is for data wrangling and plotting.
-library(RColorBrewer) # This is for generating color pallets for the plots.
+base::library(RColorBrewer) # This is for generating color pallets for the plots.
 
 diamonds_df <- diamonds # Saving the diamonds data-set to a new object in R.
 
