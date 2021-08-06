@@ -19,7 +19,7 @@ base::nrow(diamonds) # Checking for the number of rows in the data. 53940 observ
 base::ncol(diamonds) # Checking the number of variables in the data-set. 10 variables
 
 diamonds_df %>% # Picking the diamonds data, and then
-  slice_sample(n = 0.2*(nrow(diamonds))) %>% # Picking a portion of the data-set
+  dplyr::slice_sample(n = 0.2*(nrow(diamonds))) %>% # Picking a portion of the data-set
   ggplot(aes(x = cut, y = price, color = cut)) + # Adding the mapping variables
   geom_point(position = "jitter", alpha = 0.2) + # Adding jitter and alpha
   geom_boxplot(alpha = 0.1, width = 0.5) + # Modifying dimensions of the boxplot 
