@@ -14,7 +14,7 @@ base::library(RColorBrewer) # This is for generating color pallets for the plots
 
 diamonds_df <- diamonds # Saving the diamonds data-set to a new object in R.
 
-base::head(diamonds) # Checking the variables in the data-set for subsequent analyses
+utils::head(diamonds) # Checking the variables in the data-set for subsequent analyses
 nrow(diamonds) # Checking for the number of rows in the data. 53940 observations
 ncol(diamonds) # Checking the number of variables in the data-set. 10 variables
 
