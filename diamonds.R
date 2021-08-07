@@ -23,7 +23,7 @@ diamonds_df %>% # Picking the diamonds data, and then
   ggplot2::ggplot(ggplot2::aes(x = cut, y = price, color = cut)) + # Adding the mapping variables
   ggplot2::geom_point(position = "jitter", alpha = 0.2) + # Adding jitter and alpha
   ggplot2::geom_boxplot(alpha = 0.1, width = 0.5) + # Modifying dimensions of the boxplot 
-  geom_violin(alpha = 0.5) + # Adding violin plot on top of the box and jitter
+  ggplot2::geom_violin(alpha = 0.5) + # Adding violin plot on top of the box and jitter
   theme_classic() + # Adding my preferred theme for publication.
   theme(legend.position = "none") + # Removing the legend; it is on the x-axis
   labs(x = "Diamond cut", # Labels the x-axis.
