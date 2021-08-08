@@ -42,7 +42,7 @@ diamonds %>% # Picking the diamonds data, and then
   utils::nrow() # counting the number of rows with very good cut
 
 diamonds %>% 
-  select(cut) %>% 
+  dplyr::select(cut) %>% 
   table() %>% 
   barplot(col = c('green', 'red', 'blue', 'yellow', 'purple'))
 
