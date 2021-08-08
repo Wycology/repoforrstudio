@@ -34,7 +34,7 @@ diamonds_df %>% # Picking the diamonds data, and then
   ggplot2::theme(axis.text = ggplot2::element_text(size=16), # Size of labels on tick-marks
         axis.title = ggplot2::element_text(size=16,face="bold")) + # Size of axis labels
   ggplot2::theme(plot.title = ggplot2::element_text(color = 'red', size = 18, face = 'bold'),
-        plot.subtitle = element_text(color = 'purple', size = 14, face = 'italic'),
+        plot.subtitle = ggplot2::element_text(color = 'purple', size = 14, face = 'italic'),
         plot.caption = element_text(color = 'blue', face = 'italic'))
 
 diamonds %>% # Picking the diamonds data, and then
