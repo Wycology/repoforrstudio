@@ -39,7 +39,7 @@ diamonds_df %>% # Picking the diamonds data, and then
 
 diamonds %>% # Picking the diamonds data, and then
   dplyr::filter(cut == 'Very Good') %>% # Picking the very good cut 
-  nrow() # counting the number of rows with very good cut
+  utils::nrow() # counting the number of rows with very good cut
 
 diamonds %>% 
   select(cut) %>% 
