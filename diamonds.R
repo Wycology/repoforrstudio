@@ -38,7 +38,7 @@ diamonds_df %>% # Picking the diamonds data, and then
         plot.caption = ggplot2::element_text(color = 'blue', face = 'italic'))
 
 diamonds %>% # Picking the diamonds data, and then
-  filter(cut == 'Very Good') %>% # Picking the very good cut 
+  dplyr::filter(cut == 'Very Good') %>% # Picking the very good cut 
   nrow() # counting the number of rows with very good cut
 
 diamonds %>% 
