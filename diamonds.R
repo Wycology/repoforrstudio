@@ -43,7 +43,7 @@ diamonds %>% # Picking the diamonds data, and then
 
 diamonds %>% 
   dplyr::select(cut) %>% 
-  table() %>% 
+  base::table() %>% 
   barplot(col = c('green', 'red', 'blue', 'yellow', 'purple'))
 
 # Instead of specifying the colors, we can simply use the color brewer panel 
