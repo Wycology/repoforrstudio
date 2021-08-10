@@ -59,15 +59,15 @@ RColorBrewer::display.brewer.all()
 # Can also use rainbow colors
 
 diamonds %>% 
-  select(cut) %>% 
-  table() %>% 
-  barplot(col = rainbow(5))
+  dplyr::select(cut) %>% 
+  base::table() %>% 
+  graphics::barplot(col = grDevices::rainbow(5))
 
 # Can also use heat.colors
 diamonds %>% 
-  select(cut) %>% 
-  table() %>% 
-  barplot(col = heat.colors(5))
+  dplyr::select(cut) %>% 
+  base::table() %>% 
+  graphics::barplot(col = grDevices::heat.colors(5))
 
 # Can also use topographic colors
 
