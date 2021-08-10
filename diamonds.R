@@ -49,12 +49,12 @@ diamonds %>%
 # Instead of specifying the colors, we can simply use the color brewer panel 
 
 diamonds %>% 
-  select(cut) %>% 
-  table() %>% 
-  barplot(col = brewer.pal(n = 5, name = "RdBu"))
+  dplyr::select(cut) %>% 
+  base::table() %>% 
+  graphics::barplot(col = RColorBrewer::brewer.pal(n = 5, name = "RdBu"))
 # To display more brewer colors options to use, run the following function:
 
-display.brewer.all()
+RColorBrewer::display.brewer.all()
 
 # Can also use rainbow colors
 
