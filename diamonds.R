@@ -78,14 +78,14 @@ diamonds %>%
 
 # Can also use terrain colors for the plot
 diamonds %>% 
-  select(cut) %>% 
-  table() %>% 
-  barplot(col = terrain.colors(5))
+  dplyr::select(cut) %>% 
+  base::table() %>% 
+  graphics::barplot(col = grDevices::terrain.colors(5))
 
 # Can also use cm.colors
 diamonds %>% 
-  select(cut) %>% 
-  table() %>% 
-  barplot(col = cm.colors(5)) 
+  dplyr::select(cut) %>% 
+  base::table() %>% 
+  graphics::barplot(col = grDevices::cm.colors(5)) 
 
 # That is awesome. Good for the day.
