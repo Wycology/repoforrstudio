@@ -4,7 +4,7 @@
 # GitHub: https://github.com/Wycology   #
 # Task: Boxplot and violin plots in one #
 # Date: 4th Jan 2021                    #
-# Last edited: 22nd July 2021           #
+# Last edited: 10th Aug 2021            #
 #########################################
 
 # Loading the necessary libraries for the project
@@ -39,7 +39,7 @@ diamonds_df %>% # Picking the diamonds data, and then
 
 diamonds %>% # Picking the diamonds data, and then
   dplyr::filter(cut == 'Very Good') %>% # Picking the very good cut 
-  utils::nrow() # counting the number of rows with very good cut
+  base::nrow() # counting the number of rows with very good cut
 
 diamonds %>% 
   dplyr::select(cut) %>% 
