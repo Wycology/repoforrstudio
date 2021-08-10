@@ -11,10 +11,10 @@
 
 # Loading necessary packages.
 
-library(modelr)    # for modeling work-flow
-library(patchwork) # Combining several plots using the package
-library(ggforce)   # working with plots 
-library(tidyverse) # Library for wrangling and visualizing data the data-set
+base::library(modelr)    # for modeling work-flow
+base::library(patchwork) # Combining several plots using the package
+base::library(ggforce)   # working with plots 
+base::library(tidyverse) # Library for wrangling and visualizing data the data-set
 
 str(iris) # Checking the data structure. We can already see relatively higher 
 # values for sepal length variable compared to the others.
