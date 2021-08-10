@@ -72,9 +72,9 @@ diamonds %>%
 # Can also use topographic colors
 
 diamonds %>% 
-  select(cut) %>% 
-  table() %>% 
-  barplot(col = topo.colors(5))
+  dplyr::select(cut) %>% 
+  base::table() %>% 
+  graphics::barplot(col = grDevices::topo.colors(5))
 
 # Can also use terrain colors for the plot
 diamonds %>% 
