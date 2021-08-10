@@ -11,12 +11,12 @@
 
 # Loading necessary packages.
 
-base::library(modelr)    # Modeling work-flow.........version
-base::library(patchwork) # Combining plots............version
-base::library(ggforce)   # working with plots.........version 
-base::library(tidyverse) # Wrangling and Visualizing..version 
+base::library(modelr)    # Modeling work-flow.........version 0.1.8
+base::library(patchwork) # Combining plots............version 1.1.1
+base::library(ggforce)   # working with plots.........version 0.3.3
+base::library(tidyverse) # Wrangling and Visualizing..version 1.3.1
 
-str(iris) # Checking the data structure. We can already see relatively higher 
+utils::str(iris) # Checking the data structure. We can already see relatively higher 
 # values for sepal length variable compared to the others.
 
 reg <- lm(Petal.Width ~ Sepal.Length, data = iris) # Creating a regression line
