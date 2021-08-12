@@ -1,6 +1,8 @@
-# Created: 3rd July 2021
-# Last edited 12th Aug 2021
-# By Wyclife Agumba Oluoch (wyclifeoluoch@gmail.com)
+# ####################################################
+# Created: 3rd July 2021                             #
+# Last edited 12th Aug 2021                          #
+# By Wyclife Agumba Oluoch (wyclifeoluoch@gmail.com) #
+######################################################
 
 base::library(tidyverse) # For wrangling the data
 base::library(plyr) # For lapply function
