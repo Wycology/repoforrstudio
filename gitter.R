@@ -22,7 +22,7 @@ utils::data("iris") # Loading iris data
 
 Reg <-  stats::lm(Sepal.Length ~ Petal.Width, data = iris) # simple linear regression.
 
-summary(Reg) # The regression results.
+base::summary(Reg) # The regression results.
 
 coeff <- coefficients(Reg) # Saving the coefficients to an object
 
