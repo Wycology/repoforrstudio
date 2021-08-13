@@ -9,7 +9,7 @@
 
 # Loading libraries
 
-base::library(vioplot)   # version 0.3.6 
+base::library(vioplot)   # version 0.3.7 
 base::library(ggplot2)   # version 3.3.5
 base::library(readxl)    # version 1.3.1
 base::library(tidyverse) # version 1.3.1
