@@ -18,7 +18,7 @@ base::library(tidyverse) # version 1.3.1
 
 utils::data() # View data-sets in R.
 
-data("iris") # Loading iris data
+utils::data("iris") # Loading iris data
 
 Reg <-  lm(Sepal.Length ~ Petal.Width, data = iris) # simple linear regression.
 
