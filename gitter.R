@@ -20,7 +20,7 @@ utils::data() # View data-sets in R.
 
 utils::data("iris") # Loading iris data
 
-Reg <-  lm(Sepal.Length ~ Petal.Width, data = iris) # simple linear regression.
+Reg <-  stats::lm(Sepal.Length ~ Petal.Width, data = iris) # simple linear regression.
 
 summary(Reg) # The regression results.
 
