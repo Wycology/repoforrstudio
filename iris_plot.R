@@ -40,9 +40,9 @@ base::plot(iris$Sepal.Length, iris$Petal.Width, # Variables to use on the plot
      )
 graphics::abline(reg, data = iris, lty = 5, lwd = 2, col = 'purple')# Best line of fit on the plot
 graphics::abline(v = mean(iris$Sepal.Length), col = 'red', lwd = 3, lty = 2)
-abline(v = median(iris$Sepal.Length), col = 'yellow', lwd = 3, lty = 3)
-abline(h = mean(iris$Petal.Width), col = 'blue', lwd = 3, lty = 2)
-abline(h = median(iris$Petal.Width), col = 'orange', lwd = 3, lty = 6)
+graphics::abline(v = median(iris$Sepal.Length), col = 'yellow', lwd = 3, lty = 3)
+graphics::abline(h = mean(iris$Petal.Width), col = 'blue', lwd = 3, lty = 2)
+graphics::abline(h = median(iris$Petal.Width), col = 'orange', lwd = 3, lty = 6)
 text(7, 0.5, "Such a simple plot to generate")
 text(5, 2.25, "I thought it was hard until I gave it a try")
 
