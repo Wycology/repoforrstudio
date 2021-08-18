@@ -21,8 +21,8 @@ utils::str(iris) # Checking the data structure. We can already see relatively hi
 
 reg <- stats::lm(Petal.Width ~ Sepal.Length, data = iris) # Creating a regression line
 coeff <- stats::coefficients(reg)
-eq <- base::paste0('y = ', base::round(coeff[2], 1), "*x ", round(coeff[1], 1))
-plot(iris$Sepal.Length, iris$Petal.Width, # Variables to use on the plot
+eq <- base::paste0('y = ', base::round(coeff[2], 1), "*x ", base::round(coeff[1], 1))
+base::plot(iris$Sepal.Length, iris$Petal.Width, # Variables to use on the plot
      col = 'purple', # Color for the data points on the plot
      main = paste0("Simple plot in R \n Isn't it?\n", eq), # Title of the plot in two lines
      sub = 'Subtitle at lower center of the plot', # Adding subtitle to the plot
