@@ -24,7 +24,7 @@ coeff <- stats::coefficients(reg)
 eq <- base::paste0('y = ', base::round(coeff[2], 1), "*x ", base::round(coeff[1], 1))
 base::plot(iris$Sepal.Length, iris$Petal.Width, # Variables to use on the plot
      col = 'purple', # Color for the data points on the plot
-     main = paste0("Simple plot in R \n Isn't it?\n", eq), # Title of the plot in two lines
+     main = base::paste0("Simple plot in R \n Isn't it?\n", eq), # Title of the plot in two lines
      sub = 'Subtitle at lower center of the plot', # Adding subtitle to the plot
      cex = 2, # Double size of the points on the plot
      pch = 19, # Picks the 19th character in terms of shape of points plotted
@@ -38,7 +38,7 @@ base::plot(iris$Sepal.Length, iris$Petal.Width, # Variables to use on the plot
      # xlim = range(0:8), # Can easily set the limits of x-axis
      # ylim = range(0:2.6) # Can easily set the limits of y-axis
      )
-abline(reg, data = iris, lty = 5, lwd = 2, col = 'purple')# Best line of fit on the plot
+graphics::abline(reg, data = iris, lty = 5, lwd = 2, col = 'purple')# Best line of fit on the plot
 abline(v = mean(iris$Sepal.Length), col = 'red', lwd = 3, lty = 2)
 abline(v = median(iris$Sepal.Length), col = 'yellow', lwd = 3, lty = 3)
 abline(h = mean(iris$Petal.Width), col = 'blue', lwd = 3, lty = 2)
