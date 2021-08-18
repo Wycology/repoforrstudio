@@ -48,8 +48,8 @@ graphics::text(5, 2.25, "I thought it was hard until I gave it a try")
 
 # Creating cool plot of the iris data using ggplot2 package.
 
-separate_smooth <- ggplot(data = iris,    # Specifying the data to be plotted.
-       mapping = aes(x = Sepal.Length,    # Stating the axes data.
+separate_smooth <- ggplot2::ggplot(data = iris,    # Specifying the data to be plotted.
+       mapping = ggplot2::aes(x = Sepal.Length,    # Stating the axes data.
                      y = Petal.Width,     # data for the y axis
                      color = Species)) +  # Ensuring points are colored by spp.
   geom_point() +                          # Deciding the plotting geometry.
