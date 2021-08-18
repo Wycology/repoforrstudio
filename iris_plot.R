@@ -39,12 +39,12 @@ base::plot(iris$Sepal.Length, iris$Petal.Width, # Variables to use on the plot
      # ylim = range(0:2.6) # Can easily set the limits of y-axis
      )
 graphics::abline(reg, data = iris, lty = 5, lwd = 2, col = 'purple')# Best line of fit on the plot
-graphics::abline(v = mean(iris$Sepal.Length), col = 'red', lwd = 3, lty = 2)
-graphics::abline(v = median(iris$Sepal.Length), col = 'yellow', lwd = 3, lty = 3)
-graphics::abline(h = mean(iris$Petal.Width), col = 'blue', lwd = 3, lty = 2)
-graphics::abline(h = median(iris$Petal.Width), col = 'orange', lwd = 3, lty = 6)
-text(7, 0.5, "Such a simple plot to generate")
-text(5, 2.25, "I thought it was hard until I gave it a try")
+graphics::abline(v = base::mean(iris$Sepal.Length), col = 'red', lwd = 3, lty = 2)
+graphics::abline(v = stats::median(iris$Sepal.Length), col = 'yellow', lwd = 3, lty = 3)
+graphics::abline(h = base::mean(iris$Petal.Width), col = 'blue', lwd = 3, lty = 2)
+graphics::abline(h = stats::median(iris$Petal.Width), col = 'orange', lwd = 3, lty = 6)
+graphics::text(7, 0.5, "Such a simple plot to generate")
+graphics::text(5, 2.25, "I thought it was hard until I gave it a try")
 
 # Creating cool plot of the iris data using ggplot2 package.
 
