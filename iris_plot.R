@@ -20,7 +20,7 @@ utils::str(iris) # Checking the data structure. We can already see relatively hi
 # values for sepal length variable compared to the others.
 
 reg <- stats::lm(Petal.Width ~ Sepal.Length, data = iris) # Creating a regression line
-coeff <- coefficients(reg)
+coeff <- lm::coefficients(reg)
 eq <- paste0('y = ', round(coeff[2], 1), "*x ", round(coeff[1], 1))
 plot(iris$Sepal.Length, iris$Petal.Width, # Variables to use on the plot
      col = 'purple', # Color for the data points on the plot
