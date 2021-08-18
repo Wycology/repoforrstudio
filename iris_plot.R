@@ -39,7 +39,7 @@ base::plot(iris$Sepal.Length, iris$Petal.Width, # Variables to use on the plot
      # ylim = range(0:2.6) # Can easily set the limits of y-axis
      )
 graphics::abline(reg, data = iris, lty = 5, lwd = 2, col = 'purple')# Best line of fit on the plot
-abline(v = mean(iris$Sepal.Length), col = 'red', lwd = 3, lty = 2)
+graphics::abline(v = mean(iris$Sepal.Length), col = 'red', lwd = 3, lty = 2)
 abline(v = median(iris$Sepal.Length), col = 'yellow', lwd = 3, lty = 3)
 abline(h = mean(iris$Petal.Width), col = 'blue', lwd = 3, lty = 2)
 abline(h = median(iris$Petal.Width), col = 'orange', lwd = 3, lty = 6)
