@@ -75,7 +75,7 @@ separate_smooth # Generates the plot output of the dataset
 # In the above plot, having color within the aes() breakes the data into 
 # species-wise groups. Meaning each species group will be smoothed separately.
 
-uniform_smooth <- ggplot(data = iris,
+uniform_smooth <- ggplot2::ggplot(data = iris,
                          mapping = aes(x = Sepal.Length,
                                        y = Petal.Width)) + # Note no color here.
   geom_point() +
