@@ -85,7 +85,7 @@ uniform_smooth <- ggplot2::ggplot(data = iris,
                         filter = Species == "setosa",
                         label = "Iris setosa",
                         description = "Shortest species")) +
-  geom_mark_ellipse(aes(fill = Species,
+  ggplot2::geom_mark_ellipse(aes(fill = Species,
                         filter = Species == "versicolor",
                         label = "Iris versicolor",
                         description = "Medium species")) +
