@@ -76,7 +76,7 @@ separate_smooth # Generates the plot output of the dataset
 # species-wise groups. Meaning each species group will be smoothed separately.
 
 uniform_smooth <- ggplot2::ggplot(data = iris,
-                         mapping = aes(x = Sepal.Length,
+                         mapping = ggplot2::aes(x = Sepal.Length,
                                        y = Petal.Width)) + # Note no color here.
   geom_point() +
   labs(x = "Petal length (cm)",
