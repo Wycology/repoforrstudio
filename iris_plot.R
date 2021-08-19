@@ -79,7 +79,7 @@ uniform_smooth <- ggplot2::ggplot(data = iris,
                          mapping = ggplot2::aes(x = Sepal.Length,
                                        y = Petal.Width)) + # Note no color here.
   ggplot2::geom_point() +
-  labs(x = "Petal length (cm)",
+  ggplot2::labs(x = "Petal length (cm)",
        y = "Petal width (cm)") +
   geom_mark_ellipse(aes(fill = Species,
                         filter = Species == "setosa",
