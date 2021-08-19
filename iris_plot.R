@@ -78,7 +78,7 @@ separate_smooth # Generates the plot output of the dataset
 uniform_smooth <- ggplot2::ggplot(data = iris,
                          mapping = ggplot2::aes(x = Sepal.Length,
                                        y = Petal.Width)) + # Note no color here.
-  geom_point() +
+  ggplot2::geom_point() +
   labs(x = "Petal length (cm)",
        y = "Petal width (cm)") +
   geom_mark_ellipse(aes(fill = Species,
