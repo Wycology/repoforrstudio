@@ -93,7 +93,7 @@ uniform_smooth <- ggplot2::ggplot(data = iris,
                         filter = Species == "virginica",
                         label = "Iris virginica",
                         description = "Tallest species")) +
-  theme_classic() +
+  ggplot2::theme_classic() +
   geom_smooth() # Adding the line of best fit to the data, with error margin
 
 uniform_smooth # This is looking cool!
