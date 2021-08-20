@@ -142,7 +142,7 @@ utils::head(iris) # Checking the first few rows of the iris data-set, basically 
 
 diamonds %>% # Picking the diamonds data to run plotting on  
   ggplot2::ggplot() + # Feeding in the diamonds data for the plot.
-  geom_bar(mapping = aes(x = cut, fill = cut), show.legend = FALSE, width = 1) +
+  ggplot2::geom_bar(mapping = aes(x = cut, fill = cut), show.legend = FALSE, width = 1) +
   theme(aspect.ratio = 1) +
   labs(x = NULL, y = NULL) +
   coord_polar() # coord_flip() can also work well with the data depending on need.
