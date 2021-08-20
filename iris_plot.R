@@ -133,7 +133,7 @@ iris %>% # Picking the iris data, and then
   ggplot2::geom_point() + # Specifying the geometry to use.
   ggplot2::theme_classic() # Publication ready theme
 
-head(iris) # Checking the first few rows of the iris data-set, basically to get 
+utils::head(iris) # Checking the first few rows of the iris data-set, basically to get 
 # the first six rows and the column names of the variables.
 
 # I think it has taken me a long time to know this.
