@@ -145,7 +145,7 @@ diamonds %>% # Picking the diamonds data to run plotting on
   ggplot2::geom_bar(mapping = ggplot2::aes(x = cut, fill = cut), show.legend = FALSE, width = 1) +
   ggplot2::theme(aspect.ratio = 1) +
   ggplot2::labs(x = NULL, y = NULL) +
-  coord_polar() # coord_flip() can also work well with the data depending on need.
+  ggplot2::coord_polar() # coord_flip() can also work well with the data depending on need.
   
 # Cool/crazy plot with modelr package.
 
