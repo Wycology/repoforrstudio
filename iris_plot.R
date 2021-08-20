@@ -131,7 +131,7 @@ attach(iris) # Rendering iris data available for subsequent codes.
 iris %>% # Picking the iris data, and then
   ggplot2::ggplot(ggplot2::aes(x = Sepal.Length, y = Petal.Width)) + # Providing plotting variables.
   ggplot2::geom_point() + # Specifying the geometry to use.
-  theme_classic() # Publication ready theme
+  ggplot2::theme_classic() # Publication ready theme
 
 head(iris) # Checking the first few rows of the iris data-set, basically to get 
 # the first six rows and the column names of the variables.
