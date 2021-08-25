@@ -1,6 +1,6 @@
 # 3rd July 2021
 # Created by Wyclife Agumba Oluoch (wyclifeoluoch@gmail.com)
-# 24th Aug 2021
+# 25th Aug 2021
 
 base::library(dismo) # for the getData function
 base::library(raster) # for crop, mask and stack functions
