@@ -4,8 +4,9 @@
 # By Wyclife Agumba Oluoch (wyclifeoluoch@gmail.com) #
 ######################################################
 
-base::library(tidyverse) # For data wrangling
+base::library(dplyr) # For data wrangling
 base::library(plyr) # For lapply function
+base::library(readr) # For writing 
 
 # I have 4 .csv files in my working directory "D:/FILES"
 
