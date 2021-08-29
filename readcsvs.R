@@ -6,7 +6,7 @@
 
 base::library(dplyr) # For data wrangling
 base::library(plyr)  # For lapply function
-base::library(readr) # For writing 
+base::library(readr) # For writing csv file
 
 # I have 4 .csv files in my working directory "D:/FILES"
 
