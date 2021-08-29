@@ -4,7 +4,7 @@
 # By Wyclife Agumba Oluoch (wyclifeoluoch@gmail.com) #
 ######################################################
 
-base::library(tidyverse) # For wrangling the data
+base::library(tidyverse) # For wrangling
 base::library(plyr) # For lapply function
 
 # I have 4 .csv files in my working directory "D:/FILES"
