@@ -1,0 +1,102 @@
+---
+title: "<center>**Raincloud in R**</center>"
+author: "<center>Wyclife Agumba Oluoch</center>"
+date: "<center>`r Sys.time()`</center>"
+bibliography: 
+  - bib/packages.bib
+nocite: '@*'
+output: 
+  html_document:
+    toc: true
+    toc_depth: 2
+    toc_float: true
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library(base)
+library(tidyverse)
+library(ggdist)
+library(knitr)
+library(ggtext)
+library(gapminder)
+library(glue)
+knitr::write_bib(c(.packages(),
+                   'base',
+                   'tidyverse',
+                   'ggdist',
+                   'ggtext',
+                   'gapminder',
+                   'glue',
+                   'knitr'), 'bib/packages.bib')
+```
+
+```{r echo=FALSE}
+annotation <-
+  base::data.frame(x = 4.5,
+                   y = 35,
+                   label = base::c(
+                     glue::glue(
+                     )
+                   ))
+
+gapminder |>
+  select(continent, lifeExp) |>
+  ggplot(aes(continent, lifeExp)) +
+  stat_halfeye(
+    adjust = .5,
+    width = .6,
+    .width = 0,
+    justification = -.2,
+    point_color = NA,
+    aes(fill = continent)
+  ) +
+  geom_boxplot(width = .12, outlier.shape = NA) +
+  stat_dots(
+    side = 'left',
+    justification = 1.1,
+    binwidth = 0.5,
+    aes(col = continent)
+  ) +
+  geom_richtext(
+    data = annotation,
+    aes(x = x, y = y, label = label),
+    color = 'orange',
+    size = 7,
+    angle = 0,
+    fontface = 'bold'
+  ) +
+  labs(
+    title = 'Distribution of life expectancy across continents',
+    subtitle = 'Between 1952 and 2007',
+    caption = paste0(
+      'Source: Data from gapminder, Version ',
+      packageVersion('gapminder')
+    ),
+    x = 'Continent',
+    y = 'Life expectancy (years)'
+  ) +
+  coord_cartesian(xlim = c(0.6, NA)) +
+  theme_classic() +
+  theme(legend.position = 'none',
+        text = element_text(size = 20)) 
+```
+
+
+# References
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
