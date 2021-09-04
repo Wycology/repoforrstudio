@@ -62,7 +62,7 @@ gapminder |>
     fontface = 'bold'
   ) +
   labs(
-    title = 'Distribution of life expectancy across continents',
+    title = 'Distribution of life expectancy across fibe continents',
     subtitle = 'Between 1952 and 2007',
     caption = paste0(
       'Source: Data from gapminder, Version ',
