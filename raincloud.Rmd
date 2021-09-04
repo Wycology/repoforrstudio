@@ -32,13 +32,8 @@ knitr::write_bib(c(.packages(),
 ```
 
 ```{r echo=FALSE}
-annotation <-
-  base::data.frame(x = 4.5,
-                   y = 35,
-                   label = base::c(
-                     glue::glue(
-                     )
-                   ))
+annotation <- base::data.frame(x = 4.5, y = 35,
+                   label = c(glue()))
 
 gapminder |>
   select(continent, lifeExp) |>
