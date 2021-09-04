@@ -1,6 +1,6 @@
 ---
 title: "<center>**Raincloud in R**</center>"
-author: "<center>Wyclife Agumba Oluoch</center>"
+author: "<center>Wyclife Agumba Oluoch (wyclifeoluoch@gmail.com) </center>"
 date: "<center>`r Sys.time()`</center>"
 bibliography: 
   - bib/packages.bib
@@ -30,6 +30,10 @@ knitr::write_bib(c(.packages(),
                    'glue',
                    'knitr'), 'bib/packages.bib')
 ```
+
+# Introduction
+
+In this short article I demonstrate how to generate beautiful plots using a number of packages in R.
 
 ```{r echo=FALSE}
 annotation <- base::data.frame(x = 4.5, y = 35,
