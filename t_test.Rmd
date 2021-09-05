@@ -62,8 +62,28 @@ p<a hence we reject the null hypothesis and conclude that the data is no-paramet
 ## Using Anderson-Darling test
 
 ```{r normality_check_Anderson_Darling}
-
+ad.test(bee.data$abundance)
 ```
+
+p>a hence we fail to reject the null hypothesis and conclude that the data is parametric
+
+# Test for equal variance using levene's test
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 # References
