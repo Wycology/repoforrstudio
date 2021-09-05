@@ -69,9 +69,22 @@ p>a hence we fail to reject the null hypothesis and conclude that the data is pa
 
 # Test for equal variance using levene's test
 
+```{r}
+leveneTest(data_set$abundance ~ factor(data_set$Gender))
+```
 
+p>a hence we fail to reject the null hypothesis and conclude that the data 
+have equal variance
 
+# Parametric t-test with equal variance
 
+```{r t-test_equal_variance}
+t.test(abundance ~ Gender,
+       data = data_set,
+       alternative = 'two.sided',
+       paired = F,
+       var.equal = T)
+```
 
 
 
