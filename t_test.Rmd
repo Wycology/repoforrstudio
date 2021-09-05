@@ -1,0 +1,53 @@
+---
+title: "<center>**Parametric and non-parametric t-tests in R**</center>"
+author: "<center>Wyclife Agumba Oluoch (wyclifeoluoch@gmail.com) </center>"
+date: "<center>`r Sys.time()`</center>"
+bibliography: 
+  - bib/packages.bib
+nocite: '@*'
+output: 
+  html_document:
+    toc: true
+    toc_depth: 2
+    toc_float: true
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library(base)
+library(knitr)
+library(rmarkdown)
+library(utils)
+library(stats)
+library(nortest)
+library(car)
+library(mapsf)
+library(mapview)
+knitr::write_bib(c(.packages(),
+                   'base',
+                   'knitr',
+                   'rmarkdown',
+                   'utils',
+                   'stats',
+                   'nortest',
+                   'car',
+                   'mapsf',
+                   'mapview'), 'bib/packages.bib')
+```
+
+# Creating the dataset
+
+```{r dataset, echo = FALSE}
+data_set <- data.frame(Gender = c(rep('Male', 10), rep('Female', 10)),
+                   abundance = sample(x = 7:40, size = 20, replace = TRUE))
+data_set
+```
+
+
+
+
+
+
+
+
+# References
