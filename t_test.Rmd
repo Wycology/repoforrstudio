@@ -38,12 +38,20 @@ knitr::write_bib(c(.packages(),
 # Creating the dataset
 
 ```{r dataset, echo = FALSE}
-data_set <- data.frame(Gender = c(rep('Male', 10), rep('Female', 10)),
-                   abundance = sample(x = 7:40, size = 20, replace = TRUE))
-data_set
+data_set <- data.frame(Gender = c(rep('Male', 100), rep('Female', 100)),
+                   abundance = sample(x = 7:40, size = 200, replace = TRUE))
 ```
 
+# Checking for normality
 
+## Using qqnorm and qqline
+
+```{r normality_check}
+qqnorm(data_set$abundance)
+qqline(data_set$abundance)
+```
+
+## Using Shapiro test
 
 
 
