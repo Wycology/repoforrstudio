@@ -21,8 +21,6 @@ library(utils)
 library(stats)
 library(nortest)
 library(car)
-library(mapsf)
-library(mapview)
 knitr::write_bib(c(.packages(),
                    'base',
                    'knitr',
@@ -30,9 +28,7 @@ knitr::write_bib(c(.packages(),
                    'utils',
                    'stats',
                    'nortest',
-                   'car',
-                   'mapsf',
-                   'mapview'), 'bib/packages.bib')
+                   'car'), 'bib/packages.bib')
 ```
 
 # Creating the dataset
@@ -62,7 +58,7 @@ p<a hence we reject the null hypothesis and conclude that the data is no-paramet
 ## Using Anderson-Darling test
 
 ```{r normality_check_Anderson_Darling}
-ad.test(bee.data$abundance)
+ad.test(data_set$abundance)
 ```
 
 p>a hence we fail to reject the null hypothesis and conclude that the data is parametric
