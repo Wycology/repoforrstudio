@@ -46,16 +46,24 @@ data_set <- data.frame(Gender = c(rep('Male', 100), rep('Female', 100)),
 
 ## Using qqnorm and qqline
 
-```{r normality_check}
+```{r normality_check_qq}
 qqnorm(data_set$abundance)
 qqline(data_set$abundance)
 ```
 
 ## Using Shapiro test
 
+```{r normality_check_shapiro}
+shapiro.test(data_set$abundance)
+```
 
+p<a hence we reject the null hypothesis and conclude that the data is no-parametric
 
+## Using Anderson-Darling test
 
+```{r normality_check_Anderson_Darling}
+
+```
 
 
 # References
