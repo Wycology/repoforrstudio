@@ -86,8 +86,17 @@ t.test(abundance ~ Gender,
        var.equal = T)
 ```
 
+# Non-parametric t-test with equal variance
 
+```{r non-para_equal_variance}
+wilcox.test(abundance ~ Gender,
+       data = data_set,
+       alternative = 'two.sided',
+       paired = F,
+       var.equal = T)
+```
 
+This is normally used when the data is non parametric, i.e. p<a in case of  shapiro.test or ad.test results.
 
 
 
