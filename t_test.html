@@ -268,62 +268,107 @@ div.tocify {
 Wyclife Agumba Oluoch (<a href="mailto:wyclifeoluoch@gmail.com" class="email">wyclifeoluoch@gmail.com</a>)
 </center></h4>
 <h4 class="date"><center>
-2021-09-05 08:14:23
+2021-09-05 08:43:08
 </center></h4>
 
 </div>
 
 
+<div id="creating-the-dataset" class="section level1">
+<h1>Creating the dataset</h1>
+</div>
+<div id="checking-for-normality" class="section level1">
+<h1>Checking for normality</h1>
+<div id="using-qqnorm-and-qqline" class="section level2">
+<h2>Using qqnorm and qqline</h2>
+<pre class="r"><code>qqnorm(data_set$abundance)
+qqline(data_set$abundance)</code></pre>
+<p><img src="data:image/png;base64,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" width="672" /></p>
+</div>
+<div id="using-shapiro-test" class="section level2">
+<h2>Using Shapiro test</h2>
+<pre class="r"><code>shapiro.test(data_set$abundance)</code></pre>
+<pre><code>## 
+##  Shapiro-Wilk normality test
+## 
+## data:  data_set$abundance
+## W = 0.94368, p-value = 4.853e-07</code></pre>
+<p>p&lt;a hence we reject the null hypothesis and conclude that the data is no-parametric</p>
+</div>
+<div id="using-anderson-darling-test" class="section level2">
+<h2>Using Anderson-Darling test</h2>
+<pre class="r"><code>ad.test(data_set$abundance)</code></pre>
+<pre><code>## 
+##  Anderson-Darling normality test
+## 
+## data:  data_set$abundance
+## A = 2.9918, p-value = 1.544e-07</code></pre>
+<p>p&gt;a hence we fail to reject the null hypothesis and conclude that the data is parametric</p>
+</div>
+</div>
+<div id="test-for-equal-variance-using-levenes-test" class="section level1">
+<h1>Test for equal variance using levene’s test</h1>
+<pre class="r"><code>leveneTest(data_set$abundance ~ factor(data_set$Gender))</code></pre>
+<pre><code>## Levene&#39;s Test for Homogeneity of Variance (center = median)
+##        Df F value Pr(&gt;F)
+## group   1  0.2875 0.5925
+##       198</code></pre>
+<p>p&gt;a hence we fail to reject the null hypothesis and conclude that the data have equal variance</p>
+</div>
+<div id="parametric-t-test-with-equal-variance" class="section level1">
+<h1>Parametric t-test with equal variance</h1>
+<pre class="r"><code>t.test(abundance ~ Gender,
+       data = data_set,
+       alternative = &#39;two.sided&#39;,
+       paired = F,
+       var.equal = T)</code></pre>
+<pre><code>## 
+##  Two Sample t-test
+## 
+## data:  abundance by Gender
+## t = 0.27501, df = 198, p-value = 0.7836
+## alternative hypothesis: true difference in means between group Female and group Male is not equal to 0
+## 95 percent confidence interval:
+##  -2.406539  3.186539
+## sample estimates:
+## mean in group Female   mean in group Male 
+##                23.37                22.98</code></pre>
+</div>
+<div id="non-parametric-t-test-with-equal-variance" class="section level1">
+<h1>Non-parametric t-test with equal variance</h1>
+<pre class="r"><code>wilcox.test(abundance ~ Gender,
+       data = data_set,
+       alternative = &#39;two.sided&#39;,
+       paired = F,
+       var.equal = T)</code></pre>
+<pre><code>## 
+##  Wilcoxon rank sum test with continuity correction
+## 
+## data:  abundance by Gender
+## W = 5139.5, p-value = 0.734
+## alternative hypothesis: true location shift is not equal to 0</code></pre>
+<p>This is normally used when the data is non parametric, i.e. p&lt;a in case of shapiro.test or ad.test results.</p>
+</div>
 <div id="references" class="section level1 unnumbered">
 <h1 class="unnumbered">References</h1>
 <div id="refs" class="references csl-bib-body hanging-indent">
-<div id="ref-R-gapminder" class="csl-entry">
-Bryan, Jennifer. 2017. <em>Gapminder: Data from Gapminder</em>. <a href="https://CRAN.R-project.org/package=gapminder">https://CRAN.R-project.org/package=gapminder</a>.
+<div id="ref-R-rmarkdown" class="csl-entry">
+Allaire, JJ, Yihui Xie, Jonathan McPherson, Javier Luraschi, Kevin Ushey, Aron Atkins, Hadley Wickham, Joe Cheng, Winston Chang, and Richard Iannone. 2021. <em>Rmarkdown: Dynamic Documents for r</em>. <a href="https://CRAN.R-project.org/package=rmarkdown">https://CRAN.R-project.org/package=rmarkdown</a>.
 </div>
-<div id="ref-R-purrr" class="csl-entry">
-Henry, Lionel, and Hadley Wickham. 2020. <em>Purrr: Functional Programming Tools</em>. <a href="https://CRAN.R-project.org/package=purrr">https://CRAN.R-project.org/package=purrr</a>.
+<div id="ref-car2019" class="csl-entry">
+Fox, John, and Sanford Weisberg. 2019. <em>An <span>R</span> Companion to Applied Regression</em>. Third. Thousand Oaks <span>CA</span>: Sage. <a href="https://socialsciences.mcmaster.ca/jfox/Books/Companion/">https://socialsciences.mcmaster.ca/jfox/Books/Companion/</a>.
 </div>
-<div id="ref-R-glue" class="csl-entry">
-Hester, Jim. 2020. <em>Glue: Interpreted String Literals</em>. <a href="https://CRAN.R-project.org/package=glue">https://CRAN.R-project.org/package=glue</a>.
+<div id="ref-R-carData" class="csl-entry">
+Fox, John, Sanford Weisberg, and Brad Price. 2020. <em>carData: Companion to Applied Regression Data Sets</em>. <a href="https://CRAN.R-project.org/package=carData">https://CRAN.R-project.org/package=carData</a>.
 </div>
-<div id="ref-R-ggdist" class="csl-entry">
-Kay, Matthew. 2021. <em>Ggdist: Visualizations of Distributions and Uncertainty</em>. <a href="https://CRAN.R-project.org/package=ggdist">https://CRAN.R-project.org/package=ggdist</a>.
+<div id="ref-R-car" class="csl-entry">
+———. 2021. <em>Car: Companion to Applied Regression</em>. <a href="https://CRAN.R-project.org/package=car">https://CRAN.R-project.org/package=car</a>.
 </div>
-<div id="ref-R-tibble" class="csl-entry">
-Müller, Kirill, and Hadley Wickham. 2021. <em>Tibble: Simple Data Frames</em>. <a href="https://CRAN.R-project.org/package=tibble">https://CRAN.R-project.org/package=tibble</a>.
+<div id="ref-R-nortest" class="csl-entry">
+Gross, Juergen, and Uwe Ligges. 2015. <em>Nortest: Tests for Normality</em>. <a href="https://CRAN.R-project.org/package=nortest">https://CRAN.R-project.org/package=nortest</a>.
 </div>
 <div id="ref-R-base" class="csl-entry">
 R Core Team. 2021. <em>R: A Language and Environment for Statistical Computing</em>. Vienna, Austria: R Foundation for Statistical Computing. <a href="https://www.R-project.org/">https://www.R-project.org/</a>.
-</div>
-<div id="ref-ggplot22016" class="csl-entry">
-Wickham, Hadley. 2016. <em>Ggplot2: Elegant Graphics for Data Analysis</em>. Springer-Verlag New York. <a href="https://ggplot2.tidyverse.org">https://ggplot2.tidyverse.org</a>.
-</div>
-<div id="ref-R-stringr" class="csl-entry">
-———. 2019. <em>Stringr: Simple, Consistent Wrappers for Common String Operations</em>. <a href="https://CRAN.R-project.org/package=stringr">https://CRAN.R-project.org/package=stringr</a>.
-</div>
-<div id="ref-R-forcats" class="csl-entry">
-———. 2021a. <em>Forcats: Tools for Working with Categorical Variables (Factors)</em>. <a href="https://CRAN.R-project.org/package=forcats">https://CRAN.R-project.org/package=forcats</a>.
-</div>
-<div id="ref-R-tidyr" class="csl-entry">
-———. 2021b. <em>Tidyr: Tidy Messy Data</em>. <a href="https://CRAN.R-project.org/package=tidyr">https://CRAN.R-project.org/package=tidyr</a>.
-</div>
-<div id="ref-R-tidyverse" class="csl-entry">
-———. 2021c. <em>Tidyverse: Easily Install and Load the Tidyverse</em>. <a href="https://CRAN.R-project.org/package=tidyverse">https://CRAN.R-project.org/package=tidyverse</a>.
-</div>
-<div id="ref-tidyverse2019" class="csl-entry">
-Wickham, Hadley, Mara Averick, Jennifer Bryan, Winston Chang, Lucy D’Agostino McGowan, Romain François, Garrett Grolemund, et al. 2019. <span>“Welcome to the <span class="nocase">tidyverse</span>.”</span> <em>Journal of Open Source Software</em> 4 (43): 1686. <a href="https://doi.org/10.21105/joss.01686">https://doi.org/10.21105/joss.01686</a>.
-</div>
-<div id="ref-R-ggplot2" class="csl-entry">
-Wickham, Hadley, Winston Chang, Lionel Henry, Thomas Lin Pedersen, Kohske Takahashi, Claus Wilke, Kara Woo, Hiroaki Yutani, and Dewey Dunnington. 2021. <em>Ggplot2: Create Elegant Data Visualisations Using the Grammar of Graphics</em>. <a href="https://CRAN.R-project.org/package=ggplot2">https://CRAN.R-project.org/package=ggplot2</a>.
-</div>
-<div id="ref-R-dplyr" class="csl-entry">
-Wickham, Hadley, Romain François, Lionel Henry, and Kirill Müller. 2021. <em>Dplyr: A Grammar of Data Manipulation</em>. <a href="https://CRAN.R-project.org/package=dplyr">https://CRAN.R-project.org/package=dplyr</a>.
-</div>
-<div id="ref-R-readr" class="csl-entry">
-Wickham, Hadley, and Jim Hester. 2021. <em>Readr: Read Rectangular Text Data</em>. <a href="https://CRAN.R-project.org/package=readr">https://CRAN.R-project.org/package=readr</a>.
-</div>
-<div id="ref-R-ggtext" class="csl-entry">
-Wilke, Claus O. 2020. <em>Ggtext: Improved Text Rendering Support for Ggplot2</em>. <a href="https://wilkelab.org/ggtext/">https://wilkelab.org/ggtext/</a>.
 </div>
 <div id="ref-knitr2014" class="csl-entry">
 Xie, Yihui. 2014. <span>“Knitr: A Comprehensive Tool for Reproducible Research in <span>R</span>.”</span> In <em>Implementing Reproducible Computational Research</em>, edited by Victoria Stodden, Friedrich Leisch, and Roger D. Peng. Chapman; Hall/CRC. <a href="http://www.crcpress.com/product/isbn/9781466561595">http://www.crcpress.com/product/isbn/9781466561595</a>.
@@ -333,6 +378,12 @@ Xie, Yihui. 2014. <span>“Knitr: A Comprehensive Tool for Reproducible Research
 </div>
 <div id="ref-R-knitr" class="csl-entry">
 ———. 2021. <em>Knitr: A General-Purpose Package for Dynamic Report Generation in r</em>. <a href="https://yihui.org/knitr/">https://yihui.org/knitr/</a>.
+</div>
+<div id="ref-rmarkdown2018" class="csl-entry">
+Xie, Yihui, J. J. Allaire, and Garrett Grolemund. 2018. <em>R Markdown: The Definitive Guide</em>. Boca Raton, Florida: Chapman; Hall/CRC. <a href="https://bookdown.org/yihui/rmarkdown">https://bookdown.org/yihui/rmarkdown</a>.
+</div>
+<div id="ref-rmarkdown2020" class="csl-entry">
+Xie, Yihui, Christophe Dervieux, and Emily Riederer. 2020. <em>R Markdown Cookbook</em>. Boca Raton, Florida: Chapman; Hall/CRC. <a href="https://bookdown.org/yihui/rmarkdown-cookbook">https://bookdown.org/yihui/rmarkdown-cookbook</a>.
 </div>
 </div>
 </div>
