@@ -52,6 +52,13 @@ stacked_rasters <- raster::stack(masked_rasters)
 
 # Running k-means
 
+Running k-means on raster data requires use of `raster.kmeans` function in `ecbtools` package. To install the `ecbtools` package use:
+
+
+>remotes::install_github("ozjimbob/ecbtools")
+
+You may need to install `remotes` package first to have the `install_github` function.
+
 ```{r}
 kmeans_layer <- ecbtools::raster.kmeans(x = stacked_rasters, # The stack
                              k = 4,# Number of clusters
