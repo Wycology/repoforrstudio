@@ -1,0 +1,71 @@
+---
+title: "<center>**k-means on rasters in R**</center>"
+author: "<center>Wyclife Agumba Oluoch (wyclifeoluoch@gmail.com) </center>"
+date: "<center>`r Sys.time()`</center>"
+bibliography: 
+  - bib/packages.bib
+nocite: '@*'
+output: 
+  html_document:
+    toc: true
+    toc_depth: 2
+    toc_float: true
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library(base)
+library(knitr)
+library(rmarkdown)
+library(dismo)
+library(raster)
+library(ecbtools)
+knitr::write_bib(c(.packages(),
+                   'base',
+                   'knitr',
+                   'rmarkdown',
+                   'dismo',
+                   'raster',
+                   'ecbtools'), 'bib/packages.bib')
+```
+
+# Introduction
+
+Here I demonstrate how to generate k-means output from stacked raster data in `R`. For the .Rmd behind this output, visit my [gitHub]() account.
+
+# Getting the data sets
+
+I will make use of worldclim data and global administrative units data of Kenya.
+
+```{r}
+my_rasters <- getData('worldclim', res = 10, var = 'tmin')
+my_polygon <- getData('GADM', country = 'KEN', level = 0)
+masked_rasters <- mask(crop(my_rasters, my_polygon), my_polygon)
+plot(masked_rasters[[2]])
+```
+
+# Stacking the rasters
+
+```{r}
+stacked_rasters <- raster::stack(masked_rasters) 
+```
+
+# Running k-means
+
+```{r}
+kmeans_layer <- ecbtools::raster.kmeans(x = stacked_rasters, # The stack
+                             k = 4,# Number of clusters
+                             nstart = 3, # random sets 
+                             geo = TRUE, # weighting by location (x,y coords)
+                             geo.weight = 1) # wweight to location
+
+raster::plot(kmeans_layer)
+```
+
+# Saving the raster output
+
+```{r saving_output}
+raster::writeRaster(kmeans_layer, 'output_clusters.tif', overwrite = TRUE) 
+```
+
+# References
