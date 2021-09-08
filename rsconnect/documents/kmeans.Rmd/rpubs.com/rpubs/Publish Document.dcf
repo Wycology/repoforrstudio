@@ -1,0 +1,11 @@
+name: Publish Document
+title:
+username:
+account: rpubs
+server: rpubs.com
+hostUrl: rpubs.com
+appId: https://api.rpubs.com/api/v1/document/806487/fe979d86b93c41bc895ad1226d7f5b85
+bundleId: https://api.rpubs.com/api/v1/document/806487/fe979d86b93c41bc895ad1226d7f5b85
+url: http://rpubs.com/Wyclife/806487
+when: 1631111372.52659
+lastSyncTime: 1631111372.52659

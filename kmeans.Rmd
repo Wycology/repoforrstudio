@@ -31,7 +31,7 @@ knitr::write_bib(c(.packages(),
 
 # Introduction
 
-Here I demonstrate how to generate k-means output from stacked raster data in `R`. For the .Rmd behind this output, visit my [gitHub]() account.
+Here I demonstrate how to generate k-means output from stacked raster data in `R`. For the .Rmd behind this output, right click, copy the link and paste in your browser my [gitHub](https://github.com/Wycology/repoforrstudio/blob/main/kmeans.Rmd) account.
 
 # Getting the data sets
 
@@ -70,6 +70,8 @@ raster::plot(kmeans_layer)
 ```
 
 # Saving the raster output
+
+Saving the raster into the current working directory for future reference or subsequent analysis/sharing as need may be.
 
 ```{r saving_output}
 raster::writeRaster(kmeans_layer, 'output_clusters.tif', overwrite = TRUE) 
