@@ -21,7 +21,7 @@ Reg <-  stats::lm(Sepal.Length ~ Petal.Width, data = iris)
 
 base::summary(Reg)
 
-coeff <- stats::coefficients(Reg) # Saving the coefficients to an object
+coeff <- stats::coefficients(Reg) 
 
 # Saving the equations of the line-----
 Eq <- paste0('y = ', round(coeff[2], 2), '*x + ', round(coeff[1], 2)) 
