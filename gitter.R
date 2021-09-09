@@ -17,7 +17,7 @@ library(tidyverse) # version 1.3.1
 
 utils::data("iris") # Loading iris data
 
-Reg <-  stats::lm(Sepal.Length ~ Petal.Width, data = iris) le linear regression.
+Reg <-  stats::lm(Sepal.Length ~ Petal.Width, data = iris)  regression.
 
 base::summary(Reg) # The regression results.
 
