@@ -8,11 +8,10 @@
 ###############################
 
 # Loading libraries
-
-base::library(vioplot)   # version 0.3.7 
-base::library(ggplot2)   # version 3.3.5
-base::library(readxl)    # version 1.3.1
-base::library(tidyverse) # version 1.3.1
+library(vioplot)   # version 0.3.7 
+library(ggplot2)   # version 3.3.5
+library(readxl)    # version 1.3.1
+library(tidyverse) # version 1.3.1
 
 # abline in R ----
 
