@@ -1,5 +1,5 @@
 ---
-title: "<center>**dplyr functions in R**</center>"
+title: "<center>**Selected dplyr functions in R**</center>"
 author: "<center>Wyclife Agumba Oluoch (wyclifeoluoch@gmail.com) </center>"
 date: "<center>`r Sys.time()`</center>"
 bibliography: 
@@ -35,8 +35,8 @@ knitr::write_bib(c(.packages(),
 # Introduction
 
 ```{r}
-titanic_tibble <- tibble::tibble(base::data.frame(Titanic))
-base::dim(titanic_tibble)
+titanic_tibble <- tibble(data.frame(Titanic))
+dim(titanic_tibble)
 ```
 
 ```{r}
@@ -276,9 +276,5 @@ iris |>
   dplyr::group_by(Species) |> 
   dplyr::summarise(`sum(Sepal.Length)` = base::sprintf('%0.4f', base::sum(Sepal.Length)))
 ```
-
-
-
-
 
 # References
