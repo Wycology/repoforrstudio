@@ -1,11 +1,4 @@
   
-
-
-# Task: Some data wrangling with dplyr  #
-# Date: 9th Jan 2020                    #
-# Last edited: 10th Sept 2021           #
-#########################################
-
 library(tidyverse) # For data wrangling in the whole project.
 library(broom) # For tidying model outputs. Kind of displaying model output in a tibble
 library(nycflights13) # This is having the titanic data-set.
