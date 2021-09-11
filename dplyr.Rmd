@@ -17,15 +17,23 @@ knitr::opts_chunk$set(echo = TRUE)
 library(base)
 library(knitr)
 library(rmarkdown)
-library(dplyr)
+library(tidyverse)
+library(moderndive)
+library(broom)
+library(nycflights13)
 
 knitr::write_bib(c(.packages(),
                    'base',
                    'knitr',
                    'rmarkdown',
-                   'dplyr'), 'bib/packages.bib')
+                   'tidyverse',
+                   'moderndive',
+                   'broom',
+                   'nycflights13'), 'bib/packages.bib')
 ```
 
 # Introduction
+
+
 
 # References
