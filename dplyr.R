@@ -1,43 +1,35 @@
   
-library(tidyverse) # For data wrangling in the whole project.
-library(broom) # For tidying model outputs. Kind of displaying model output in a tibble
-library(nycflights13) # This is having the titanic data-set.
-library(moderndive) # Almost the same role as broom of tidying model output 
 
 # I will use the Titanic data.set which is a of class table
 
-titanic_df <- base::data.frame(Titanic) # Titanic data as a data.frame object
+ # Titanic data as a data.frame object
 
 # Once it is a data.frame, I can set it as a tibble which is my preferred structure
-titanic_tibble <- tibble::tibble(titanic_df) # Tibble form of the titanic_df
+ # Tibble form of the titanic_df
 
-titanic_tibble <- tibble::tibble(base::data.frame(Titanic)) # In a single line of code
+ # In a single line of code
 
-base::dim(titanic_tibble) # Dimension of the data set; rows and columns.
+ # Dimension of the data set; rows and columns.
 
 # Checking the total number of passengers in the Titanic
 
-number_passengers <- dplyr::summarise(titanic_tibble, number_passengers = base::sum(Freq))
+
 number_passengers # Number of passengers.
 
 # This can also be made more readable using the pipe ( |> )
 
-number_passengers <- titanic_tibble |>  # Super clear to read and understand what happens.
-  dplyr::summarise(number_passengers = base::sum(Freq))
+
 
 # Working with the group_by verb to further get summary of the data
 
-number_survived <- titanic_tibble  |>  # Picking the data data set
-  dplyr::group_by(Survived) |>  # Grouping the data by titanic ship Survived variable
-  dplyr::summarise(Survival = base::sum(Freq)) # Creating sum of based on whether 
+ # Creating sum of based on whether 
 
-number_survived # Returning the sum of passengers by survival which is 
+ # Returning the sum of passengers by survival which is 
 # the grouping variable.
 
 # Using the select verb----
 
-data_sex_age_freq <- titanic_tibble |> # Takes the Titanic data set
-  dplyr::select(Sex, Age, Freq) # Picking the three columns of my interest only.
+ # Picking the three columns of my interest only.
 
 # Using the mutate verb----
 
@@ -46,11 +38,9 @@ data_sex_age_freq <- titanic_tibble |> # Takes the Titanic data set
 # This is what I applied on my research to get tree heights from inclinometer
 # read values.
 
-titanic_tibble_mutate <- titanic_tibble |> 
-  dplyr::mutate(Freq_10 = Freq * 10) # Creates new variable called Freq_10 which is 
-# former Freq in the titanic_tibble multiplied by 10.
 
-utils::head(titanic_tibble_mutate) # Freq_10 is added to the data-set as the last column.
+
+ # Freq_10 is added to the data-set as the last column.
 
 # If I want the created column to fit as first in the tibble, then I can
 # add the .after or .before argument in the mutate function:
