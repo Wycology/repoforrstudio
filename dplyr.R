@@ -1,5 +1,4 @@
-#########################################
-# Name: Wyclife Agumba Oluoch           #   
+  
 # E-mail: wyclifeoluoch@gmail.com       #
 # GitHub: https://github.com/Wycology   #
 # Task: Some data wrangling with dplyr  #

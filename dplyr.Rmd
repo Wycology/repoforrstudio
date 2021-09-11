@@ -1,0 +1,31 @@
+---
+title: "<center>**dplyr functions in R**</center>"
+author: "<center>Wyclife Agumba Oluoch (wyclifeoluoch@gmail.com) </center>"
+date: "<center>`r Sys.time()`</center>"
+bibliography: 
+  - bib/packages.bib
+nocite: '@*'
+output: 
+  html_document:
+    toc: true
+    toc_depth: 2
+    toc_float: true
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library(base)
+library(knitr)
+library(rmarkdown)
+library(dplyr)
+
+knitr::write_bib(c(.packages(),
+                   'base',
+                   'knitr',
+                   'rmarkdown',
+                   'dplyr'), 'bib/packages.bib')
+```
+
+# Introduction
+
+# References
