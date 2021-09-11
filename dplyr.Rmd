@@ -34,6 +34,251 @@ knitr::write_bib(c(.packages(),
 
 # Introduction
 
+```{r}
+titanic_tibble <- tibble::tibble(base::data.frame(Titanic))
+base::dim(titanic_tibble)
+```
+
+```{r}
+number_passengers <- dplyr::summarise(titanic_tibble, number_passengers = base::sum(Freq))
+number_passengers
+```
+
+```{r}
+number_passengers <- titanic_tibble |>  
+  dplyr::summarise(number_passengers = base::sum(Freq))
+```
+
+```{r}
+number_survived <- titanic_tibble  |>  
+  dplyr::group_by(Survived) |>  
+  dplyr::summarise(Survival = base::sum(Freq))
+number_survived
+```
+
+```{r}
+data_sex_age_freq <- titanic_tibble |> 
+  dplyr::select(Sex, Age, Freq)
+data_sex_age_freq
+```
+
+# Mutate
+
+```{r}
+titanic_tibble_mutate <- titanic_tibble |> 
+  dplyr::mutate(Freq_10 = Freq * 10)
+utils::head(titanic_tibble_mutate)
+```
+
+```{r}
+titanic_tibble_mutate <- titanic_tibble |> 
+  dplyr::mutate(Freq_10 = Freq * 10, .after = 1)
+utils::head(titanic_tibble_mutate)
+```
+
+```{r}
+titanic_tibble_mutate <- titanic_tibble |> 
+  dplyr::mutate(Freq_10 = Freq * 10, .before = 1)
+utils::head(titanic_tibble_mutate)
+```
+
+```{r}
+titanic_tibble_mutate <- titanic_tibble |> 
+  dplyr::mutate(Freq_10 = Freq * 10, .after = Age) 
+utils::head(titanic_tibble_mutate)
+```
+
+```{r}
+titanic_tibble_mutate <- titanic_tibble_mutate |> 
+  dplyr::relocate(Age, .before = Sex)  
+utils::head(titanic_tibble_mutate)
+```
+
+```{r}
+titanic_tibble_mutate <- titanic_tibble_mutate |> 
+  dplyr::relocate(Age, .after = Sex)
+utils::head(titanic_tibble_mutate)
+```
+
+# Filter
+
+```{r}
+titanic_female <- titanic_tibble |> 
+  dplyr::filter(Sex == 'Female') 
+utils::head(titanic_female) 
+```
+
+```{r}
+titanic_tibble |> 
+  dplyr::filter(Age == 'Child' & Sex == 'Female' & Survived == 'Yes' & Class == '1st')
+```
+
+```{r}
+titanic_tibble |> 
+  dplyr::filter(Age == 'Child' & Sex == 'Male' & Survived == 'Yes' & Class == '1st')
+```
+
+# Arrange
+
+```{r}
+titanic_df <- base::data.frame(Titanic) 
+```
+
+```{r}
+titanic_tibble <- tibble::tibble(titanic_df)
+```
+
+```{r}
+titanic_tibble <- titanic_tibble |> 
+  dplyr::arrange(Freq)
+```
+
+
+```{r}
+utils::head(titanic_tibble) 
+```
+
+
+```{r}
+utils::tail(titanic_tibble)
+```
+
+```{r}
+titanic_tibble <- titanic_tibble |> 
+  dplyr::arrange(utils::desc(Freq)) 
+```
+
+
+```{r}
+utils::head(titanic_tibble)
+```
+
+
+```{r}
+titanic_tibble |> 
+  dplyr::arrange(utils::desc(Freq), Survived)
+```
+
+# Correlation
+
+```{r}
+utils::data(flights)
+```
+
+
+```{r}
+flights |> 
+  dplyr::summarise(delay_cor = stats::cor(dep_delay, arr_delay))
+```
+
+
+```{r}
+flights |> 
+  dplyr::summarise(delay_cor = stats::cor(dep_delay, arr_delay, use = 'complete.obs'))
+```
+
+
+```{r}
+flights |> 
+  dplyr::select(dep_delay, arr_delay) |>
+  stats::na.omit() |> 
+  dplyr::summarise(delay_cor = stats::cor(dep_delay, arr_delay))
+```
+
+# Iris
+
+```{r}
+utils::data("iris")
+```
+
+
+```{r}
+score_model <- stats::lm(Sepal.Length ~ Petal.Width, data = iris) 
+score_model|> 
+  base::summary()
+```
+
+```{r}
+broom::tidy(score_model)
+```
+
+
+```{r}
+broom::tidy(score_model) |>
+  ggplot2::ggplot() + 
+  ggplot2::geom_col(ggplot2::aes(x = term, y = statistic, fill = term))
+```
+
+
+```{r}
+iris |> 
+  dplyr::select(Sepal.Length, Petal.Width) |> 
+  stats::lm() |> 
+  broom::tidy() |> 
+  ggplot2::ggplot() + 
+  ggplot2::geom_col(ggplot2::aes(x = term, y = std.error, fill = term))
+```
+
+
+```{r}
+broom::glance(score_model)
+```
+
+
+```{r}
+moderndive::get_regression_summaries(score_model) 
+```
+
+
+```{r}
+broom::augment(score_model)
+```
+
+
+```{r}
+moderndive::get_regression_points(score_model)
+```
+
+
+```{r}
+anova_iris <- stats::aov(Sepal.Length ~ Petal.Width, data = iris)
+broom::tidy(anova_iris)
+```
+
+
+```{r}
+utils::data(iris) 
+utils::head(iris)
+```
+
+
+```{r}
+stats::aggregate(x = base::c(iris$Sepal.Length), 
+          by = base::list(iris$Species), 
+          FUN = sum)
+```
+
+
+```{r}
+iris |> 
+  dplyr::group_by(Species) |> 
+  dplyr::summarise(x = base::sum(Sepal.Length))
+```
+
+```{r}
+iris |> 
+  dplyr::group_by(Species) |> 
+  dplyr::summarise(`sum(Sepal.Length)` = base::sprintf('%0.1f', base::sum(Sepal.Length)))
+```
+
+```{r}
+iris |> 
+  dplyr::group_by(Species) |> 
+  dplyr::summarise(`sum(Sepal.Length)` = base::sprintf('%0.4f', base::sum(Sepal.Length)))
+```
+
+
+
 
 
 # References
