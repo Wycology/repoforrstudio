@@ -47,6 +47,7 @@ number_passengers
 ```{r}
 number_passengers <- titanic_tibble |>  
   dplyr::summarise(number_passengers = base::sum(Freq))
+number_passengers
 ```
 
 ```{r}
@@ -122,6 +123,7 @@ titanic_tibble |>
 
 ```{r}
 titanic_df <- base::data.frame(Titanic) 
+nrow(titanic_df)
 ```
 
 ```{r}
