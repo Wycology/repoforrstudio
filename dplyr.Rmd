@@ -125,7 +125,7 @@ head(titanic_tibble_mutate)
 A interesting and important functionality which can be appended to `mutate` is called `case_when`. This is almost working like `if_else`.
 
 ```{r}
-titanic_tibble |> mutate(Remarks = case_when(Survived == 'Yes' ~ 'Awesome, you made it', Survived == 'No' ~ 'RIP', TRUE ~ 'Wishing you well'))
+titanic_tibble |> mutate(Remarks = case_when(Survived == 'Yes' ~ 'Awesome, you made it', Survived == 'No' ~ 'RIP', TRUE ~ 'Wishing you well')) |> group_by(Remarks) |> summarise(Number = sum(Freq))
 ```
 
 
