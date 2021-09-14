@@ -80,13 +80,15 @@ titanic_tibble_mutate <- titanic_tibble |>
 head(titanic_tibble_mutate)
 ```
 
-Mutate normally adds the newly created column as the last in the tibble. However, that can be changed by specifying where you want it by .after or .before arguments.
+Mutate normally adds the newly created column as the last in the tibble. However, that can be changed by specifying where you want it by .after or .before arguments. Here I use .after.
 
 ```{r}
 titanic_tibble_mutate <- titanic_tibble |> 
   mutate(Freq_10 = Freq * 10, .after = 1)
 head(titanic_tibble_mutate)
 ```
+
+Here I use .before, hence making it even the first column.
 
 ```{r}
 titanic_tibble_mutate <- titanic_tibble |> 
