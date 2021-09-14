@@ -268,7 +268,7 @@ div.tocify {
 Wyclife Agumba Oluoch (<a href="mailto:wyclifeoluoch@gmail.com" class="email">wyclifeoluoch@gmail.com</a>)
 </center></h4>
 <h4 class="date"><center>
-2021-09-11 19:55:26
+2021-09-14 08:50:47
 </center></h4>
 
 </div>
@@ -286,7 +286,12 @@ number_passengers</code></pre>
 ##               &lt;dbl&gt;
 ## 1              2201</code></pre>
 <pre class="r"><code>number_passengers &lt;- titanic_tibble |&gt;  
-  dplyr::summarise(number_passengers = base::sum(Freq))</code></pre>
+  dplyr::summarise(number_passengers = base::sum(Freq))
+number_passengers</code></pre>
+<pre><code>## # A tibble: 1 x 1
+##   number_passengers
+##               &lt;dbl&gt;
+## 1              2201</code></pre>
 <pre class="r"><code>number_survived &lt;- titanic_tibble  |&gt;  
   dplyr::group_by(Survived) |&gt;  
   dplyr::summarise(Survival = base::sum(Freq))
@@ -418,7 +423,9 @@ utils::head(titanic_female) </code></pre>
 </div>
 <div id="arrange" class="section level1">
 <h1>Arrange</h1>
-<pre class="r"><code>titanic_df &lt;- base::data.frame(Titanic) </code></pre>
+<pre class="r"><code>titanic_df &lt;- base::data.frame(Titanic) 
+nrow(titanic_df)</code></pre>
+<pre><code>## [1] 32</code></pre>
 <pre class="r"><code>titanic_tibble &lt;- tibble::tibble(titanic_df)</code></pre>
 <pre class="r"><code>titanic_tibble &lt;- titanic_tibble |&gt; 
   dplyr::arrange(Freq)</code></pre>

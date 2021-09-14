@@ -14,22 +14,28 @@ output:
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
-library(base)
-library(knitr)
-library(rmarkdown)
-library(tidyverse)
-library(moderndive)
-library(broom)
-library(nycflights13)
+```
 
-knitr::write_bib(c(.packages(),
-                   'base',
-                   'knitr',
-                   'rmarkdown',
-                   'tidyverse',
-                   'moderndive',
-                   'broom',
-                   'nycflights13'), 'bib/packages.bib')
+
+```{r libs, echo=FALSE, warning=FALSE, message=FALSE, include=FALSE}
+packages <- c("base",
+              'knitr',
+              'rmarkdown',
+              'tidyverse',
+              'moderndive',
+              'broom',
+              'nycflights13')
+installed_packages <- packages %in% rownames(installed.packages())
+if(any(installed_packages == FALSE)){
+  install.packages(packages[!installed_packages])
+}
+lapply(packages, library, character.only = TRUE) |> invisible()
+```
+
+```{r write_bib, echo=FALSE, warning=FALSE, message=FALSE, include=FALSE}
+knitr::write_bib(c(
+  .packages(), packages
+), 'packages.bib')
 ```
 
 # Introduction
