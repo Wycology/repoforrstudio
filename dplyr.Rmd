@@ -128,14 +128,14 @@ A interesting and important functionality which can be appended to `mutate` is c
 titanic_tibble |> mutate(Remarks = case_when(Survived == 'Yes' ~ 'Awesome, you made it', Survived == 'No' ~ 'RIP', TRUE ~ 'Wishing you well')) |> group_by(Remarks) |> summarise(Number = sum(Freq))
 ```
 
-
-
 # Filter
+
+Picks rows/records of a column meeting some defined conditions.
 
 ```{r}
 titanic_female <- titanic_tibble |> 
-  dplyr::filter(Sex == 'Female') 
-utils::head(titanic_female) 
+  filter(Sex == 'Female') 
+head(titanic_female) 
 ```
 
 ```{r}
