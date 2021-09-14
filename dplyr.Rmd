@@ -96,10 +96,12 @@ titanic_tibble_mutate <- titanic_tibble |>
 head(titanic_tibble_mutate)
 ```
 
+.after and .before do not only take column index like 1, 2, 3...but also take actual column names like is the case with Age column below.
+
 ```{r}
 titanic_tibble_mutate <- titanic_tibble |> 
-  dplyr::mutate(Freq_10 = Freq * 10, .after = Age) 
-utils::head(titanic_tibble_mutate)
+  mutate(Freq_10 = Freq * 10, .after = Age) 
+head(titanic_tibble_mutate)
 ```
 
 ```{r}
