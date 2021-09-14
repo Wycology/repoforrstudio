@@ -104,17 +104,31 @@ titanic_tibble_mutate <- titanic_tibble |>
 head(titanic_tibble_mutate)
 ```
 
-```{r}
-titanic_tibble_mutate <- titanic_tibble_mutate |> 
-  dplyr::relocate(Age, .before = Sex)  
-utils::head(titanic_tibble_mutate)
-```
+Can have it located before Sex column.
 
 ```{r}
 titanic_tibble_mutate <- titanic_tibble_mutate |> 
-  dplyr::relocate(Age, .after = Sex)
-utils::head(titanic_tibble_mutate)
+  relocate(Age, .before = Sex)  
+head(titanic_tibble_mutate)
 ```
+
+Or even after Sex.
+
+```{r}
+titanic_tibble_mutate <- titanic_tibble_mutate |> 
+  relocate(Age, .after = Sex)
+head(titanic_tibble_mutate)
+```
+
+# Mutate and case_when
+
+A interesting and important functionality which can be appended to `mutate` is called `case_when`. This is almost working like `if_else`.
+
+```{r}
+titanic_tibble |> mutate(Remarks = case_when(Survived == 'Yes' ~ 'Awesome, you made it', Survived == 'No' ~ 'RIP', TRUE ~ 'Wishing you well'))
+```
+
+
 
 # Filter
 
