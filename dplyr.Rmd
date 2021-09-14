@@ -176,7 +176,7 @@ utils::tail(titanic_tibble)
 
 ```{r}
 titanic_tibble <- titanic_tibble |> 
-  dplyr::arrange(utils::desc(Freq)) 
+  arrange(desc(Freq)) 
 ```
 
 
