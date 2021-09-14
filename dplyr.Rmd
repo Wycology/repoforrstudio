@@ -187,7 +187,7 @@ head(titanic_tibble)
 
 ```{r}
 titanic_tibble |> 
-  dplyr::arrange(utils::desc(Freq), Survived)
+  arrange(desc(Freq), Survived)
 ```
 
 # Correlation
