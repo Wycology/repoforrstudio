@@ -181,7 +181,7 @@ titanic_tibble <- titanic_tibble |>
 
 
 ```{r}
-utils::head(titanic_tibble)
+head(titanic_tibble)
 ```
 
 
