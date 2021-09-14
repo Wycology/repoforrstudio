@@ -40,53 +40,58 @@ knitr::write_bib(c(
 
 # Introduction
 
+We start this by converting Titanic table data to tibble. This is for easy manipulation with tidyverse packages. We also use `dim` function to check the number of rows and columns of the tibble. 
+
 ```{r}
 titanic_tibble <- tibble(data.frame(Titanic))
 dim(titanic_tibble)
 ```
 
+Checking the total number of passangers that boarded the Titanic.
+
 ```{r}
-number_passengers <- dplyr::summarise(titanic_tibble, number_passengers = base::sum(Freq))
+number_passengers <- titanic_tibble |> summarise(number_passengers = sum(Freq))
 number_passengers
 ```
 
-```{r}
-number_passengers <- titanic_tibble |>  
-  dplyr::summarise(number_passengers = base::sum(Freq))
-number_passengers
-```
+Checking the total number of passengers who succumbed and those who survived the ordeal.
 
 ```{r}
 number_survived <- titanic_tibble  |>  
-  dplyr::group_by(Survived) |>  
-  dplyr::summarise(Survival = base::sum(Freq))
+  group_by(Survived) |>
+  summarise(Survival = sum(Freq))
 number_survived
 ```
+Selecting a few columns from the tibble.
 
 ```{r}
 data_sex_age_freq <- titanic_tibble |> 
-  dplyr::select(Sex, Age, Freq)
+  select(Sex, Age, Freq)
 data_sex_age_freq
 ```
 
 # Mutate
 
+Mutate creates a column using some conditional statements on other existing columns. For example, creating a new column which is 10 times the Freq column.
+
 ```{r}
 titanic_tibble_mutate <- titanic_tibble |> 
-  dplyr::mutate(Freq_10 = Freq * 10)
-utils::head(titanic_tibble_mutate)
+  mutate(Freq_10 = Freq * 10)
+head(titanic_tibble_mutate)
+```
+
+Mutate normally adds the newly created column as the last in the tibble. However, that can be changed by specifying where you want it by .after or .before arguments.
+
+```{r}
+titanic_tibble_mutate <- titanic_tibble |> 
+  mutate(Freq_10 = Freq * 10, .after = 1)
+head(titanic_tibble_mutate)
 ```
 
 ```{r}
 titanic_tibble_mutate <- titanic_tibble |> 
-  dplyr::mutate(Freq_10 = Freq * 10, .after = 1)
-utils::head(titanic_tibble_mutate)
-```
-
-```{r}
-titanic_tibble_mutate <- titanic_tibble |> 
-  dplyr::mutate(Freq_10 = Freq * 10, .before = 1)
-utils::head(titanic_tibble_mutate)
+  mutate(Freq_10 = Freq * 10, .before = 1)
+head(titanic_tibble_mutate)
 ```
 
 ```{r}
