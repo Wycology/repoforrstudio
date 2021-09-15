@@ -15,7 +15,7 @@ library(tidyverse) # version 1.3.1
 
 # abline in R ----
 
-utils:data("iris") # Loading iris data
+utilsdata("iris") # Loading iris data
 
 Reg <-  stats::lm(Sepal.Length ~ Petal.Width, data = iris)
 
