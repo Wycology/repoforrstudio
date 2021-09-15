@@ -17,7 +17,7 @@ library(tidyverse) # version 1.3.1
 
 data("iris") # Loading iris data
 
-Reg <-  stats::lm(Sepal.Length ~ Petal.Width, data = iris)
+Reg <-  statslm(Sepal.Length ~ Petal.Width, data = iris)
 
 base::summary(Reg)
 
