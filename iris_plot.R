@@ -26,7 +26,7 @@ base::plot(iris$Sepal.Length, iris$Petal.Width, # Variables to use on the plot
      col = 'purple', # Color for the data points on the plot
      main = base::paste0("Simple plot in R \n Isn't it?\n", eq), # Title of the plot in two lines
      sub = 'Subtitle at lower center of the plot', # Adding subtitle to the plot
-     cex = 2, # Double size of the points on the plot
+     cex = 2, # Double size of the points on the pl
      pch = 19, # Picks the 19th character in terms of shape of points plotted
      bty = 'l', # Box type. Other options are 'o', 'n', 'l', '7', 'c', 'u', ']'
      xlab = 'Sepal length (cm)', # Labels x axis
