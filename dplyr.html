@@ -268,7 +268,7 @@ div.tocify {
 Wyclife Agumba Oluoch (<a href="mailto:wyclifeoluoch@gmail.com" class="email">wyclifeoluoch@gmail.com</a>)
 </center></h4>
 <h4 class="date"><center>
-2021-09-14 08:50:47
+2021-09-19 16:01:05
 </center></h4>
 
 </div>
@@ -276,33 +276,30 @@ Wyclife Agumba Oluoch (<a href="mailto:wyclifeoluoch@gmail.com" class="email">wy
 
 <div id="introduction" class="section level1">
 <h1>Introduction</h1>
+<p>We start this by converting Titanic table data to tibble. This is for easy manipulation with tidyverse packages. We also use <code>dim</code> function to check the number of rows and columns of the tibble.</p>
 <pre class="r"><code>titanic_tibble &lt;- tibble(data.frame(Titanic))
 dim(titanic_tibble)</code></pre>
 <pre><code>## [1] 32  5</code></pre>
-<pre class="r"><code>number_passengers &lt;- dplyr::summarise(titanic_tibble, number_passengers = base::sum(Freq))
+<p>Checking the total number of passangers that boarded the Titanic.</p>
+<pre class="r"><code>number_passengers &lt;- titanic_tibble |&gt; summarise(number_passengers = sum(Freq))
 number_passengers</code></pre>
 <pre><code>## # A tibble: 1 x 1
 ##   number_passengers
 ##               &lt;dbl&gt;
 ## 1              2201</code></pre>
-<pre class="r"><code>number_passengers &lt;- titanic_tibble |&gt;  
-  dplyr::summarise(number_passengers = base::sum(Freq))
-number_passengers</code></pre>
-<pre><code>## # A tibble: 1 x 1
-##   number_passengers
-##               &lt;dbl&gt;
-## 1              2201</code></pre>
+<p>Checking the total number of passengers who succumbed and those who survived the ordeal.</p>
 <pre class="r"><code>number_survived &lt;- titanic_tibble  |&gt;  
-  dplyr::group_by(Survived) |&gt;  
-  dplyr::summarise(Survival = base::sum(Freq))
+  group_by(Survived) |&gt;
+  summarise(Survival = sum(Freq))
 number_survived</code></pre>
 <pre><code>## # A tibble: 2 x 2
 ##   Survived Survival
 ##   &lt;fct&gt;       &lt;dbl&gt;
 ## 1 No           1490
 ## 2 Yes           711</code></pre>
+<p>Selecting a few columns from the tibble.</p>
 <pre class="r"><code>data_sex_age_freq &lt;- titanic_tibble |&gt; 
-  dplyr::select(Sex, Age, Freq)
+  select(Sex, Age, Freq)
 data_sex_age_freq</code></pre>
 <pre><code>## # A tibble: 32 x 3
 ##    Sex    Age    Freq
@@ -321,9 +318,10 @@ data_sex_age_freq</code></pre>
 </div>
 <div id="mutate" class="section level1">
 <h1>Mutate</h1>
+<p>Mutate creates a column using some conditional statements on other existing columns. For example, creating a new column which is 10 times the Freq column.</p>
 <pre class="r"><code>titanic_tibble_mutate &lt;- titanic_tibble |&gt; 
-  dplyr::mutate(Freq_10 = Freq * 10)
-utils::head(titanic_tibble_mutate)</code></pre>
+  mutate(Freq_10 = Freq * 10)
+head(titanic_tibble_mutate)</code></pre>
 <pre><code>## # A tibble: 6 x 6
 ##   Class Sex    Age   Survived  Freq Freq_10
 ##   &lt;fct&gt; &lt;fct&gt;  &lt;fct&gt; &lt;fct&gt;    &lt;dbl&gt;   &lt;dbl&gt;
@@ -333,9 +331,10 @@ utils::head(titanic_tibble_mutate)</code></pre>
 ## 4 Crew  Male   Child No           0       0
 ## 5 1st   Female Child No           0       0
 ## 6 2nd   Female Child No           0       0</code></pre>
+<p>Mutate normally adds the newly created column as the last in the tibble. However, that can be changed by specifying where you want it by .after or .before arguments. Here I use .after.</p>
 <pre class="r"><code>titanic_tibble_mutate &lt;- titanic_tibble |&gt; 
-  dplyr::mutate(Freq_10 = Freq * 10, .after = 1)
-utils::head(titanic_tibble_mutate)</code></pre>
+  mutate(Freq_10 = Freq * 10, .after = 1)
+head(titanic_tibble_mutate)</code></pre>
 <pre><code>## # A tibble: 6 x 6
 ##   Class Freq_10 Sex    Age   Survived  Freq
 ##   &lt;fct&gt;   &lt;dbl&gt; &lt;fct&gt;  &lt;fct&gt; &lt;fct&gt;    &lt;dbl&gt;
@@ -345,9 +344,10 @@ utils::head(titanic_tibble_mutate)</code></pre>
 ## 4 Crew        0 Male   Child No           0
 ## 5 1st         0 Female Child No           0
 ## 6 2nd         0 Female Child No           0</code></pre>
+<p>Here I use .before, hence making it even the first column.</p>
 <pre class="r"><code>titanic_tibble_mutate &lt;- titanic_tibble |&gt; 
-  dplyr::mutate(Freq_10 = Freq * 10, .before = 1)
-utils::head(titanic_tibble_mutate)</code></pre>
+  mutate(Freq_10 = Freq * 10, .before = 1)
+head(titanic_tibble_mutate)</code></pre>
 <pre><code>## # A tibble: 6 x 6
 ##   Freq_10 Class Sex    Age   Survived  Freq
 ##     &lt;dbl&gt; &lt;fct&gt; &lt;fct&gt;  &lt;fct&gt; &lt;fct&gt;    &lt;dbl&gt;
@@ -357,9 +357,10 @@ utils::head(titanic_tibble_mutate)</code></pre>
 ## 4       0 Crew  Male   Child No           0
 ## 5       0 1st   Female Child No           0
 ## 6       0 2nd   Female Child No           0</code></pre>
+<p>.after and .before do not only take column index like 1, 2, 3…but also take actual column names like is the case with Age column below.</p>
 <pre class="r"><code>titanic_tibble_mutate &lt;- titanic_tibble |&gt; 
-  dplyr::mutate(Freq_10 = Freq * 10, .after = Age) 
-utils::head(titanic_tibble_mutate)</code></pre>
+  mutate(Freq_10 = Freq * 10, .after = Age) 
+head(titanic_tibble_mutate)</code></pre>
 <pre><code>## # A tibble: 6 x 6
 ##   Class Sex    Age   Freq_10 Survived  Freq
 ##   &lt;fct&gt; &lt;fct&gt;  &lt;fct&gt;   &lt;dbl&gt; &lt;fct&gt;    &lt;dbl&gt;
@@ -369,9 +370,10 @@ utils::head(titanic_tibble_mutate)</code></pre>
 ## 4 Crew  Male   Child       0 No           0
 ## 5 1st   Female Child       0 No           0
 ## 6 2nd   Female Child       0 No           0</code></pre>
+<p>Can have it located before Sex column.</p>
 <pre class="r"><code>titanic_tibble_mutate &lt;- titanic_tibble_mutate |&gt; 
-  dplyr::relocate(Age, .before = Sex)  
-utils::head(titanic_tibble_mutate)</code></pre>
+  relocate(Age, .before = Sex)  
+head(titanic_tibble_mutate)</code></pre>
 <pre><code>## # A tibble: 6 x 6
 ##   Class Age   Sex    Freq_10 Survived  Freq
 ##   &lt;fct&gt; &lt;fct&gt; &lt;fct&gt;    &lt;dbl&gt; &lt;fct&gt;    &lt;dbl&gt;
@@ -381,9 +383,10 @@ utils::head(titanic_tibble_mutate)</code></pre>
 ## 4 Crew  Child Male         0 No           0
 ## 5 1st   Child Female       0 No           0
 ## 6 2nd   Child Female       0 No           0</code></pre>
+<p>Or even after Sex.</p>
 <pre class="r"><code>titanic_tibble_mutate &lt;- titanic_tibble_mutate |&gt; 
-  dplyr::relocate(Age, .after = Sex)
-utils::head(titanic_tibble_mutate)</code></pre>
+  relocate(Age, .after = Sex)
+head(titanic_tibble_mutate)</code></pre>
 <pre><code>## # A tibble: 6 x 6
 ##   Class Sex    Age   Freq_10 Survived  Freq
 ##   &lt;fct&gt; &lt;fct&gt;  &lt;fct&gt;   &lt;dbl&gt; &lt;fct&gt;    &lt;dbl&gt;
@@ -394,11 +397,22 @@ utils::head(titanic_tibble_mutate)</code></pre>
 ## 5 1st   Female Child       0 No           0
 ## 6 2nd   Female Child       0 No           0</code></pre>
 </div>
+<div id="mutate-and-case_when" class="section level1">
+<h1>Mutate and case_when</h1>
+<p>A interesting and important functionality which can be appended to <code>mutate</code> is called <code>case_when</code>. This is almost working like <code>if_else</code>.</p>
+<pre class="r"><code>titanic_tibble |&gt; mutate(Remarks = case_when(Survived == &#39;Yes&#39; ~ &#39;Awesome, you made it&#39;, Survived == &#39;No&#39; ~ &#39;RIP&#39;, TRUE ~ &#39;Wishing you well&#39;)) |&gt; group_by(Remarks) |&gt; summarise(Number = sum(Freq))</code></pre>
+<pre><code>## # A tibble: 2 x 2
+##   Remarks              Number
+##   &lt;chr&gt;                 &lt;dbl&gt;
+## 1 Awesome, you made it    711
+## 2 RIP                    1490</code></pre>
+</div>
 <div id="filter" class="section level1">
 <h1>Filter</h1>
+<p>Picks rows/records of a column meeting some defined conditions.</p>
 <pre class="r"><code>titanic_female &lt;- titanic_tibble |&gt; 
-  dplyr::filter(Sex == &#39;Female&#39;) 
-utils::head(titanic_female) </code></pre>
+  filter(Sex == &#39;Female&#39;) 
+head(titanic_female) </code></pre>
 <pre><code>## # A tibble: 6 x 5
 ##   Class Sex    Age   Survived  Freq
 ##   &lt;fct&gt; &lt;fct&gt;  &lt;fct&gt; &lt;fct&gt;    &lt;dbl&gt;
@@ -450,8 +464,8 @@ nrow(titanic_df)</code></pre>
 ## 5 3rd   Male   Adult No         387
 ## 6 Crew  Male   Adult No         670</code></pre>
 <pre class="r"><code>titanic_tibble &lt;- titanic_tibble |&gt; 
-  dplyr::arrange(utils::desc(Freq)) </code></pre>
-<pre class="r"><code>utils::head(titanic_tibble)</code></pre>
+  arrange(desc(Freq)) </code></pre>
+<pre class="r"><code>head(titanic_tibble)</code></pre>
 <pre><code>## # A tibble: 6 x 5
 ##   Class Sex    Age   Survived  Freq
 ##   &lt;fct&gt; &lt;fct&gt;  &lt;fct&gt; &lt;fct&gt;    &lt;dbl&gt;
@@ -462,7 +476,7 @@ nrow(titanic_df)</code></pre>
 ## 5 1st   Female Adult Yes        140
 ## 6 1st   Male   Adult No         118</code></pre>
 <pre class="r"><code>titanic_tibble |&gt; 
-  dplyr::arrange(utils::desc(Freq), Survived)</code></pre>
+  arrange(desc(Freq), Survived)</code></pre>
 <pre><code>## # A tibble: 32 x 5
 ##    Class Sex    Age   Survived  Freq
 ##    &lt;fct&gt; &lt;fct&gt;  &lt;fct&gt; &lt;fct&gt;    &lt;dbl&gt;
@@ -634,6 +648,15 @@ utils::head(iris)</code></pre>
 ## 1 setosa     250.3000           
 ## 2 versicolor 296.8000           
 ## 3 virginica  329.4000</code></pre>
+<pre class="r"><code>library(reticulate)</code></pre>
+<pre class="python"><code>import numpy as np
+my_python_array = np.array([2,4,6,8])
+for item in my_python_array:
+  print(item)</code></pre>
+<pre><code>## 2
+## 4
+## 6
+## 8</code></pre>
 </div>
 <div id="references" class="section level1 unnumbered">
 <h1 class="unnumbered">References</h1>
