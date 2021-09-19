@@ -308,4 +308,17 @@ iris |>
   dplyr::summarise(`sum(Sepal.Length)` = base::sprintf('%0.4f', base::sum(Sepal.Length)))
 ```
 
+```{r}
+library(reticulate)
+```
+
+
+```{python}
+import numpy as np
+my_python_array = np.array([2,4,6,8])
+for item in my_python_array:
+  print(item)
+```
+
+
 # References
