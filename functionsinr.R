@@ -8,8 +8,7 @@
 #########################################
 
 # R has thousands of in-built functions as well as those inside various third 
-# party libraries, how to write them is important just to be
-
+# party libraries, how to write them is important 
 # Let me start with a basic structure of a function.
 
 function_name <- function(inputs){
