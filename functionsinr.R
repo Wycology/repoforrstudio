@@ -7,8 +7,7 @@
 # Last edited: 3rd Oct 2021           #
 #########################################
 
-# R has thousands of in-built functions as well as those inside various third 
-
+# R has thousands of in-built functions as well as
 # Let me start with a basic structure of a function.
 
 function_name <- function(inputs){
