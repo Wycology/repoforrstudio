@@ -7,7 +7,6 @@
 # Last edited: 3rd Oct 2021           #
 #########################################
 
-# R has th
 # Let me start with a basic structure of a function.
 
 function_name <- function(inputs){
