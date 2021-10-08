@@ -9,7 +9,6 @@
 
 # R has thousands of in-built functions as well as those inside various third 
 # party libraries, how to write them is important just to be sure of what a 
-# function does.
 
 # Let me start with a basic structure of a function.
 
