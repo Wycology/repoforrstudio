@@ -19,7 +19,7 @@ for (item in list_of_items){
 # Like for every student in a class, vaccinate. So every student must get the 
 # vaccine. 
 
-# For better appreciation, let me create vector called volumes of
+# For better appreciation, let me create vector called 
 
 volumes <- c(22, 12, 29)
 
