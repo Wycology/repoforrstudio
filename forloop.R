@@ -19,8 +19,6 @@ for (item in list_of_items){
 # Like for every student in a class, vaccinate. So every student must get the 
 # vaccine. 
 
-# For
-
 volumes <- c(22, 12, 29)
 
 for (volume in volumes){  # I have replaced item with volume, list_of_items
