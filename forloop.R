@@ -19,7 +19,7 @@ for (item in list_of_items){
 # Like for every student in a class, vaccinate. So every student must get the 
 # vaccine. 
 
-# For better apprecia
+# For better
 
 volumes <- c(22, 12, 29)
 
