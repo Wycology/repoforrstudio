@@ -14,7 +14,7 @@ function_name <- function(inputs){
   return(output_value)
 }
 
-# Curly braces {} tell R that whatever is inside should be run togeth
+# Curly braces {} tell R that whatever is inside should be run toge
 
 {
   a = 3
