@@ -14,7 +14,6 @@ function_name <- function(inputs){
   return(output_value)
 }
 
-# Curly braces {} tell R that whatever is
 
 {
   a = 3
