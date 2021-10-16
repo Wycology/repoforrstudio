@@ -14,7 +14,7 @@ function_name <- function(inputs){
   return(output_value)
 }
 
-# Curly braces {} tell R that whatever is inside sh
+# Curly braces {} tell R that whatever is insi
 
 {
   a = 3
