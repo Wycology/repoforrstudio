@@ -4,7 +4,7 @@
 # GitHub: https://github.com/Wycology   #
 # Task: Creating functions in R         #
 # Date: 7th Jan 2020                    #
-# Last edited: 3rd Oct 2021           #
+# Last edited: 3r Oct 2021           #
 #########################################
 
 # Let me start with a basic structure of a function.
