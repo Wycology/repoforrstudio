@@ -85,4 +85,3 @@ est_shrub_mass_dim(2.2, 1.2, 2.9) # This gets volume, then mass, then prints
 
 # That is it for today, I enjoyed it and I hope you too.
 # Note: when one of the inputs is negative value or NA then problems arise
-# Those can be handled later.
