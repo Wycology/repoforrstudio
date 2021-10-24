@@ -13,7 +13,7 @@ base::library(readr)
 my_csv_files <- base::list.files(path = 'D:/FILES', 
                            pattern = "*.csv", 
                            full.names = TRUE) %>% 
-  base::lapply(readr::read_csv) %>% # Reads all the .csv files
+  base::lapply(readr::read_csv) %>% 
   dplyr::bind_cols() %>% # Binds the read files by columns
   dplyr::select(A...1, B...8, E...17) # Selects column names of interest
 
