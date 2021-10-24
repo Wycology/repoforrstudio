@@ -4,7 +4,7 @@
 # By Wyclife Agumba Oluoch (wyclifeoluoch@gmail.com) #
 ######################################################
 
-base::library(dplyr) # For data wrangling
+base::library(dplyr)
 base::library(plyr)  # For lapply function
 base::library(readr) # For writing csv file
 
