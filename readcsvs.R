@@ -15,7 +15,7 @@ my_csv_files <- base::list.files(path = 'D:/FILES',
                            full.names = TRUE) %>% 
   base::lapply(readr::read_csv) %>% 
   dplyr::bind_cols() %>% 
-  dplyr::select(A...1, B...8, E...17) # Selects column names of interest
+  dplyr::select(A...1, B...8, E...17)
 
 readr::write_csv(my_csv_files, 'my_columns.csv', progress = TRUE) # Writes the output as csv to directory
 
