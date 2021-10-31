@@ -8,7 +8,7 @@ base::library(dplyr)
 base::library(plyr) 
 base::library(readr)
 
-# I have 4 .csv files in my working directory "D:/FILES"
+# I have 4 .csv files in my working directo "D:/FILES"
 
 my_csv_files <- base::list.files(path = 'D:/FILES', 
                            pattern = "*.csv", 
