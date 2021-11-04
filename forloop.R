@@ -3,7 +3,7 @@
 # wyclifeoluoch@gmail.com     #
 # Task: working with for loop #
 # Created 6th Jan 2021        #
-# Last edited 4t Nov 2021    #
+# Last edited 4th Nov 2021    #
 ###############################
 
 # The basic structure of a `for loop` is of the kind:
