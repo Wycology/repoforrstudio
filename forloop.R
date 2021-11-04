@@ -6,7 +6,7 @@
 # Last edited 4th Nov 2021    #
 ###############################
 
-# The basic structure of a `for loop` is of the :
+# The basic structure of a `for loop` is of t :
 
 for (item in list_of_items){
   do_something(item)
