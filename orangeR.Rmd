@@ -1,0 +1,354 @@
+---
+title: "<center>**Working with orange data in R**</center>"
+author: "<center>Wyclife Agumba Oluoch (wyclifeoluoch@gmail.com) </center>"
+date: "<center>`r Sys.time()`</center>"
+bibliography: 
+  - bib/packages.bib
+nocite: '@*'
+output: 
+  html_document:
+    toc: true
+    toc_depth: 2
+    toc_float: true
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+
+```{r libs, echo=FALSE, warning=FALSE, message=FALSE, include=FALSE}
+packages <- c("base",
+              'knitr',
+              'rmarkdown',
+              'datasets',
+              'tidyverse',
+              'gapminder',
+              'ggstatsplot')
+installed_packages <- packages %in% rownames(installed.packages())
+if(any(installed_packages == FALSE)){
+  install.packages(packages[!installed_packages])
+}
+lapply(packages, library, character.only = TRUE) |> invisible()
+```
+
+```{r write_bib, echo=FALSE, warning=FALSE, message=FALSE, include=FALSE}
+knitr::write_bib(c(
+  .packages(), packages
+), 'bib/packages.bib')
+```
+
+# Checking data
+
+```{r orange}
+attach(Orange)
+
+str(Orange) # Checking the structure of the dataset.
+
+orange_data <- Orange
+
+orange_data <- as.data.frame(orange_data)
+
+str(orange_data)
+
+head(orange_data) 
+```
+
+# Some data checks
+
+```{r}
+orange_data %>% 
+        dplyr::select(age) %>% 
+        nrow()
+Orangelm <- lm(circumference ~ age, data = orange_data) 
+summary(Orangelm) 
+```
+
+# Simple plot
+
+```{r}
+plot(orange_data$circumference ~ orange_data$age, 
+     col = "purple",
+     pch = 19,
+     cex = 2,
+     xlab = "Age (days)",
+     ylab = "Circumference (mm)",
+     main = "Relationship between age and cricumference of oranges trees")
+abline(Orangelm, lwd = 4, lty = "dotted", col = "magenta") 
+text(300, 200, "R^2 = 0.8345\nP<0.0001\ny = 17.4 + 0.107x")
+```
+
+# Checking largest circumference
+
+```{r}
+orange_data %>% 
+        dplyr::select(circumference) %>%
+        max()
+```
+
+# Age of oldest tree in years
+
+```{r}
+orange_data %>% 
+        dplyr::select(age) %>%  
+        max()/365
+```
+
+# Back to diamonds
+
+```{r}
+head(diamonds)
+diamonds %>% 
+        mutate(color2 = case_when(price > 400 ~ "High",
+                                  price < 400 ~ "Moderate",
+                                  TRUE ~ "Low")) %>% 
+        head()
+```
+
+# Checking speed of processing 
+
+```{r}
+start_time <- Sys.time()
+head(gapminder)
+gapminder %>% 
+        dplyr::select(country, year, pop) %>% 
+        filter(country == "Kenya") %>% 
+        head(4)
+
+end_time <- Sys.time()
+
+duration2 <- round(end_time - start_time, 2)
+duration2
+```
+
+# Histogram
+
+```{r}
+ggplot(data = gapminder, aes(pop)) +
+        geom_histogram()
+```
+
+
+# Further histogram
+
+```{r}
+ggplot(data = gapminder, aes(log(pop))) +
+        geom_histogram(col = "cyan", fill = "purple")
+
+```
+
+
+# Boxplot
+
+```{r}
+ggplot(data = gapminder, aes(x = continent, 
+                             y = lifeExp, 
+                             fill  = continent)) + 
+        geom_boxplot()
+```
+
+# Embracing ggstatsplot
+
+```{r}
+ggbetweenstats(
+        data = movies_long, 
+        x = mpaa, 
+        y = rating 
+)
+```
+
+# More steps further
+
+```{r}
+ggbetweenstats(
+        data = movies_long,
+        x = mpaa,
+        y = rating,
+        type = 'np', 
+        pairwise.display = 'all', 
+        p.adjust.method = 'fdr'
+)
+```
+
+# Tagging outliers
+
+```{r}
+ggbetweenstats(
+        data = movies_long,
+        
+        x = mpaa,
+        y = rating,
+        type = 'np',
+        pairwise.display = "all",
+        p.adjust.method = "fdr",
+        outlier.tagging = TRUE,
+        outlier.label = title, 
+        outlier.coef = 2
+)
+```
+
+## gghistostats
+
+```{r}
+gghistostats(
+        data = movies_long,
+        x = budget,
+        test.value = 30
+)
+```
+
+
+
+## ggdotplotstats
+
+```{r}
+ggdotplotstats(
+        data = movies_long,
+        x = budget,
+        y = genre,
+        test.value = 52,
+        test.value.line = TRUE,
+)
+```
+
+## ggscatterstats
+
+```{r}
+ggscatterstats(
+        data = movies_long,
+        x = budget,
+        y = rating,
+        type = 'r',
+        label.var = title,
+        label.expression = budget > 150
+        & rating > 7.5,
+        marginal.type = 'density' 
+)
+```
+
+## ggcormat
+
+```{r}
+ggcorrmat(dplyr::starwars)
+```
+
+
+
+## ggcormat as dataframe
+
+```{r}
+ggcorrmat(
+        data = dplyr::select(msleep, sleep_rem, awake, brainwt),
+        type = 'bf',
+        output = 'dataframe'
+)
+```
+
+## ggpiestats
+
+```{r}
+ggpiestats(
+        data = dplyr::filter(.data = movies_long,
+                             genre %in% c("Drama", "Comedy")),
+        x = mpaa,
+        y = genre
+)
+```
+
+```{r}
+ggpiestats(
+        data = as.data.frame(Titanic),
+        x = Class,
+        counts = Freq,
+        label = "both"
+)
+```
+
+## ggbarstats
+
+```{r}
+ggbarstats(
+        data = movies_long,
+        x = genre,
+        y = mpaa,
+        package = 'ggsci',
+        palette = 'default_igv'
+)
+```
+
+
+# Extract coefficients
+
+```{r}
+mod <- stats::aov(
+        formula = rating ~ mpaa * genre,
+        data = movies_long
+)
+ggcoefstats(mod)
+```
+
+## grouped ggpiestats
+
+```{r}
+grouped_ggpiestats(
+        data = mtcars,
+        x = cyl,
+        grouping.var = am
+)
+```
+
+This is also available for grouped_ggdotplotstats, grouped_ggbarstats, grouped_ggscatterstats, grouped_gghistostats, grouped_ggbetweenstats, grouped_ggwithinstats, and grouped_cormat
+
+## CUSTOMIZING THE PLOTS TO MY LIKING
+
+```{r}
+ggbetweenstats(
+        data = movies_long,
+        x = mpaa, 
+        y = rating,
+        results.subtitle = FALSE,
+        ggtheme = hrbrthemes::theme_ipsum_tw(),
+        palette = 'Darjeeling2',
+        package = 'wesanderson'
+)
+```
+
+
+## More playing
+
+```{r}
+ggbetweenstats(
+        data = mtcars,
+        x = am,
+        y = wt,
+        type = 'bf'
+) +
+        scale_y_continuous(sec.axis = dup_axis())
+```
+
+## Extracting only the useful statistics from ggplot using ggstatsplot
+
+```{r}
+results <- 
+        ggstatsplot::ggpiestats(
+                data = Titanic_full,
+                x = Survived,
+                y = Sex,
+                output = 'subtitile'
+        )
+ggiraphExtra::ggSpine(
+        data = Titanic_full,
+        aes(x = Sex, fill = Survived),
+        addlabel = TRUE,
+        interactive = FALSE
+) +
+        labs(subtitle = results)
+results
+```
+
+
+
+
+
+
+

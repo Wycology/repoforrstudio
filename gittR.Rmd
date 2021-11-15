@@ -34,7 +34,7 @@ lapply(packages, library, character.only = TRUE) |> invisible()
 ```{r write_bib, echo=FALSE, warning=FALSE, message=FALSE, include=FALSE}
 knitr::write_bib(c(
   .packages(), packages
-), 'packages.bib')
+), 'bib/packages.bib')
 ```
 
 # Abline in R
@@ -245,31 +245,3 @@ stem(iris$Sepal.Width, scale = 5) # Looks cool
 ```
 
 # References
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

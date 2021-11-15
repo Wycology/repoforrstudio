@@ -1,0 +1,110 @@
+---
+title: "<center>**Working with functions in R**</center>"
+author: "<center>Wyclife Agumba Oluoch (wyclifeoluoch@gmail.com) </center>"
+date: "<center>`r Sys.time()`</center>"
+bibliography: 
+  - bib/packages.bib
+nocite: '@*'
+output: 
+  html_document:
+    toc: true
+    toc_depth: 2
+    toc_float: true
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+
+```{r libs, echo=FALSE, warning=FALSE, message=FALSE, include=FALSE}
+packages <- c("base",
+              'knitr',
+              'rmarkdown',
+              'dplyr')
+installed_packages <- packages %in% rownames(installed.packages())
+if(any(installed_packages == FALSE)){
+  install.packages(packages[!installed_packages])
+}
+lapply(packages, library, character.only = TRUE) |> invisible()
+```
+
+```{r write_bib, echo=FALSE, warning=FALSE, message=FALSE, include=FALSE}
+knitr::write_bib(c(
+  .packages(), packages
+), 'bib/packages.bib')
+```
+
+# Basic structure of functions in R
+
+function_name <- function(inputs){
+  output_value <- do_something(inputs)
+  return(output_value)
+}
+
+
+{
+  a = 3
+  b = 2
+  a + b
+}
+
+# Sample function
+
+```{r} 
+calc_shrub_vol <- function(length, width, height){ # inputs are the dimensions
+  volume <- length*width*height # output is given the math to do on inputs
+  return(volume) # output is returned
+}
+```
+
+# Use the function
+
+```{r use_function}
+calc_shrub_vol(2.2, 1.2, 2.9)
+```
+
+```{r explicit_parameters}
+calc_shrub_vol(height = 2.2, length = 1.2, width = 2.9)
+```
+
+# Other functions
+
+```{r}
+est_shrub_mass <- function(volume){
+  mass <- 2.65 * volume^0.9
+}
+
+shrub_volume <- calc_shrub_vol(2.2, 1.2, 2.9) 
+shrub_mass <- est_shrub_mass(shrub_volume) 
+shrub_mass
+```
+
+# Just to prove the results of the function
+
+```{r}
+2.65 * (2.2*1.2*2.9)^0.9
+```
+
+# More advanced
+
+```{r}
+shrub_mass <- calc_shrub_vol(2.2, 1.2, 2.9) %>% # Perfect and the output piped down
+  est_shrub_mass() # receives output from the above function and calculates mass
+shrub_mass # Confirms everything went on well.
+
+# Now let us do actual nesting of out two functions we created so far.
+
+shrub_mass <- est_shrub_mass(calc_shrub_vol(2.2, 1.2, 2.9)) # two nested functions
+shrub_mass
+
+est_shrub_mass_dim  <- function(length, width, height) {
+  volume <- calc_shrub_vol(length, width, height)
+  mass <- est_shrub_mass(volume)
+  return(mass)
+}
+
+est_shrub_mass_dim(2.2, 1.2, 2.9)
+```
+
+# References

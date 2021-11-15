@@ -35,7 +35,7 @@ lapply(packages, library, character.only = TRUE) |> invisible()
 ```{r write_bib, echo=FALSE, warning=FALSE, message=FALSE, include=FALSE}
 knitr::write_bib(c(
   .packages(), packages
-), 'packages.bib')
+), 'bib/packages.bib')
 ```
 
 # Plotting iris data

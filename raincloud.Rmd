@@ -14,21 +14,28 @@ output:
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
-library(base)
-library(tidyverse)
-library(ggdist)
-library(knitr)
-library(ggtext)
-library(gapminder)
-library(glue)
-knitr::write_bib(c(.packages(),
-                   'base',
-                   'tidyverse',
-                   'ggdist',
-                   'ggtext',
-                   'gapminder',
-                   'glue',
-                   'knitr'), 'bib/packages.bib')
+```
+
+```{r libs, echo=FALSE, warning=FALSE, message=FALSE, include=FALSE}
+packages <- c("base",
+              'knitr',
+              'rmarkdown',
+              'tidyverse',
+              'ggdist',
+              'ggtext',
+              'gapminder',
+              'glue')
+installed_packages <- packages %in% rownames(installed.packages())
+if(any(installed_packages == FALSE)){
+  install.packages(packages[!installed_packages])
+}
+lapply(packages, library, character.only = TRUE) |> invisible()
+```
+
+```{r write_bib, echo=FALSE, warning=FALSE, message=FALSE, include=FALSE}
+knitr::write_bib(c(
+  .packages(), packages
+), 'bib/packages.bib')
 ```
 
 # Introduction
@@ -37,7 +44,7 @@ In this short article I demonstrate how to generate beautiful plots using a numb
 
 ```{r echo=FALSE}
 annotation <- base::data.frame(x = 4.5, y = 35,
-                   label = c(glue()))
+                   label = c(glue("The data is from the <br> gapminder package<br> which you can easily install")))
 
 gapminder |>
   select(continent, lifeExp) |>
@@ -82,19 +89,3 @@ gapminder |>
 ```
 
 # References
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

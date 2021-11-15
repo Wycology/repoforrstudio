@@ -14,19 +14,27 @@ output:
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
-library(base)
-library(knitr)
-library(rmarkdown)
-library(dismo)
-library(raster)
-library(ecbtools)
-knitr::write_bib(c(.packages(),
-                   'base',
-                   'knitr',
-                   'rmarkdown',
-                   'dismo',
-                   'raster',
-                   'ecbtools'), 'bib/packages.bib')
+```
+
+
+```{r libs, echo=FALSE, warning=FALSE, message=FALSE, include=FALSE}
+packages <- c("base",
+              'knitr',
+              'rmarkdown',
+              'dismo',
+              'raster',
+              'ecbtools')
+installed_packages <- packages %in% rownames(installed.packages())
+if(any(installed_packages == FALSE)){
+  install.packages(packages[!installed_packages])
+}
+lapply(packages, library, character.only = TRUE) |> invisible()
+```
+
+```{r write_bib, echo=FALSE, warning=FALSE, message=FALSE, include=FALSE}
+knitr::write_bib(c(
+  .packages(), packages
+), 'bib/packages.bib')
 ```
 
 # Introduction

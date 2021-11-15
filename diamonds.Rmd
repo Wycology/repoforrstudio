@@ -1,23 +1,52 @@
-#########################################
-# Name: Wyclife Agumba Oluoch           #   
-# E-mail: wyclifeoluoch@gmail.com       #
-# GitHub: https://github.com/Wycology   #
-# Task: Boxplot and violin plots in one #
-# Date: 4th Jan 2021                    #
-# Last edited: 19th Sept 2021           #
-#########################################
+---
+title: "<center>**Working with Diamonds Data**</center>"
+author: "<center>Wyclife Agumba Oluoch (wyclifeoluoch@gmail.com) </center>"
+date: "<center>`r Sys.time()`</center>"
+bibliography: 
+  - bib/packages.bib
+nocite: '@*'
+output: 
+  html_document:
+    toc: true
+    toc_depth: 2
+    toc_float: true
+---
 
-# Loading the necessary libraries for the project
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
 
-base::library(tidyverse) # This is for data wrangling and plotting.
-base::library(RColorBrewer) # This is for generating color pallets for the plots.
 
-diamonds_df <- diamonds # Saving the diamonds data-set to a new object in R.
+```{r libs, echo=FALSE, warning=FALSE, message=FALSE, include=FALSE}
+packages <- c("base",
+              'knitr',
+              'rmarkdown',
+              'tidyverse',
+              'RColorBrewer',
+              'grDevices')
+installed_packages <- packages %in% rownames(installed.packages())
+if(any(installed_packages == FALSE)){
+  install.packages(packages[!installed_packages])
+}
+lapply(packages, library, character.only = TRUE) |> invisible()
+```
 
-utils::head(diamonds) # Checking the variables in the data-set for subsequent analyses
-base::nrow(diamonds) # Checking for the number of rows in the data. 53940 observations
-base::ncol(diamonds) # Checking the number of variables in the data-set. 10 variables
+```{r write_bib, echo=FALSE, warning=FALSE, message=FALSE, include=FALSE}
+knitr::write_bib(c(
+  .packages(), packages
+), 'bib/packages.bib')
+```
 
+# Diamonds dataframe
+
+```{r df}
+diamonds_df <- diamonds
+head(diamonds_df)
+nrow(diamonds_df)
+ncol(diamonds_df)
+```
+
+```{r diamonds_plot}
 diamonds_df %>% # Picking the diamonds data, and then
   dplyr::slice_sample(n = 0.2*(nrow(diamonds))) %>% # Picking a portion of the data-set
   ggplot2::ggplot(ggplot2::aes(x = cut, y = price, color = cut)) + # Adding the mapping variables
@@ -36,7 +65,11 @@ diamonds_df %>% # Picking the diamonds data, and then
   ggplot2::theme(plot.title = ggplot2::element_text(color = 'red', size = 18, face = 'bold'),
         plot.subtitle = ggplot2::element_text(color = 'purple', size = 14, face = 'italic'),
         plot.caption = ggplot2::element_text(color = 'blue', face = 'italic'))
+```
 
+# Simple Wrangling
+
+```{r simple}
 diamonds %>% # Picking the diamonds data, and then
   dplyr::filter(cut == 'Very Good') %>% # Picking the very good cut 
   base::nrow() # counting the number of rows with very good cut
@@ -45,9 +78,11 @@ diamonds %>%
   dplyr::select(cut) %>% 
   base::table() %>% 
   graphics::barplot(col = c('green', 'red', 'blue', 'yellow', 'purple'))
+```
 
-# Instead of specifying the colors, we can simply use the color brewer panel 
+# Using color brewer
 
+```{r color_brewer}
 diamonds %>% 
   dplyr::select(cut) %>% 
   base::table() %>% 
@@ -61,31 +96,33 @@ RColorBrewer::display.brewer.all()
 diamonds %>% 
   dplyr::select(cut) %>% 
   base::table() %>% 
-  graphics::barplot(col = grDevices::rainbow(5))
+  graphics::barplot(col = rainbow(5, alpha = 1))
 
 # Can also use heat.colors
 diamonds %>% 
   dplyr::select(cut) %>% 
   base::table() %>% 
-  graphics::barplot(col = grDevices::heat.colors(5))
+  graphics::barplot(col = heat.colors(5, alpha = 1))
 
 # Can also use topographic colors
 
 diamonds %>% 
   dplyr::select(cut) %>% 
   base::table() %>% 
-  graphics::barplot(col = grDevices::topo.colors(5))
+  graphics::barplot(col = topo.colors(5, alpha = 1))
 
 # Can also use terrain colors for the plot
 diamonds %>% 
   dplyr::select(cut) %>% 
   base::table() %>% 
-  graphics::barplot(col = grDevices::terrain.colors(5))
+  graphics::barplot(col = terrain.colors(5, alpha = 1))
 
 # Can also use cm.colors
 diamonds %>% 
   dplyr::select(cut) %>% 
   base::table() %>% 
-  graphics::barplot(col = grDevices::cm.colors(5)) 
+  graphics::barplot(col = cm.colors(5, alpha = 1)) 
 
-# That is awesome. Good for the day.
+```
+
+# References

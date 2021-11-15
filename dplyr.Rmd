@@ -35,7 +35,7 @@ lapply(packages, library, character.only = TRUE) |> invisible()
 ```{r write_bib, echo=FALSE, warning=FALSE, message=FALSE, include=FALSE}
 knitr::write_bib(c(
   .packages(), packages
-), 'packages.bib')
+), 'bib/packages.bib')
 ```
 
 # Introduction
@@ -319,6 +319,5 @@ my_python_array = np.array([2,4,6,8])
 for item in my_python_array:
   print(item)
 ```
-
 
 # References

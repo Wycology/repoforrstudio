@@ -1,0 +1,128 @@
+---
+title: "<center>**Working with for loop in R**</center>"
+author: "<center>Wyclife Agumba Oluoch (wyclifeoluoch@gmail.com) </center>"
+date: "<center>`r Sys.time()`</center>"
+bibliography: 
+  - bib/packages.bib
+nocite: '@*'
+output: 
+  html_document:
+    toc: true
+    toc_depth: 2
+    toc_float: true
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+
+```{r libs, echo=FALSE, warning=FALSE, message=FALSE, include=FALSE}
+packages <- c("base",
+              'knitr',
+              'rmarkdown',
+              'tidyverse',
+              'RColorBrewer',
+              'grDevices')
+installed_packages <- packages %in% rownames(installed.packages())
+if(any(installed_packages == FALSE)){
+  install.packages(packages[!installed_packages])
+}
+lapply(packages, library, character.only = TRUE) |> invisible()
+```
+
+```{r write_bib, echo=FALSE, warning=FALSE, message=FALSE, include=FALSE}
+knitr::write_bib(c(
+  .packages(), packages
+), 'bib/packages.bib')
+```
+
+# Basic structure of for loop
+
+> for (item in list_of_items){
+  do_something(item)
+  print()
+}
+
+# Sample for loop
+
+```{r simple}
+volumes <- c(22, 12, 29)
+
+for (volume in volumes){
+  print(2.65 * volume^0.9) 
+}
+```
+
+# This is what happened
+
+```{r explained}
+volume <- volumes[1]     
+print(2.65 * volume^0.9)
+
+volume <- volumes[2]     
+print(2.65 * volume^0.9) 
+
+volume <- volumes[3]     
+print(2.65 * volume^0.9)
+```
+
+# Extended for loop
+
+```{r extended}
+for (volume in volumes){         
+  mass_kgs <- 2.65 * volume^0.9  
+  mass_lb <- mass_kgs * 2.2      
+  mass_whole <- round(mass_lb)   
+  mass_tens <- round(mass_whole, digits = -1) 
+  print(mass_tens) 
+}
+```
+
+# Indexing in for loop
+
+```{r indexing}
+for (i in 1:length(volumes)){   
+  mass <- 2.65 * volumes[i]^0.9 
+  mass <- round(mass)           
+  print(mass)                  
+}
+```
+
+# Creating vector to store for loop output
+
+```{r output_store}
+masses <- vector(mode = 'numeric', length = length(volumes))
+masses2 <- vector(mode = 'numeric', length = 50)
+print(masses)
+print(masses2)
+```
+
+# Creating for loop and storing output
+
+```{r stored}
+for (i in 1:length(volumes)){
+  mass <- 2.65 * volumes[i]^0.9
+  masses[i] <- mass
+}
+
+print(masses)
+print(round(masses))
+print(round(masses, digits = -1))
+```
+
+# Additional fun with for loop
+
+```{r fun}
+b0 <- c(2.2, 1.2, 2.9) 
+b1 <- c(0.22, 0.12, 0.29)    
+
+masses <- vector(mode = 'numeric', length = length(volumes))
+
+for (i in seq_along(volumes)){ 
+  mass <- b0[i] * volumes[i] ^ b1[i]
+  masses[i] <- mass
+} 
+masses
+```
+# References

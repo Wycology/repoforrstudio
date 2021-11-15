@@ -14,28 +14,34 @@ output:
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
-library(base)
-library(knitr)
-library(rmarkdown)
-library(utils)
-library(stats)
-library(nortest)
-library(car)
-knitr::write_bib(c(.packages(),
-                   'base',
-                   'knitr',
-                   'rmarkdown',
-                   'utils',
-                   'stats',
-                   'nortest',
-                   'car'), 'bib/packages.bib')
+```
+
+```{r libs, echo=FALSE, warning=FALSE, message=FALSE, include=FALSE}
+packages <- c("base",
+              'knitr',
+              'rmarkdown',
+              'utils',
+              'stats',
+              'nortest',
+              'car')
+installed_packages <- packages %in% rownames(installed.packages())
+if(any(installed_packages == FALSE)){
+  install.packages(packages[!installed_packages])
+}
+lapply(packages, library, character.only = TRUE) |> invisible()
+```
+
+```{r write_bib, echo=FALSE, warning=FALSE, message=FALSE, include=FALSE}
+knitr::write_bib(c(
+  .packages(), packages
+), 'bib/packages.bib')
 ```
 
 # Creating the data_set
 
 We create random data with two factor levels and continuous variable.
 
-```{r dataset, echo = FALSE}
+```{r dataset, echo = TRUE}
 data_set <- data.frame(Gender = c(rep('Male', 100), rep('Female', 100)),
                    abundance = sample(x = 7:40, size = 200, replace = TRUE))
 ```
