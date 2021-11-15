@@ -1,20 +1,45 @@
-###############################
-# Wyclife Agumba Oluoch       #
-# wyclifeoluoch@gmail.com     #
-# https://github.com/Wycology #
-# Task: Playing with some data#
-# Created: 30th Nov 2020      #
-# Edited: 11th Nov 2021       #
-###############################
+---
+title: "<center>**Simple Data Wrangling**</center>"
+author: "<center>Wyclife Agumba Oluoch (wyclifeoluoch@gmail.com) </center>"
+date: "<center>`r Sys.time()`</center>"
+bibliography: 
+  - bib/packages.bib
+nocite: '@*'
+output: 
+  html_document:
+    toc: true
+    toc_depth: 2
+    toc_float: true
+---
 
-# Loading libraries
-library(vioplot)   # version 0.3.7 
-library(ggplot2)   # version 3.3.5
-library(readxl)    # version 1.3.1
-library(tidyverse) # version 1.3.1
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
 
-# abline in R ----
 
+```{r libs, echo=FALSE, warning=FALSE, message=FALSE, include=FALSE}
+packages <- c("base",
+              'knitr',
+              'rmarkdown',
+              'tidyverse',
+              'vioplot',
+              'readxl')
+installed_packages <- packages %in% rownames(installed.packages())
+if(any(installed_packages == FALSE)){
+  install.packages(packages[!installed_packages])
+}
+lapply(packages, library, character.only = TRUE) |> invisible()
+```
+
+```{r write_bib, echo=FALSE, warning=FALSE, message=FALSE, include=FALSE}
+knitr::write_bib(c(
+  .packages(), packages
+), 'packages.bib')
+```
+
+# Abline in R
+
+```{r abline}
 data("iris") # Loading iris data
 
 Reg <-  lm(Sepal.Length ~ Petal.Width, data = iris)
@@ -58,12 +83,11 @@ abline(Reg, # Passing regression line as the best line of fit.
        lty = "dotted", # Could also set it as 'dashed'. default is solid line
        v = 1.6, # Drawing vertical abline at x = 1.6
        h = 7.2) # Adding another horizontal line at y = 7.2, just for fun.
+```
 
-# I think the plot is fine depending on the need. All needs met
+# Boxplots in R
 
-# Boxplots in R ----
-# Adding beautiful violin plots on boxplots in R Studio
-
+```{r boxplot}
 diamonds_df <- diamonds # Creating a copy of the diamonds data to manipulate
 
 diamonds_df %>%
@@ -73,11 +97,14 @@ diamonds_df %>%
   geom_violin(alpha = 0.1) +                     # Adds the violin plots
   theme(legend.position = "none")                # Does away with legend
 
-# From online to geom_hex plots ----
-# Plotting beautiful hexagonal plots
-# Reading data from url
+```
+
+# Online to geom_hex
+
+```{r geom_hex}
 chic <- readr::read_csv("https://raw.githubusercontent.com/Z3tt/R-Tutorials/master/ggplot2/chicago-nmmaps.csv")
 
+head(chic)
 tibble::glimpse(chic) # Quick look at the data we got from the website
 
 ggplot(data = chic, aes(x = temp, y = o3)) +
@@ -93,9 +120,11 @@ ggplot(data = chic, aes(x = temp, y = o3)) +
 testData1 <- read_xlsx("CommercialToolRentals2016and2017.xlsx")
         
 str(testData1)
+```
 
 # Separate the data by weekday
 
+```{r weekday}
 graph0 <- testData1$newrentals[testData1$weekday == 1]
 graph1 <- testData1$newrentals[testData1$weekday == 2]
 graph2 <- testData1$newrentals[testData1$weekday == 3]
@@ -103,16 +132,19 @@ graph3 <- testData1$newrentals[testData1$weekday == 4]
 graph4 <- testData1$newrentals[testData1$weekday == 5]
 graph5 <- testData1$newrentals[testData1$weekday == 6]
 graph6 <- testData1$newrentals[testData1$weekday == 7]
+```
 
-# Separate the data by seasons
+# Separate by month
 
+```{r month}
 graph7 <- testData1$newrentals[testData1$season == 1]
 graph8 <- testData1$newrentals[testData1$season == 2]
 graph9 <- testData1$newrentals[testData1$season == 3]
 graph10 <- testData1$newrentals[testData1$season == 4]
+```
 
-# Basic violin plot by weekday
-
+# Violin plot
+```{r vioplot}
 vioplot(graph0, graph1, graph2, graph3, graph4, graph5, graph6, 
         names = c("1", "2", "3", "4", "5", "6", "7"))
 
@@ -129,9 +161,11 @@ vioplot(graph7, graph8, graph9, graph10,
         names = c("1", "2", "3", "4"),
         col = "purple")
 title("Tool Rentals by Season")
+```
 
-# Time to try histograms too
+# Histograms
 
+```{r histograms}
 qplot(testData1$temp,
       xlab = "Temperature",
       geom = "histogram",
@@ -156,9 +190,11 @@ qplot(testData1$temp,
       ylab = "Count",
       fill = I("steel blue"),
       col = I("black"))
+```
 
-# Try a bar plot. I must admit that I rarely draw bar plots
+# Bargraphs
 
+```{r bargraphs}
 barplot(testData1$newrentals) # This is horrible ):
 
 barplot(testData1$newrentals, names.arg = testData1$date,
@@ -177,10 +213,11 @@ barplot(height = testData1$newrentals,
         main = "Tool Rentals By Date",
         ylab = "Rentals",
         xlab = "Date") # Super cool
+```
 
-# Practicing with tapply()
-# Let me create a data.frame
+# Working with tapply 
 
+```{r tapply}
 tea_yield <- data.frame(Yield = c(20, 27, 25, 21, 25, 28, 29, 35, 36, 33),
                         Temp = c(12.5, 15, 11, 12, 16, 18, 17, 16, 19, 20),
                         Site = c('Timbilil', 'Timbilil', 'Timbilil', 'Timbilil',
@@ -205,3 +242,34 @@ stemdata <-  tea_yield %>%
 str(stemdata) # Checking for the structure of the stem data
 
 stem(iris$Sepal.Width, scale = 5) # Looks cool
+```
+
+# References
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
