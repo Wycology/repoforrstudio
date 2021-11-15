@@ -47,10 +47,10 @@ eq <- base::paste0('y = ', base::round(coeff[2], 1), "*x ", base::round(coeff[1]
 base::plot(iris$Sepal.Length, iris$Petal.Width, # Variables to use on the plot
      col = 'purple', # Color for the data points on the plot
      main = base::paste0("Simple plot in R \n Isn't it?\n", eq), # Title of the plot in two lines
-     sub = 'Subtitle at lower center of the plot', # Adding subtitle to the plot
-     cex = 2, # Do
-     pch = 19, # Picks the 19th character in terms of shape of points plotted
-     bty = 'l', # Box type. Other options are 'o', 'n', 'l', '7', 'c', 'u', ']'
+     sub = 'Subtitle at lower center of the plot', 
+     cex = 2, 
+     pch = 19, 
+     bty = 'l', 
      xlab = 'Sepal length (cm)', # Labels x axis
      ylab = 'Petal width (cm)', # Labels y axis
      las = 1, # Making y axis labels to stand upright
