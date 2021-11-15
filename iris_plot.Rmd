@@ -51,9 +51,9 @@ base::plot(iris$Sepal.Length, iris$Petal.Width, # Variables to use on the plot
      cex = 2, 
      pch = 19, 
      bty = 'l', 
-     xlab = 'Sepal length (cm)', # Labels x axis
-     ylab = 'Petal width (cm)', # Labels y axis
-     las = 1, # Making y axis labels to stand upright
+     xlab = 'Sepal length (cm)', 
+     ylab = 'Petal width (cm)', 
+     las = 1, 
      cex.main = 1.5, # Doubles text size on title
      cex.lab = 1.5, # Increases labels text size by 50%
      cex.axis = 1.5
