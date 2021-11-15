@@ -1,0 +1,178 @@
+---
+title: "<center>**Plotting Iris Data**</center>"
+author: "<center>Wyclife Agumba Oluoch (wyclifeoluoch@gmail.com) </center>"
+date: "<center>`r Sys.time()`</center>"
+bibliography: 
+  - bib/packages.bib
+nocite: '@*'
+output: 
+  html_document:
+    toc: true
+    toc_depth: 2
+    toc_float: true
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+
+```{r libs, echo=FALSE, warning=FALSE, message=FALSE, include=FALSE}
+packages <- c("base",
+              'knitr',
+              'rmarkdown',
+              'modelr',
+              'ggforce',
+              'tidyverse',
+              'patchwork')
+installed_packages <- packages %in% rownames(installed.packages())
+if(any(installed_packages == FALSE)){
+  install.packages(packages[!installed_packages])
+}
+lapply(packages, library, character.only = TRUE) |> invisible()
+```
+
+```{r write_bib, echo=FALSE, warning=FALSE, message=FALSE, include=FALSE}
+knitr::write_bib(c(
+  .packages(), packages
+), 'packages.bib')
+```
+
+# Plotting iris data
+
+```{r iris}
+reg <- stats::lm(Petal.Width ~ Sepal.Length, data = iris) # Creating a regression line
+coeff <- stats::coefficients(reg)
+eq <- base::paste0('y = ', base::round(coeff[2], 1), "*x ", base::round(coeff[1], 1))
+base::plot(iris$Sepal.Length, iris$Petal.Width, # Variables to use on the plot
+     col = 'purple', # Color for the data points on the plot
+     main = base::paste0("Simple plot in R \n Isn't it?\n", eq), # Title of the plot in two lines
+     sub = 'Subtitle at lower center of the plot', # Adding subtitle to the plot
+     cex = 2, # Do
+     pch = 19, # Picks the 19th character in terms of shape of points plotted
+     bty = 'l', # Box type. Other options are 'o', 'n', 'l', '7', 'c', 'u', ']'
+     xlab = 'Sepal length (cm)', # Labels x axis
+     ylab = 'Petal width (cm)', # Labels y axis
+     las = 1, # Making y axis labels to stand upright
+     cex.main = 1.5, # Doubles text size on title
+     cex.lab = 1.5, # Increases labels text size by 50%
+     cex.axis = 1.5
+     # xlim = range(0:8), # Can easily set the limits of x-axis
+     # ylim = range(0:2.6) # Can easily set the limits of y-axis
+     )
+graphics::abline(reg, data = iris, lty = 5, lwd = 2, col = 'purple')# Best line of fit on the plot
+graphics::abline(v = base::mean(iris$Sepal.Length), col = 'red', lwd = 3, lty = 2)
+graphics::abline(v = stats::median(iris$Sepal.Length), col = 'yellow', lwd = 3, lty = 3)
+graphics::abline(h = base::mean(iris$Petal.Width), col = 'blue', lwd = 3, lty = 2)
+graphics::abline(h = stats::median(iris$Petal.Width), col = 'orange', lwd = 3, lty = 6)
+graphics::text(7, 0.5, "Such a simple plot to generate")
+graphics::text(5, 2.25, "I thought it was hard until I gave it a try")
+```
+
+# Using ggplot2
+
+```{r ggplot}
+separate_smooth <- ggplot2::ggplot(data = iris,    # Specifying the data to be plotted.
+       mapping = ggplot2::aes(x = Sepal.Length,    # Stating the axes data.
+                     y = Petal.Width,     # data for the y axis
+                     color = Species)) +  # Ensuring points are colored by spp.
+  geom_point() +                          # Deciding the plotting geometry.
+  labs(x = "Petal length (cm)",           # Specifying the axes labels.
+       y = "Sepal width (cm)") +
+  geom_mark_ellipse(aes(fill = Species,   # Adding ellipses for the spps.
+                        filter = Species == "setosa",
+                        label = "Iris setosa",
+                        description = "Shortest species")) +
+  geom_mark_ellipse(aes(fill = Species,
+                        filter = Species == "versicolor",
+                        label = "Iris versicolor",
+                        description = "Moderate species")) +
+  geom_mark_ellipse(aes(fill = Species,
+                        filter = Species == "virginica",
+                        label = "Iris virginica",
+                        description = "Largest species")) +
+  theme_classic() +                      # Having publication ready background.
+  geom_smooth() 
+separate_smooth
+```
+
+# Uniform smooth
+
+```{r uniform}
+uniform_smooth <- ggplot2::ggplot(data = iris,
+                         mapping = ggplot2::aes(x = Sepal.Length,
+                                       y = Petal.Width)) + # Note no color here.
+  ggplot2::geom_point() +
+  ggplot2::labs(x = "Petal length (cm)",
+       y = "Petal width (cm)") +
+  ggforce::geom_mark_ellipse(aes(fill = Species,
+                        filter = Species == "setosa",
+                        label = "Iris setosa",
+                        description = "Shortest species")) +
+  ggforce::geom_mark_ellipse(aes(fill = Species,
+                        filter = Species == "versicolor",
+                        label = "Iris versicolor",
+                        description = "Medium species")) +
+  ggforce::geom_mark_ellipse(aes(fill = Species,
+                        filter = Species == "virginica",
+                        label = "Iris virginica",
+                        description = "Tallest species")) +
+  ggplot2::theme_classic() +
+  ggplot2::geom_smooth() # Adding the line of best fit to the data, with error margin
+
+uniform_smooth
+```
+
+# Combined
+
+```{r combine}
+combined_plots <- separate_smooth + uniform_smooth # Adding plots.
+
+combined_plots
+```
+
+
+# Label combined
+
+```{r combine_label}
+combined_plots_labeled <- combined_plots +
+  plot_annotation(
+    title = "Relationships among dimensions of the three iris species", # Title of both plots.
+    tag_levels = "A" # Indicates that the plots will be labelled A, B, C etc.
+  ) # This makes the first plot to be A and the next to be B. Checking on 
+# documentation will help know more arguments in this function.
+combined_plots_labeled
+```
+
+# Unlabel
+
+```{r unlegend}
+combined_plots_labeled_no_legend <- combined_plots_labeled &
+  theme(legend.position = "none")
+combined_plots_labeled_no_legend
+```
+
+# Cool plot with modelr
+
+```{r modelr}
+options(na.action = na.warn)
+
+ggplot(data = sim1, mapping = aes(x = x, y = y)) +
+  geom_point() # There is some visible correlation between the variables
+
+models <- tibble( # Creating some random tibble data-set for plotting.
+  a1 = runif(250, -20, 40), # Generates 250 random numbers between -20 and 40
+  a2 = runif(250, -5, 5) # Generates 250 random numbers between -5 and 5
+)
+
+sim1 %>% 
+ggplot(aes(x = x, y =y)) +
+  geom_abline(aes(intercept = a1, slope = a2),
+              data = models, alpha = 1/4) +
+  geom_point(col = 'purple', pch = 18, size = 5) +
+  labs(x = 'The x-axis', y = 'The y-axis', title = 'Crazy model in deed') +
+  theme_classic()
+rm(list = ls())
+```
+
+# References
