@@ -345,10 +345,3 @@ ggiraphExtra::ggSpine(
         labs(subtitle = results)
 results
 ```
-
-
-
-
-
-
-
