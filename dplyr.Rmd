@@ -43,7 +43,7 @@ knitr::write_bib(c(
 We start this by converting Titanic table data to tibble. This is for easy manipulation with tidyverse packages. We also use `dim` function to check the number of rows and columns of the tibble. 
 
 ```{r}
-titanic_tibble <- tibble(data.frame(Titanic)) # Se
+titanic_tibble <- tibble(data.frame(Titanic)) # Set
 dim(titanic_tibble)
 ```
 
