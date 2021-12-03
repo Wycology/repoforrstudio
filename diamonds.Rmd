@@ -47,7 +47,7 @@ ncol(diamonds_df)
 ```
 
 ```{r diamonds_plot}
-diamonds_df %>% # Picking the diamonds data, and then
+diamonds_df %>% # Picking the diamonds data, and th
   dplyr::slice_sample(n = 0.2*(nrow(diamonds))) %>% # Picking a portion of the data-set
   ggplot2::ggplot(ggplot2::aes(x = cut, y = price, color = cut)) + # Adding the mapping variables
   ggplot2::geom_point(position = "jitter", alpha = 0.2) + # Adding jitter and alpha
