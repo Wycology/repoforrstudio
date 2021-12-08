@@ -53,7 +53,7 @@ function_name <- function(inputs){
 
 ```{r} 
 calc_shrub_vol <- function(length, width, height){ # inputs are the dimensions
-  volume <- length*width*height # output is given the math to do on inputs
+  volume <- length*width*height # output is given the math to do on inpu
   return(volume) # output is returned
 }
 ```
