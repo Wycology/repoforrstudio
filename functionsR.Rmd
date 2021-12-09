@@ -52,7 +52,7 @@ function_name <- function(inputs){
 # Sample function
 
 ```{r} 
-calc_shrub_vol <- function(length, width, height){ # inputs are the dimens
+calc_shrub_vol <- function(length, width, height){ # inputs are the dime
   volume <- length*width*height
   return(volume) # output is returned
 }
