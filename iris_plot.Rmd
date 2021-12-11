@@ -74,7 +74,7 @@ separate_smooth <- ggplot2::ggplot(data = iris,    # Specifying the data to be p
        mapping = ggplot2::aes(x = Sepal.Length,    # Stating the axes data.
                      y = Petal.Width,     # data for the y axis
                      color = Species)) +  # Ensuring points are colored by spp.
-  geom_point() +                          # Deciding the plotting geometry.
+  geom_point() +                          
   labs(x = "Petal length (cm)",           
        y = "Sepal width (cm)") +
   geom_mark_ellipse(aes(fill = Species,   # Adding ellipses for the spps.
