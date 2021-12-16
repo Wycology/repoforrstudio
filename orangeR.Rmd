@@ -114,16 +114,14 @@ duration2
 # Histogram
 
 ```{r}
-ggplot(data = gapminder, aes(pop)) +
-        geom_histogram()
+ggplot(data = gapminder, aes(pop)) + geom_histogram(col = "cyan", fill = "purple")
 ```
 
 
 # Further histogram
 
 ```{r}
-ggplot(data = gapminder, aes(log(pop))) +
-        geom_histogram(col = "cyan", fill = "purple")
+ggplot(gapminder, aes(log(pop))) + geom_histogram(col = "cyan", fill = "purple")
 
 ```
 
@@ -131,10 +129,7 @@ ggplot(data = gapminder, aes(log(pop))) +
 # Boxplot
 
 ```{r}
-ggplot(data = gapminder, aes(x = continent, 
-                             y = lifeExp, 
-                             fill  = continent)) + 
-        geom_boxplot()
+ggplot(gapminder, aes(continent, lifeExp, fill  = continent)) + geom_violin()
 ```
 
 # Embracing ggstatsplot
