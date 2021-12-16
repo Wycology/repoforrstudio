@@ -66,7 +66,7 @@ summary(orange_data_lm) %>% tidy()
 # Simple plot
 
 ```{r}
-plot(orange_data$circumference ~ orange_data$age, 
+plot(circumference ~ age, # Because we already attached the data in line 45
      col = "purple",
      pch = 19,
      cex = 2,
@@ -80,28 +80,19 @@ text(300, 200, "R^2 = 0.8345\nP < 0.0001\ny = 17.4 + 0.107x")
 # Checking largest circumference
 
 ```{r}
-orange_data %>% 
-        dplyr::select(circumference) %>%
-        max()
+orange_data %>% dplyr::select(circumference) %>% max()
 ```
 
 # Age of oldest tree in years
 
 ```{r}
-orange_data %>% 
-        dplyr::select(age) %>%  
-        max()/365
+orange_data %>% dplyr::select(age) %>% max()/365 # Assuming a year has 365 days
 ```
 
-# Back to diamonds
+# Back to diamonds dataset
 
 ```{r}
-head(diamonds)
-diamonds %>% 
-        mutate(color2 = case_when(price > 400 ~ "High",
-                                  price < 400 ~ "Moderate",
-                                  TRUE ~ "Low")) %>% 
-        head()
+diamonds %>% mutate(color2 = case_when(price > 400 ~ "High", price < 400 ~ "Moderate", TRUE ~ "Low")) %>% head()
 ```
 
 # Checking speed of processing 
