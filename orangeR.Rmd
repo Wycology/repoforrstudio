@@ -135,65 +135,32 @@ ggplot(gapminder, aes(continent, lifeExp, fill  = continent)) + geom_violin()
 # Embracing ggstatsplot
 
 ```{r}
-ggbetweenstats(
-        data = movies_long, 
-        x = mpaa, 
-        y = rating 
-)
+ggbetweenstats(data = movies_long, x = mpaa, y = rating)
 ```
 
 # More steps further
 
 ```{r}
-ggbetweenstats(
-        data = movies_long,
-        x = mpaa,
-        y = rating,
-        type = 'np', 
-        pairwise.display = 'all', 
-        p.adjust.method = 'fdr'
-)
+ggbetweenstats(data = movies_long, x = mpaa, y = rating, type = 'np', pairwise.display = 'all', p.adjust.method = 'fdr')
 ```
 
 # Tagging outliers
 
 ```{r}
-ggbetweenstats(
-        data = movies_long,
-        
-        x = mpaa,
-        y = rating,
-        type = 'np',
-        pairwise.display = "all",
-        p.adjust.method = "fdr",
-        outlier.tagging = TRUE,
-        outlier.label = title, 
-        outlier.coef = 2
-)
+ggbetweenstats(data = movies_long, x = mpaa,y = rating, type = 'np', pairwise.display = "all",
+        p.adjust.method = "fdr", outlier.tagging = TRUE, outlier.label = title, outlier.coef = 2)
 ```
 
 ## gghistostats
 
 ```{r}
-gghistostats(
-        data = movies_long,
-        x = budget,
-        test.value = 30
-)
+gghistostats(data = movies_long, x = budget, test.value = 30)
 ```
-
-
 
 ## ggdotplotstats
 
 ```{r}
-ggdotplotstats(
-        data = movies_long,
-        x = budget,
-        y = genre,
-        test.value = 52,
-        test.value.line = TRUE,
-)
+ggdotplotstats(data = movies_long, x = budget, y = genre, test.value = 52, test.value.line = TRUE)
 ```
 
 ## ggscatterstats
