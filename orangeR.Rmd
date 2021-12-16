@@ -23,6 +23,7 @@ packages <- c("base",
               'rmarkdown',
               'datasets',
               'tidyverse',
+              'parsnip',
               'gapminder',
               'ggstatsplot')
 installed_packages <- packages %in% rownames(installed.packages())
@@ -43,7 +44,7 @@ knitr::write_bib(c(
 ```{r orange}
 attach(Orange)
 
-str(Orange) # Checking the structure of the
+str(Orange)
 
 orange_data <- Orange
 
@@ -57,11 +58,9 @@ head(orange_data)
 # Some data checks
 
 ```{r}
-orange_data %>% 
-        dplyr::select(age) %>% 
-        nrow()
-Orangelm <- lm(circumference ~ age, data = orange_data) 
-summary(Orangelm) 
+orange_data %>% dplyr::select(age) %>% nrow()
+orange_data_lm <- lm(circumference ~ age, data = orange_data) 
+summary(orange_data_lm) %>% tidy()
 ```
 
 # Simple plot
@@ -71,11 +70,11 @@ plot(orange_data$circumference ~ orange_data$age,
      col = "purple",
      pch = 19,
      cex = 2,
-     xlab = "Age (days)",
-     ylab = "Circumference (mm)",
+     xlab = "Age of orange (days)",
+     ylab = "Circumference of orange (mm)",
      main = "Relationship between age and cricumference of oranges trees")
-abline(Orangelm, lwd = 4, lty = "dotted", col = "magenta") 
-text(300, 200, "R^2 = 0.8345\nP<0.0001\ny = 17.4 + 0.107x")
+abline(orange_data_lm, lwd = 4, lty = "dotted", col = "magenta") 
+text(300, 200, "R^2 = 0.8345\nP < 0.0001\ny = 17.4 + 0.107x")
 ```
 
 # Checking largest circumference
