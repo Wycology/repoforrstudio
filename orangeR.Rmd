@@ -43,7 +43,7 @@ knitr::write_bib(c(
 ```{r orange}
 attach(Orange)
 
-str(Orange) # Checking the structure of the dataset.
+str(Orange) # Checking the structure of the
 
 orange_data <- Orange
 
