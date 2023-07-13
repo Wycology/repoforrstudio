@@ -68,7 +68,7 @@ print(2.65 * volume^0.9)
 for (volume in volumes){         
   mass_kgs <- 2.65 * volume^0.9  
   mass_lb <- mass_kgs * 2.2      
-  mass_whole <- round(mass_lb)   
+  mass_whole <- round(mass_lb,)   
   mass_tens <- round(mass_whole, digits = -1) 
   print(mass_tens) 
 }
