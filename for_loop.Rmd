@@ -93,7 +93,7 @@ print(masses)
 print(masses2)
 ```
 
-# Creating for loop and storing output
+# Creating for loop and storing the output
 
 ```{r stored}
 for (i in 1:length(volumes)){
