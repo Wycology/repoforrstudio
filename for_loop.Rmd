@@ -62,7 +62,7 @@ volume <- volumes[3]
 print(2.65 * volume^0.9)
 ```
 
-# Extend for loop
+# Extendi for loop
 
 ```{r extended}
 for (volume in volumes){         
