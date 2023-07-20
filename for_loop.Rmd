@@ -1,5 +1,5 @@
 ---
-title: "<center>**Working with for loop in R**</center>"
+title: "<center>**Working with for loop in R**</center"
 author: "<center>Wyclife Agumba Oluoch (wyclifeoluoch@gmail.com) </center>"
 date: "<center>`r Sys.time()`</center>"
 bibliography: 
