@@ -37,7 +37,7 @@ knitr::write_bib(c(
 ), 'bib/packages.bib')
 ```
 
-# Diamonds dataframe
+# Diamonds data frame
 
 ```{r df}
 diamonds_df <- diamonds
