@@ -56,7 +56,7 @@ diamonds_df %>%
   ggplot2::theme_classic() + # Adding my preferred theme for publication.
   ggplot2::theme(legend.position = "none") +
   ggplot2::labs(x = "Diamond cut", # Labels the x-axis.
-       y = "Diamonds price (USD)", # Labeling the y-axis
+       y = "Diamonds Price (USD)", # Labeling the y-axis
        title = "Diamond cut against price", # Setting tibble of the plot
        subtitle = "Preview of diamond cut versus price", # Descriptive title beneath TITLE
        caption = "Data source: gglot2 package's diamond data") +
