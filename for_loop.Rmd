@@ -39,7 +39,7 @@ knitr::write_bib(c(
   print()
 }
 
-# Sample for loop
+# Sample for loopf
 
 ```{r simple}
 volumes <- c(22, 12, 29)
