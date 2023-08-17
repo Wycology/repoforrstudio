@@ -18,8 +18,7 @@ knitr::opts_chunk$set(echo = TRUE)
 
 
 ```{r libs, echo=FALSE, warning=FALSE, message=FALSE, include=FALSE}
-packages <- c("base", 'knitr',
-              'rmarkdown',
+packages <- c("base", 'knitr', 'rmarkdown',
               'tidyverse',
               'moderndive',
               'broom',
