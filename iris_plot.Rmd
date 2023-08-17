@@ -19,8 +19,7 @@ knitr::opts_chunk$set(echo = TRUE)
 
 ```{r libs, echo=FALSE, warning=FALSE, message=FALSE, include=FALSE}
 packages <- c("base", 'knitr', 'rmarkdown',
-              'modelr',
-              'ggforce',
+              'modelr', 'ggforce',
               'tidyverse',
               'patchwork')
 installed_packages <- packages %in% rownames(installed.packages())
