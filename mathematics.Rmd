@@ -1,5 +1,5 @@
 ---
-title: "<center>**Mathematical equations in R Markdown**</center>"
+title: "enter>**Mathematical equations in R Markdown**</center>"
 author: "<center>Wyclife Agumba Oluoch (wyclifeoluoch@gmail.com) </center>"
 date: "<center>`r Sys.time()`</center>"
 bibliography: 
