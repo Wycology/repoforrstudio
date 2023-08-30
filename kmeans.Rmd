@@ -19,7 +19,7 @@ knitr::opts_chunk$set(echo = TRUE)
 
 ```{r libs, echo=FALSE, warning=FALSE, message=FALSE, include=FALSE}
 packages <- c("base",
-      'knitr',
+  'knitr',
               'rmarkdown',
               'dismo',
               'raster',
