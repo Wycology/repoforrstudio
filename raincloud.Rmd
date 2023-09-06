@@ -18,7 +18,7 @@ knitr::opts_chunk$set(echo = TRUE)
 
 ```{r libs, echo=FALSE, warning=FALSE, message=FALSE, include=FALSE}
 packages <- c("base",'knitr','rmarkdown','tidyverse','ggdist','ggtext','gapminder',
-          'glue')
+        'glue')
 installed_packages <- packages %in% rownames(installed.packages())
 if(any(installed_packages == FALSE)){
   install.packages(packages[!installed_packages])
