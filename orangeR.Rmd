@@ -19,8 +19,7 @@ knitr::opts_chunk$set(echo = TRUE)
 
 ```{r libs, echo=FALSE, warning=FALSE, message=FALSE, include=FALSE}
 pacman::p_load(base, knitr, rmarkdown, datasets, tidyverse, parsnip,
-              'gapminder',
-              'ggstatsplot')
+              gapminder, ggstatsplot)
 ```
 
 ```{r write_bib, echo=FALSE, warning=FALSE, message=FALSE, include=FALSE}
