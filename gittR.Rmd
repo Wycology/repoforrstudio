@@ -53,7 +53,7 @@ Eq <- paste0('y = ', round(coeff[2], 2), '*x + ', round(coeff[1], 2))
 
 Eq2 <- paste0('y = ', round(coeff[1], 2), ' + ', round(coeff[2], 2), '*x')
 
-# Ving the scatter-----
+# Viing the scatter-----
 
 plot(Sepal.Length ~ Petal.Width, 
      col = "magenta",
