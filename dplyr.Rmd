@@ -41,7 +41,7 @@ titanic_tibble <- tibble(data.frame(Titanic))
 dim(titanic_tibble)
 ```
 
-Checking the total number of passangers that boarded the Titanic.
+Checking the total number of passengers that boarded the Titanic.
 
 ```{r}
 number_passengers <- titanic_tibble |> summarise(number_passengers = sum(Freq))
