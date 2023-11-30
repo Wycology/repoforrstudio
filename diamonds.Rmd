@@ -98,7 +98,7 @@ diamonds %>%
   base::table() %>% 
   graphics::barplot(col = heat.colors(5, alpha = 1))
 
-# Onean also use topographic colors
+# One an also use topographic colors
 
 diamonds %>% 
   dplyr::select(cut) %>% 
